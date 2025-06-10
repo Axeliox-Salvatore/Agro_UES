@@ -1,0 +1,4 @@
+C:\Users\axeli\OneDrive\Escritorio\Agro_UES\Agro_UES\obj\Debug\Agro_UES.csproj.AssemblyReference.cache
+C:\Users\axeli\OneDrive\Escritorio\Agro_UES\Agro_UES\obj\Debug\Agro_UES.Properties.Resources.resources
+C:\Users\axeli\OneDrive\Escritorio\Agro_UES\Agro_UES\obj\Debug\Agro_UES.csproj.GenerateResource.cache
+C:\Users\axeli\OneDrive\Escritorio\Agro_UES\Agro_UES\obj\Debug\Agro_UES.csproj.CoreCompileInputs.cache
