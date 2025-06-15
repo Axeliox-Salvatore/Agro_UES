@@ -10,7 +10,7 @@ namespace Agro_UES
 {
     class ConexionDB
     {
-        private string conexionString = "server=localhost; database=AgroServicioDB; user=root; password=tu_contraseña;";
+        private string conexionString = "server=127.0.0.1; database=agroservicioDB; user=root; password=;";
 
         public MySqlConnection Conectar()
         {
@@ -18,11 +18,12 @@ namespace Agro_UES
             {
                 MySqlConnection conexion = new MySqlConnection(conexionString);
                 conexion.Open();
+                Console.WriteLine("✅ Conexión exitosa con la base de datos.");
                 return conexion;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                Console.WriteLine("Error de conexión: " + ex.Message);
+                Console.WriteLine($"❌ Error de conexión a MySQL (Código {ex.Number}): {ex.Message}");
                 return null;
             }
         }
@@ -32,8 +33,8 @@ namespace Agro_UES
             if (conexion != null)
             {
                 conexion.Close();
+                Console.WriteLine("🔒 Conexión cerrada correctamente.");
             }
         }
-
     }
 }
