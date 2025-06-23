@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-06-2025 a las 08:20:37
+-- Tiempo de generación: 23-06-2025 a las 09:08:44
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -31,6 +31,13 @@ CREATE TABLE `categorias` (
   `id_categoria` int(11) NOT NULL,
   `nombre_categoria` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `categorias`
+--
+
+INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`) VALUES
+(1, 'Plantas');
 
 -- --------------------------------------------------------
 
@@ -74,6 +81,17 @@ CREATE TABLE `detalle_ventas` (
   `subtotal` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `detalle_ventas`
+--
+
+INSERT INTO `detalle_ventas` (`id_detalle`, `venta_id`, `producto_id`, `cantidad`, `subtotal`) VALUES
+(1, 1, 1, 3, 60.00),
+(2, 1, 2, 2, 30.00),
+(3, 2, 1, 4, 80.00),
+(4, 2, 3, 2, 60.00),
+(5, 3, 2, 10, 150.00);
+
 -- --------------------------------------------------------
 
 --
@@ -111,8 +129,23 @@ CREATE TABLE `productos` (
   `categoria_id` int(11) NOT NULL,
   `precio` decimal(10,2) NOT NULL,
   `stock` int(11) NOT NULL DEFAULT 0,
-  `fecha_vencimiento` date DEFAULT NULL
+  `fecha_vencimiento` date DEFAULT NULL,
+  `iva` decimal(10,2) DEFAULT 0.00
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`id_producto`, `nombre`, `descripcion`, `categoria_id`, `precio`, `stock`, `fecha_vencimiento`, `iva`) VALUES
+(1, 'Fertilizante NPK', 'Fertilizante de alta calidad', 1, 25.00, 100, '2025-12-31', 0.00),
+(2, 'Semilla Maíz', 'Semilla seleccionada de maíz', 1, 17.00, 200, '2025-01-15', 0.00),
+(3, 'Herbicida X', 'Herbicida para control de maleza', 1, 30.00, 50, '2025-08-01', 0.00),
+(4, 'Herbicida Z', 'Herbicida para control de maleza zzz', 1, 40.00, 15, NULL, 0.00),
+(5, 'LAMAMADELAMAMA', 'DELAMAMADELAMAMA', 1, 8000000.00, 400, NULL, 15.00),
+(6, 'Fertilizante NPK turbo', 'Fertilizante de alta calidad', 1, 2005.00, 1, NULL, 0.00),
+(7, 'Semilla Maíz con esteroides', 'Semilla seleccionada de maíz', 1, 1700.00, 2, '8000-01-15', 15.00),
+(8, 'Herbicida pppp', 'Herbicida para control de paletones zzz', 1, 57.00, 15, '3000-05-20', 0.00);
 
 -- --------------------------------------------------------
 
@@ -166,7 +199,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `correo`, `contraseña`, `rol_id`, `fecha_registro`, `sesion_activa`) VALUES
-(2, 'Manuel Vigil', 'juan@example.com', '41c991eb6a66242c0454191244278183ce58cf4a6bcd372f799e4b9cc01886af', 2, '2025-06-13 17:58:16', 0);
+(2, 'Manuel Vigil', 'juan@example.com', '41c991eb6a66242c0454191244278183ce58cf4a6bcd372f799e4b9cc01886af', 2, '2025-06-13 17:58:16', 0),
+(3, 'Oscar Mezar', 'oscar@ggg.lol', '4444', 2, '2025-06-22 01:13:08', 0);
 
 -- --------------------------------------------------------
 
@@ -180,6 +214,15 @@ CREATE TABLE `ventas` (
   `fecha_venta` timestamp NOT NULL DEFAULT current_timestamp(),
   `total` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `ventas`
+--
+
+INSERT INTO `ventas` (`id_venta`, `usuario_id`, `fecha_venta`, `total`) VALUES
+(1, 2, '2025-06-15 15:00:00', 90.00),
+(2, 2, '2025-06-20 16:00:00', 140.00),
+(3, 2, '2025-07-10 17:00:00', 150.00);
 
 --
 -- Índices para tablas volcadas
@@ -269,7 +312,7 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `compras`
@@ -287,7 +330,7 @@ ALTER TABLE `detalle_compras`
 -- AUTO_INCREMENT de la tabla `detalle_ventas`
 --
 ALTER TABLE `detalle_ventas`
-  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `historial_acciones`
@@ -305,7 +348,7 @@ ALTER TABLE `permisos`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedores`
@@ -323,13 +366,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas

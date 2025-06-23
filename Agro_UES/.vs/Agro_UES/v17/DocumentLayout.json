@@ -1,30 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\verde\\Agro_UES\\Agro_UES - copia\\",
+  "WorkspaceRootPath": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES - copia\\clscaptchagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:clscaptchagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|c:\\users\\verde\\agro_ues\\agro_ues\\registrousuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:registrousuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|c:\\users\\verde\\agro_ues\\agro_ues - copia\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|c:\\users\\verde\\agro_ues\\agro_ues\\gestionproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:gestionproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES - copia\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\reportesgenerales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:reportesgenerales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\reportesgenerales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:reportesgenerales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\conexiondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:conexiondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\gestionproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:gestionproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES - copia\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES - copia\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\men\u00FA.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:men\u00FA.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES - copia\\conexiondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:conexiondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\men\u00FA.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:men\u00FA.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\clscaptchagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:clscaptchagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,79 +54,140 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Inicio.cs",
-              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES - copia\\Inicio.cs",
-              "RelativeDocumentMoniker": "Inicio.cs",
-              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES - copia\\Inicio.cs",
-              "RelativeToolTip": "Inicio.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAAA4AAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Registrousuarios.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Registrousuarios.cs",
+              "RelativeDocumentMoniker": "Registrousuarios.cs",
+              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Registrousuarios.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Registrousuarios.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T05:28:47.998Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Inicio.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES - copia\\Inicio.cs",
-              "RelativeDocumentMoniker": "Inicio.cs",
-              "ToolTip": "C:\\Users\\verde\\Downloads\\Agro_UES-main\\Agro_UES-main\\Agro_UES\\Inicio.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\..\\Downloads\\Agro_UES-main\\Agro_UES-main\\Agro_UES\\Inicio.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T05:28:22.98Z"
+              "WhenOpened": "2025-06-23T06:32:39.937Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FormLogin.cs",
-              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES - copia\\FormLogin.cs",
-              "RelativeDocumentMoniker": "FormLogin.cs",
-              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES - copia\\FormLogin.cs",
-              "RelativeToolTip": "FormLogin.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAYwBkAAAAzAAAAAAAAAA==",
+              "Title": "GestionProductos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\GestionProductos.cs",
+              "RelativeDocumentMoniker": "GestionProductos.cs",
+              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\GestionProductos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GestionProductos.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T17:39:48.648Z",
+              "WhenOpened": "2025-06-22T22:26:36.878Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Men\u00FA.cs",
+              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Men\u00FA.cs",
+              "RelativeDocumentMoniker": "Men\u00FA.cs",
+              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Men\u00FA.cs",
+              "RelativeToolTip": "Men\u00FA.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAnwDAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:22:33.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Men\u00FA.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Men\u00FA.cs",
+              "RelativeDocumentMoniker": "Men\u00FA.cs",
+              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Men\u00FA.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Men\u00FA.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T21:46:56.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReportesGenerales.cs",
+              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\ReportesGenerales.cs",
+              "RelativeDocumentMoniker": "ReportesGenerales.cs",
+              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\ReportesGenerales.cs",
+              "RelativeToolTip": "ReportesGenerales.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-15T05:28:47.998Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ConexionDB.cs",
-              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES - copia\\ConexionDB.cs",
-              "RelativeDocumentMoniker": "ConexionDB.cs",
-              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES - copia\\ConexionDB.cs",
-              "RelativeToolTip": "ConexionDB.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ReportesGenerales.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\ReportesGenerales.cs",
+              "RelativeDocumentMoniker": "ReportesGenerales.cs",
+              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\ReportesGenerales.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ReportesGenerales.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T16:03:24.491Z"
+              "WhenOpened": "2025-06-15T05:28:22.98Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormLogin.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES - copia\\FormLogin.cs",
+              "DocumentIndex": 7,
+              "Title": "FormLogin.cs",
+              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\FormLogin.cs",
               "RelativeDocumentMoniker": "FormLogin.cs",
-              "ToolTip": "C:\\Users\\verde\\Downloads\\Agro_UES-main\\Agro_UES-main\\Agro_UES\\FormLogin.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\..\\Downloads\\Agro_UES-main\\Agro_UES-main\\Agro_UES\\FormLogin.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\FormLogin.cs",
+              "RelativeToolTip": "FormLogin.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAADwv58AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T17:39:48.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormLogin.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\FormLogin.cs",
+              "RelativeDocumentMoniker": "FormLogin.cs",
+              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\FormLogin.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FormLogin.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-09T00:29:28.474Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "ConexionDB.cs",
+              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\ConexionDB.cs",
+              "RelativeDocumentMoniker": "ConexionDB.cs",
+              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\ConexionDB.cs",
+              "RelativeToolTip": "ConexionDB.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T16:03:24.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GestionProductos.cs",
+              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\GestionProductos.cs",
+              "RelativeDocumentMoniker": "GestionProductos.cs",
+              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\GestionProductos.cs",
+              "RelativeToolTip": "GestionProductos.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAgwBkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:32:23.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "clsCaptchaGenerator.cs",
-              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES - copia\\clsCaptchaGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\clsCaptchaGenerator.cs",
               "RelativeDocumentMoniker": "clsCaptchaGenerator.cs",
-              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES - copia\\clsCaptchaGenerator.cs",
+              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\clsCaptchaGenerator.cs",
               "RelativeToolTip": "clsCaptchaGenerator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T17:45:15.213Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-13T17:45:15.213Z"
             }
           ]
         }

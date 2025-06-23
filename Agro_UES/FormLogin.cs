@@ -14,6 +14,8 @@ namespace Agro_UES
 {
     public partial class FormLogin: Form
     {
+
+
         public FormLogin()
         {
             InitializeComponent();
@@ -129,7 +131,7 @@ namespace Agro_UES
                             ActualizarEstadoSesion(idUsuario, true);
 
                             this.Hide();
-                            Inicio frm = new Inicio();
+                            Menú frm = new Menú();
                             frm.FormClosed += (s, args) => this.Close();
                             frm.Show();
                         }
@@ -153,6 +155,7 @@ namespace Agro_UES
         private void FormLogin_Load(object sender, EventArgs e)
         {
             GenerarNuevoCaptcha();
+            //this.WindowState = FormWindowState.Maximized;
         }
 
         private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
