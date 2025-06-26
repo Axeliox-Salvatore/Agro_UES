@@ -115,5 +115,15 @@ namespace Agro_UES
         {
 
         }
+
+        private void Registrousuarios_Load(object sender, EventArgs e)
+        {
+            SesionUsuario.NotificarFormularioAbierto();
+        }
+
+        private void Registrousuarios_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SesionUsuario.NotificarFormularioCerrado();
+        }
     }
 }

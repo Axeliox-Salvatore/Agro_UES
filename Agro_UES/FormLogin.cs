@@ -21,6 +21,8 @@ namespace Agro_UES
             InitializeComponent();
         }
 
+        private bool contraseñaVisible = false;
+
         private string textoCaptcha;
         private void GenerarNuevoCaptcha()
         {
@@ -138,6 +140,7 @@ namespace Agro_UES
                         else
                         {
                             MessageBox.Show("PIN incorrecto.");
+                            txtContraseña.Clear();
                         }
                     }
                 }
@@ -162,6 +165,22 @@ namespace Agro_UES
         {
         }
 
-        
+        private void btnVerClave_Click(object sender, EventArgs e)
+        {
+            if (contraseñaVisible)
+            {
+                // Ocultar contraseña con símbolo personalizado
+                txtContraseña.PasswordChar = '●'; // o el que prefieras, como '•', '*', etc.
+                contraseñaVisible = false;
+                btnVerClave.Text = "👁️"; // Opcional: cambia icono
+            }
+            else
+            {
+                // Mostrar contraseña (sin caracteres de ocultamiento)
+                txtContraseña.PasswordChar = '\0'; // Esto muestra el texto real
+                contraseñaVisible = true;
+                btnVerClave.Text = "🙈"; // Opcional: cambia icono
+            }
+        }
     }
 }

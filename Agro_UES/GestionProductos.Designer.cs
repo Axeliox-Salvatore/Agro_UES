@@ -36,6 +36,7 @@
             this.dgvDescripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvIva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvFechaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.dgvFechaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mtbFechaVencimiento = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -60,7 +60,8 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -132,6 +133,13 @@
             this.dgvCategoria.MinimumWidth = 6;
             this.dgvCategoria.Name = "dgvCategoria";
             this.dgvCategoria.ReadOnly = true;
+            // 
+            // dgvFechaVencimiento
+            // 
+            this.dgvFechaVencimiento.HeaderText = "Fecha vencimiento";
+            this.dgvFechaVencimiento.MinimumWidth = 6;
+            this.dgvFechaVencimiento.Name = "dgvFechaVencimiento";
+            this.dgvFechaVencimiento.ReadOnly = true;
             // 
             // label1
             // 
@@ -284,13 +292,6 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // dgvFechaVencimiento
-            // 
-            this.dgvFechaVencimiento.HeaderText = "Fecha vencimiento";
-            this.dgvFechaVencimiento.MinimumWidth = 6;
-            this.dgvFechaVencimiento.Name = "dgvFechaVencimiento";
-            this.dgvFechaVencimiento.ReadOnly = true;
             // 
             // mtbFechaVencimiento
             // 

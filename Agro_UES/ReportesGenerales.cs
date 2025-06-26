@@ -1,15 +1,20 @@
-﻿using MySql.Data.MySqlClient;
+﻿using iTextSharp.text.pdf;
+using iTextSharp.text;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Agro_UES.FormLogin;
-
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 
 namespace Agro_UES
@@ -19,26 +24,6 @@ namespace Agro_UES
         public ReportesGenerales()
         {
             InitializeComponent();
-        }
-
-        private void Inicio_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            CerrarSesionUsuario();
-        }
-
-        private void CerrarSesionUsuario()
-        {
-            string cerrarSesion = "UPDATE usuarios SET sesion_activa = FALSE WHERE id_usuario = @idUsuario";
-
-            using (MySqlConnection conexion = new ConexionDB().Conectar())
-            {
-                using (MySqlCommand comando = new MySqlCommand(cerrarSesion, conexion))
-                {
-                    comando.Parameters.AddWithValue("@idUsuario", UsuarioSesion.IdUsuarioActual);
-                    comando.ExecuteNonQuery();
-                }
-            }
-            Console.WriteLine("🔒 Sesión cerrada correctamente.");
         }
 
         // Evento para cuando se hace clic en las celdas, si se necesita (puede quedar vacío)
@@ -168,9 +153,9 @@ namespace Agro_UES
 
             return meses.ContainsKey(monthName) ? meses[monthName] : 0;
         }
-
-        private void Inicio_Load(object sender, EventArgs e)
+        private void ReportesGenerales_Load_1(object sender, EventArgs e)
         {
+
             // Llenar el ComboBox de años: "Todo" + años desde 2022 hasta el año actual.
             cbAños.Items.Add("Todo");
             for (int año = 2022; año <= DateTime.Now.Year; año++)
@@ -189,15 +174,96 @@ namespace Agro_UES
             cbMeses.DropDownStyle = ComboBoxStyle.DropDownList;
 
             // Configurar las columnas manualmente si aún no existen, respetando el orden adecuado.
-            if (dataGridView1.Columns.Count == 0)
+            SesionUsuario.NotificarFormularioAbierto();
+        }
+
+        private void ReportesGenerales_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SesionUsuario.NotificarFormularioCerrado();
+        }
+
+
+        private string ObtenerNombreUsuario(int idUsuario)
+        {
+            string nombre = "Usuario desconocido";
+            string consulta = "SELECT nombre FROM usuarios WHERE id_usuario = @id";
+
+            using (MySqlConnection conexion = new ConexionDB().Conectar())
+            using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
             {
-                dataGridView1.Columns.Add("dgvIdProducto", "ID Producto");
-                dataGridView1.Columns.Add("dgNombreProducto", "Nombre del Producto");
-                dataGridView1.Columns.Add("dgvVentasTotales", "Ventas Totales");
-                dataGridView1.Columns.Add("dgvPromedioVentasMensuales", "Promedio Mensual");
-                dataGridView1.Columns.Add("dgvPromedioVentasSemanales", "Promedio Semanal");
-                dataGridView1.Columns.Add("dgvProductosVendidos", "Productos Vendidos");
+                comando.Parameters.AddWithValue("@id", idUsuario);
+
+                using (MySqlDataReader lector = comando.ExecuteReader())
+                {
+                    if (lector.Read())
+                    {
+                        nombre = lector["nombre"].ToString();
+                    }
+                }
             }
+
+            return nombre;
+        }
+
+        private void ExportarAPDF(DataGridView dgv, string rutaArchivo, string mes, string anio, string usuario)
+        {
+            Document doc = new Document(PageSize.A4, 10, 10, 10, 10);
+            PdfWriter.GetInstance(doc, new FileStream(rutaArchivo, FileMode.Create));
+            doc.Open();
+
+            string periodo = (mes.Equals("Todo") && anio.Equals("Todo"))
+                ? "Todos los períodos"
+                : $"{(mes.Equals("Todo") ? "" : mes + " ")}{(anio.Equals("Todo") ? "" : anio)}";
+
+            string encabezado = $"📊 Reporte de Ventas - Agroservicio La Pradera\n" +
+                                $"🗓️ Período: {periodo}\n" +
+                                $"👤 Usuario: {usuario}\n" +
+                                $"Fecha de generación: {DateTime.Now:dd/MM/yyyy - HH:mm}";
+
+            Paragraph titulo = new Paragraph(encabezado,
+                FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12));
+            titulo.Alignment = Element.ALIGN_CENTER;
+            doc.Add(titulo);
+            doc.Add(new Paragraph(" ")); // Espacio
+
+            PdfPTable tabla = new PdfPTable(dgv.Columns.Count);
+
+            foreach (DataGridViewColumn col in dgv.Columns)
+            {
+                PdfPCell celdaHeader = new PdfPCell(new Phrase(col.HeaderText));
+                celdaHeader.BackgroundColor = new BaseColor(100, 149, 237);
+                celdaHeader.HorizontalAlignment = Element.ALIGN_CENTER;
+                tabla.AddCell(celdaHeader);
+            }
+
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    foreach (DataGridViewCell celda in row.Cells)
+                    {
+                        tabla.AddCell(celda.Value?.ToString());
+                    }
+                }
+            }
+
+            doc.Add(tabla);
+            doc.Close();
+
+            MessageBox.Show("📤 Reporte exportado correctamente en: " + rutaArchivo);
+        }
+
+        private void btnExportarPDF_Click(object sender, EventArgs e)
+        {
+            string baseNombre = "reporte_ventas";
+            string rutaDirectorio = @"C:\Users\verde\Downloads";
+            string nombreFinal = $"{baseNombre}_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
+            string rutaArchivo = Path.Combine(rutaDirectorio, nombreFinal);
+            string usuarioNombre = ObtenerNombreUsuario(UsuarioSesion.IdUsuarioActual);
+
+            ExportarAPDF(dataGridView1, rutaArchivo, cbMeses.Text, cbAños.Text, usuarioNombre);
         }
     }
 }
+
+

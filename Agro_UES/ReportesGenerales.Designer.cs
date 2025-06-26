@@ -38,6 +38,7 @@
             this.dgvPromedioVentasSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvProductosVendidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnExportarPDF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +80,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -141,6 +145,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 24);
@@ -149,19 +156,32 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Venta de productos por intervalos de tiempo";
             // 
+            // btnExportarPDF
+            // 
+            this.btnExportarPDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExportarPDF.Location = new System.Drawing.Point(404, 68);
+            this.btnExportarPDF.Name = "btnExportarPDF";
+            this.btnExportarPDF.Size = new System.Drawing.Size(85, 24);
+            this.btnExportarPDF.TabIndex = 3;
+            this.btnExportarPDF.Text = "Exportar";
+            this.btnExportarPDF.UseVisualStyleBackColor = false;
+            this.btnExportarPDF.Click += new System.EventHandler(this.btnExportarPDF_Click);
+            // 
             // ReportesGenerales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(800, 493);
+            this.Controls.Add(this.btnExportarPDF);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cbAños);
             this.Controls.Add(this.cbMeses);
             this.Name = "ReportesGenerales";
             this.Text = "Form1";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Inicio_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReportesGenerales_FormClosing);
+            this.Load += new System.EventHandler(this.ReportesGenerales_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -180,5 +200,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPromedioVentasSemanales;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvProductosVendidos;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnExportarPDF;
     }
 }
