@@ -107,7 +107,7 @@ namespace Agro_UES.Formularios.FormAlmacen
                         }
 
                         // 2. Insertar en productos con categoria seleccionada y campos requeridos
-                        string sqlProd = @"INSERT INTO productos 
+                        string sqlProd = @"INSERT INTO solicitudes_productos 
                             (nombre, descripcion, categoria_id, precio, stock, fecha_vencimiento, alerta_bajo_stock, ruta_imagen, estado)
                             VALUES (@nombre, @descripcion, @categoria_id, @precio, @stock, @fecha_venc, NULL, NULL, 'Pendiente')";
                         using (var cmdProd = new MySqlCommand(sqlProd, conn, trans))

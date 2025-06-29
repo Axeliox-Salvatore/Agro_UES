@@ -148,7 +148,7 @@ namespace Agro_UES.Formularios.FormAlmacen
                             }
 
                             // 2. Actualizar producto y ponerlo en estado 'Pendiente'
-                            string sqlUpdate = @"UPDATE productos SET 
+                            string sqlUpdate = @"UPDATE solicitudes_productos SET 
                         descripcion = @descripcion,
                         precio = @precio,
                         stock = @stock,
