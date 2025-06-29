@@ -71,7 +71,7 @@ namespace Agro_UES
 
             Form fh = formHija as Form;
             fh.TopLevel = false;
-            fh.FormBorderStyle = FormBorderStyle.None; // 👈 Esto elimina el marco
+            fh.FormBorderStyle = FormBorderStyle.None; // Esto elimina el marco
             fh.Dock = DockStyle.Fill;
             this.panelPrincipalGerente.Controls.Add(fh);
             this.panelPrincipalGerente.Tag = fh;
