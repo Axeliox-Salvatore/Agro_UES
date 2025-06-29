@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-06-2025 a las 23:42:20
+-- Tiempo de generación: 28-06-2025 a las 21:35:55
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -37,6 +37,15 @@ CREATE TABLE `aprobaciones` (
   `fecha_hora` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `aprobaciones`
+--
+
+INSERT INTO `aprobaciones` (`id_aprobacion`, `tipo_proceso`, `descripcion`, `estado`, `usuario_id`, `nombre_usuario_aprueba`, `fecha_hora`) VALUES
+(2, '', 'Registro de producto: asas, Precio: 12, Stock: 12, Categoría: 1', 'pendiente', 11, 'Juancho', '2025-06-27 20:06:12'),
+(3, '', 'Actualización de producto ID 4: Descripción: asasasas, Precio: 12, Stock: 1222, Fecha de vencimiento: 20/99/1231', 'pendiente', 11, 'Juancho', '2025-06-27 21:20:58'),
+(4, '', 'Solicitud de nueva categoría: asas', 'pendiente', 11, 'Juancho', '2025-06-28 12:52:18');
+
 -- --------------------------------------------------------
 
 --
@@ -45,17 +54,19 @@ CREATE TABLE `aprobaciones` (
 
 CREATE TABLE `categorias` (
   `id_categoria` int(11) NOT NULL,
-  `nombre_categoria` varchar(100) NOT NULL
+  `nombre_categoria` varchar(100) NOT NULL,
+  `estado` enum('Activa','Inactiva') NOT NULL DEFAULT 'Inactiva'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `categorias`
 --
 
-INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`) VALUES
-(1, 'Fertilizantes'),
-(2, 'Herramientas'),
-(3, 'Semillas');
+INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `estado`) VALUES
+(1, 'Fertilizantes', 'Activa'),
+(2, 'Herramientas', 'Activa'),
+(3, 'Semillas', 'Activa'),
+(5, 'asas', 'Inactiva');
 
 -- --------------------------------------------------------
 
@@ -102,6 +113,13 @@ CREATE TABLE `detalle_ventas` (
   `precio_unitario` decimal(10,2) NOT NULL,
   `subtotal` decimal(10,2) GENERATED ALWAYS AS (`cantidad` * `precio_unitario`) STORED
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `detalle_ventas`
+--
+
+INSERT INTO `detalle_ventas` (`id_detalle`, `venta_id`, `producto_id`, `nombre_producto`, `cantidad`, `precio_unitario`) VALUES
+(1, 1, 2, 'Azadón', 3, 13.75);
 
 -- --------------------------------------------------------
 
@@ -183,7 +201,38 @@ INSERT INTO `historial_acciones` (`id_historial`, `usuario_id`, `nombre_usuario`
 (59, 1, 'Admin', 'Generó respaldo de la base de datos', '2025-06-26 11:12:37'),
 (60, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-26 15:38:45'),
 (61, 1, 'Admin', 'Registro nuevo usuario: Juan Carlos', '2025-06-26 15:39:32'),
-(62, 10, 'Juan Carlos', 'Inicio de sesión en el sistema', '2025-06-26 15:40:39');
+(62, 10, 'Juan Carlos', 'Inicio de sesión en el sistema', '2025-06-26 15:40:39'),
+(63, 10, 'Juan Carlos', 'Inicio de sesión en el sistema', '2025-06-27 15:24:00'),
+(64, 10, 'Juan Carlos', 'Venta realizada. Total: 46.61', '2025-06-27 15:24:55'),
+(65, 10, 'Juan Carlos', 'Inicio de sesión en el sistema', '2025-06-27 15:26:14'),
+(66, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-27 15:36:53'),
+(67, 1, 'Admin', 'Registro nuevo usuario: Juancho', '2025-06-27 15:37:42'),
+(68, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-27 15:37:57'),
+(69, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-27 18:33:51'),
+(70, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-27 18:37:59'),
+(71, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-27 19:57:45'),
+(72, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-27 20:01:41'),
+(73, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-27 20:04:55'),
+(74, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-27 20:06:02'),
+(75, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-27 20:59:13'),
+(76, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-27 21:00:03'),
+(77, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-27 21:04:59'),
+(78, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-27 21:06:44'),
+(79, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-27 21:08:46'),
+(80, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-27 21:09:25'),
+(81, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-27 21:12:03'),
+(82, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-27 21:16:49'),
+(83, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-27 21:20:06'),
+(84, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-27 21:20:50'),
+(85, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-28 12:22:11'),
+(86, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-28 12:24:07'),
+(87, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-28 12:26:54'),
+(88, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-28 12:52:09'),
+(89, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-28 13:18:08'),
+(90, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-28 13:18:40'),
+(91, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-28 13:19:56'),
+(92, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-28 13:20:32'),
+(93, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-28 13:22:54');
 
 -- --------------------------------------------------------
 
@@ -212,17 +261,19 @@ CREATE TABLE `productos` (
   `stock` int(11) NOT NULL DEFAULT 0,
   `fecha_vencimiento` date DEFAULT NULL,
   `alerta_bajo_stock` tinyint(1) DEFAULT 0,
-  `ruta_imagen` varchar(255) DEFAULT NULL
+  `ruta_imagen` varchar(255) DEFAULT NULL,
+  `estado` varchar(20) NOT NULL DEFAULT 'Pendiente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`id_producto`, `nombre`, `descripcion`, `categoria_id`, `precio`, `stock`, `fecha_vencimiento`, `alerta_bajo_stock`, `ruta_imagen`) VALUES
-(1, 'Urea 46%', 'Fertilizante nitrogenado', 1, 25.50, 50, NULL, 0, NULL),
-(2, 'Azadón', 'Herramienta para labranza', 2, 13.75, 20, NULL, 0, NULL),
-(3, 'Maíz H-59', 'Semilla híbrida de maíz', 3, 7.90, 100, NULL, 0, NULL);
+INSERT INTO `productos` (`id_producto`, `nombre`, `descripcion`, `categoria_id`, `precio`, `stock`, `fecha_vencimiento`, `alerta_bajo_stock`, `ruta_imagen`, `estado`) VALUES
+(1, 'Urea 46%', 'Fertilizante nitrogenado', 1, 25.50, 50, NULL, 0, NULL, 'Activo'),
+(2, 'Azadón', 'Herramienta para labranza', 2, 13.75, 17, NULL, 1, NULL, 'Pendiente'),
+(3, 'Maíz H-59', 'Semilla híbrida de maíz', 3, 7.90, 100, NULL, 0, NULL, 'Pendiente'),
+(4, 'asas', 'asasasas', 1, 12.00, 1222, '0000-00-00', NULL, NULL, 'Pendiente');
 
 -- --------------------------------------------------------
 
@@ -334,7 +385,8 @@ INSERT INTO `usuarios` (`id_usuario`, `nombre`, `correo`, `contraseña_hash`, `r
 (3, 'Almacen', 'almacen@agro.com', 'c21bcb25ea64255e7e09e04b9284805717a116b5cafbf7e3257b47b0cc7607c1', 4, '2025-06-22 15:39:12', 'activo'),
 (4, 'Cajero', 'cajero@agro.com', 'd6a2cfcc09db01a0bc824ead5b03d12b6e8e3478480d34afefcf69a1c756478e', 3, '2025-06-22 15:39:12', 'activo'),
 (9, 'Josue Carlos', 'Carlos@agro.com', '84b2a5d834daee2fff7eb5e31f44ba68eb860d86d2cf8e37606a26fa775cf23b', 3, '2025-06-24 23:15:13', 'activo'),
-(10, 'Juan Carlos', 'dsadas@gmail.com', 'cbfad02f9ed2a8d1e08d8f74f5303e9eb93637d47f82ab6f1c15871cf8dd0481', 3, '2025-06-26 15:39:32', 'activo');
+(10, 'Juan Carlos', 'dsadas@gmail.com', 'cbfad02f9ed2a8d1e08d8f74f5303e9eb93637d47f82ab6f1c15871cf8dd0481', 3, '2025-06-26 15:39:32', 'activo'),
+(11, 'Juancho', 'aaaaa@gmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 4, '2025-06-27 15:37:42', 'activo');
 
 -- --------------------------------------------------------
 
@@ -348,6 +400,13 @@ CREATE TABLE `ventas` (
   `fecha_venta` datetime DEFAULT current_timestamp(),
   `total` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `ventas`
+--
+
+INSERT INTO `ventas` (`id_venta`, `usuario_id`, `fecha_venta`, `total`) VALUES
+(1, 10, '2025-06-27 15:24:55', 46.61);
 
 --
 -- Índices para tablas volcadas
@@ -467,13 +526,13 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `aprobaciones`
 --
 ALTER TABLE `aprobaciones`
-  MODIFY `id_aprobacion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_aprobacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `compras`
@@ -491,13 +550,13 @@ ALTER TABLE `detalle_compras`
 -- AUTO_INCREMENT de la tabla `detalle_ventas`
 --
 ALTER TABLE `detalle_ventas`
-  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `historial_acciones`
 --
 ALTER TABLE `historial_acciones`
-  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos`
@@ -509,7 +568,7 @@ ALTER TABLE `permisos`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedores`
@@ -545,13 +604,13 @@ ALTER TABLE `rol_permisos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas

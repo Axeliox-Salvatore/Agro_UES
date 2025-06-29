@@ -373,8 +373,6 @@ namespace Agro_UES.Formularios.FormCajero
         {
             lblFechaYHora.Text = DateTime.Now.ToString("dddd dd/MM/yyyy - hh:mm:ss tt");
         }
-
-
     }
 }
 
