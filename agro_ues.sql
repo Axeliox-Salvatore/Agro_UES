@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-06-2025 a las 21:35:55
+-- Tiempo de generación: 29-06-2025 a las 22:00:05
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -44,7 +44,11 @@ CREATE TABLE `aprobaciones` (
 INSERT INTO `aprobaciones` (`id_aprobacion`, `tipo_proceso`, `descripcion`, `estado`, `usuario_id`, `nombre_usuario_aprueba`, `fecha_hora`) VALUES
 (2, '', 'Registro de producto: asas, Precio: 12, Stock: 12, Categoría: 1', 'pendiente', 11, 'Juancho', '2025-06-27 20:06:12'),
 (3, '', 'Actualización de producto ID 4: Descripción: asasasas, Precio: 12, Stock: 1222, Fecha de vencimiento: 20/99/1231', 'pendiente', 11, 'Juancho', '2025-06-27 21:20:58'),
-(4, '', 'Solicitud de nueva categoría: asas', 'pendiente', 11, 'Juancho', '2025-06-28 12:52:18');
+(4, '', 'Solicitud de nueva categoría: asas', 'pendiente', 11, 'Juancho', '2025-06-28 12:52:18'),
+(5, '', 'Registro de producto: asasas, Precio: 12, Stock: 12, Categoría: 2', 'pendiente', 11, 'Juancho', '2025-06-29 13:52:21'),
+(6, '', 'Actualización de producto ID 1: Descripción: Fertilizante nitrogenado, Precio: 12, Stock: 123, Fecha de vencimiento: 12/12/1212', 'pendiente', 11, 'Juancho', '2025-06-29 13:53:06'),
+(7, '', 'Actualización de producto ID 1: Descripción: Fertilizante nitrogenado, Precio: 12, Stock: 50, Fecha de vencimiento: 12/12/1212', 'pendiente', 11, 'Juancho', '2025-06-29 13:58:32'),
+(8, '', 'Actualización de producto ID 1: Descripción: Fertilizante nitrogenado, Precio: 122, Stock: 124, Fecha de vencimiento: /  /', 'pendiente', 11, 'Juancho', '2025-06-29 13:58:47');
 
 -- --------------------------------------------------------
 
@@ -232,7 +236,11 @@ INSERT INTO `historial_acciones` (`id_historial`, `usuario_id`, `nombre_usuario`
 (90, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-28 13:18:40'),
 (91, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-28 13:19:56'),
 (92, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-28 13:20:32'),
-(93, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-28 13:22:54');
+(93, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-28 13:22:54'),
+(94, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 13:52:09'),
+(95, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 13:52:55'),
+(96, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 13:55:12'),
+(97, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 13:58:25');
 
 -- --------------------------------------------------------
 
@@ -271,9 +279,9 @@ CREATE TABLE `productos` (
 
 INSERT INTO `productos` (`id_producto`, `nombre`, `descripcion`, `categoria_id`, `precio`, `stock`, `fecha_vencimiento`, `alerta_bajo_stock`, `ruta_imagen`, `estado`) VALUES
 (1, 'Urea 46%', 'Fertilizante nitrogenado', 1, 25.50, 50, NULL, 0, NULL, 'Activo'),
-(2, 'Azadón', 'Herramienta para labranza', 2, 13.75, 17, NULL, 1, NULL, 'Pendiente'),
-(3, 'Maíz H-59', 'Semilla híbrida de maíz', 3, 7.90, 100, NULL, 0, NULL, 'Pendiente'),
-(4, 'asas', 'asasasas', 1, 12.00, 1222, '0000-00-00', NULL, NULL, 'Pendiente');
+(2, 'Azadón', 'Herramienta para labranza', 2, 13.75, 17, NULL, 1, NULL, 'Activo'),
+(3, 'Maíz H-59', 'Semilla híbrida de maíz', 3, 7.90, 100, NULL, 0, NULL, 'Activo'),
+(4, 'asas', 'asasasas', 1, 12.00, 1222, '0000-00-00', NULL, NULL, 'Activo');
 
 -- --------------------------------------------------------
 
@@ -526,7 +534,7 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `aprobaciones`
 --
 ALTER TABLE `aprobaciones`
-  MODIFY `id_aprobacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_aprobacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `categorias`
@@ -556,7 +564,7 @@ ALTER TABLE `detalle_ventas`
 -- AUTO_INCREMENT de la tabla `historial_acciones`
 --
 ALTER TABLE `historial_acciones`
-  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos`
