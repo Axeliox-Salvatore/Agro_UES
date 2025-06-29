@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-06-2025 a las 22:00:05
+-- Tiempo de generación: 30-06-2025 a las 00:48:55
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -240,7 +240,21 @@ INSERT INTO `historial_acciones` (`id_historial`, `usuario_id`, `nombre_usuario`
 (94, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 13:52:09'),
 (95, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 13:52:55'),
 (96, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 13:55:12'),
-(97, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 13:58:25');
+(97, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 13:58:25'),
+(98, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:01:41'),
+(99, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-29 16:01:57'),
+(100, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:22:49'),
+(101, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:25:18'),
+(102, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:37:27'),
+(103, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:38:17'),
+(104, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:40:23'),
+(105, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:40:49'),
+(106, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:42:30'),
+(107, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:44:29'),
+(108, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:45:06'),
+(109, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:45:33'),
+(110, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:46:49'),
+(111, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:48:00');
 
 -- --------------------------------------------------------
 
@@ -281,7 +295,7 @@ INSERT INTO `productos` (`id_producto`, `nombre`, `descripcion`, `categoria_id`,
 (1, 'Urea 46%', 'Fertilizante nitrogenado', 1, 25.50, 50, NULL, 0, NULL, 'Activo'),
 (2, 'Azadón', 'Herramienta para labranza', 2, 13.75, 17, NULL, 1, NULL, 'Activo'),
 (3, 'Maíz H-59', 'Semilla híbrida de maíz', 3, 7.90, 100, NULL, 0, NULL, 'Activo'),
-(4, 'asas', 'asasasas', 1, 12.00, 1222, '0000-00-00', NULL, NULL, 'Activo');
+(4, 'asas', 'asasasas', 1, 12.00, 1222, NULL, NULL, NULL, 'Activo');
 
 -- --------------------------------------------------------
 
@@ -564,7 +578,7 @@ ALTER TABLE `detalle_ventas`
 -- AUTO_INCREMENT de la tabla `historial_acciones`
 --
 ALTER TABLE `historial_acciones`
-  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos`

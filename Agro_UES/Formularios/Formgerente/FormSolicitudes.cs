@@ -13,18 +13,7 @@ using Agro_UES.Formularios.Formgerente;
 using MySql.Data.MySqlClient;
 
 
-using System;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
-using System;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-
-
-using System;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace Agro_UES.Formularios.Formgerente
 {
