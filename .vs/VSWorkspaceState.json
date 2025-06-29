@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Agro_UES"
+    "\\Agro_UES",
+    "\\Agro_UES\\Formularios",
+    "\\Agro_UES\\Formularios\\FormAlmacen"
   ],
-  "SelectedNode": "\\Agro_UES\\Registrousuarios.cs",
+  "SelectedNode": "\\Agro_UES\\Formularios\\FormAlmacen\\FormAlmacen.cs",
   "PreviewInSolutionExplorer": false
 }

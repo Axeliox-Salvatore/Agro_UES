@@ -63,6 +63,16 @@ namespace Agro_UES.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap candado {
+            get {
+                object obj = ResourceManager.GetObject("candado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cerrar_sesion_alt {
             get {
                 object obj = ResourceManager.GetObject("cerrar-sesion-alt", resourceCulture);
@@ -96,6 +106,26 @@ namespace Agro_UES.Properties {
         internal static System.Drawing.Bitmap comprimir_alt__1_ {
             get {
                 object obj = ResourceManager.GetObject("comprimir-alt (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cuenta {
+            get {
+                object obj = ResourceManager.GetObject("cuenta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cuenta1 {
+            get {
+                object obj = ResourceManager.GetObject("cuenta1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,6 +203,16 @@ namespace Agro_UES.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo2 {
+            get {
+                object obj = ResourceManager.GetObject("logo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minimizar_ventana {
             get {
                 object obj = ResourceManager.GetObject("minimizar-ventana", resourceCulture);
@@ -186,6 +226,16 @@ namespace Agro_UES.Properties {
         internal static System.Drawing.Bitmap natural {
             get {
                 object obj = ResourceManager.GetObject("natural", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PIN {
+            get {
+                object obj = ResourceManager.GetObject("PIN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

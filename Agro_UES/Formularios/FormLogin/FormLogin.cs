@@ -26,6 +26,8 @@ namespace Agro_UES
             nombreUsuarioActual = nombre;
             rolUsuarioActual = rol;
 
+            
+
 
         }
         public FormLogin() : this(0, "", "")
@@ -48,13 +50,20 @@ namespace Agro_UES
             }
         }
 
+        //mantener centrado al mover la vnetana
+        private void FormLogin_Escalar(object sender, EventArgs e)
+        {
+            panelLogin.Left = (this.ClientSize.Width - panelLogin.Width) / 2;
+            panelLogin.Top = (this.ClientSize.Height - panelLogin.Height) / 2;
+        }
+
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            // Obtener el identificador que puede ser correo o nombre, y la contrasenia
+            // Obtener el identificador que puede ser correo o nombre, y la contrasena
             string identificador = txtUsuario.Text.Trim();
             string contraseña = txtContraseña.Text.Trim();
 
-            // Encriptar la contrasña
+            // Encriptar la contraseña
             string contraEncriptada = EncriptarPin(contraseña);
 
             try
@@ -155,7 +164,8 @@ namespace Agro_UES
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            
+            this.Resize += FormLogin_Escalar;
+            FormLogin_Escalar(null, null);
         }
 
         private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)

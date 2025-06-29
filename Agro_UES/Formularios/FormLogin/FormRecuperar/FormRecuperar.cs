@@ -30,6 +30,12 @@ namespace Agro_UES
 
 
         }
+        private void FormRecuperar_Escalar(object sender, EventArgs e)
+        {
+            panelRecuperar.Left = (this.ClientSize.Width - panelRecuperar.Width) / 2;
+            panelRecuperar.Top = (this.ClientSize.Height - panelRecuperar.Height) / 2;
+        }
+
         /*Metodo pa encriptar la contrasena*/
         private string EncriptarPin(string texto)
         {
@@ -70,7 +76,7 @@ namespace Agro_UES
                                 idUsuario = Convert.ToInt32(lector["id_usuario"]);
                                 nombreUsuario = lector["nombre"].ToString();
 
-                                // Generar codigo de 6 dígitos
+                                // Generar codigo de 6 digitos
                                 Random rnd = new Random();
                                 string codigo = rnd.Next(100000, 1000000).ToString();
 
@@ -194,10 +200,10 @@ namespace Agro_UES
         {
             try
             {
-                // Se usa el correo 
+                // Se usa el correo uesagro@gmail.com 
                 MailMessage mensaje = new MailMessage("uesagro@gmail.com", destino);
-                mensaje.Subject = "Recuperación de contraseña Agro_UES";
-                mensaje.Body = "Tu código de verificación es: " + codigo;
+                mensaje.Subject = "Recuperacion de contraseña Agro_UES";
+                mensaje.Body = "Tu codigo de verificacion es: " + codigo;
 
                 // Configurar SmtpClient para Gmail
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
@@ -209,6 +215,12 @@ namespace Agro_UES
             {
                 MessageBox.Show("Error al enviar correo: " + ex.Message, "Excepción");
             }
+        }
+
+        private void FormRecuperar_Load_1(object sender, EventArgs e)
+        {
+            this.Resize += FormRecuperar_Escalar;
+            FormRecuperar_Escalar(null, null);
         }
     }
 }

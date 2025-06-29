@@ -183,10 +183,10 @@
     <Compile Include="Formularios\Formgerente\FormSolicitudes.Designer.cs">
       <DependentUpon>FormSolicitudes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FormRecuperar\FormRecuperar.cs">
+    <Compile Include="Formularios\FormLogin\FormRecuperar\FormRecuperar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FormRecuperar\FormRecuperar.Designer.cs">
+    <Compile Include="Formularios\FormLogin\FormRecuperar\FormRecuperar.Designer.cs">
       <DependentUpon>FormRecuperar.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FormReportes\FormReportes.cs">
@@ -248,7 +248,7 @@
     <EmbeddedResource Include="Formularios\FormLogin\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FormRecuperar\FormRecuperar.resx">
+    <EmbeddedResource Include="Formularios\FormLogin\FormRecuperar\FormRecuperar.resx">
       <DependentUpon>FormRecuperar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormReportes\FormReportes.resx">
@@ -334,6 +334,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-estadísticas-321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cuenta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cuenta1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PIN.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
