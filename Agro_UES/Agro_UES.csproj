@@ -374,5 +374,77 @@
   <ItemGroup>
     <None Include="Resources\ícono de notifica.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filtro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\limpiar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\limpiar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\limpiar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exportar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cajero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desactivar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desactivar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\activar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevouser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\historial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\historial1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuariosgestion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuariosgestion1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resumenes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respaldo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportes1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modulo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

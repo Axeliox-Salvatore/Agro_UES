@@ -606,6 +606,15 @@ namespace Agro_UES
 
             string nombre = dgvUsuarios.SelectedRows[0].Cells["nombre"].Value.ToString();
             int id = Convert.ToInt32(dgvUsuarios.SelectedRows[0].Cells["id_usuario"].Value);
+            string rol = dgvUsuarios.SelectedRows[0].Cells["rol"].Value.ToString();
+
+            // Evitar desactivacion de Super Administrador
+            if (rol == "Super Administrador")
+            {
+                MessageBox.Show("No se puede desactivar a un usuario con rol de Super Administrador.", "Accion no permitida", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+
 
             DialogResult respuesta = MessageBox.Show($"¿Seguro que queres desactivar a {nombre}?",
                 "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -759,8 +768,13 @@ namespace Agro_UES
             this.Hide();
         }
 
+        private void panelHistorial_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         /**********Estilo para que se adapten los paneles***************/
-        
+
     }
 }
 
