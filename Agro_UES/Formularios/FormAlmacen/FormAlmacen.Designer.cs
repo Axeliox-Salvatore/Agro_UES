@@ -1,4 +1,4 @@
-﻿namespace Agro_UES
+namespace Agro_UES
 {
     partial class FormAlmacen
     {
@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+
             this.btnsalir = new System.Windows.Forms.Button();
             this.panelLateral = new System.Windows.Forms.Panel();
             this.panelSuperior = new System.Windows.Forms.Panel();
+
             this.lblHora = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -50,6 +52,7 @@
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.relojHora = new System.Windows.Forms.Timer(this.components);
+
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblfiltro = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,27 +62,76 @@
             this.btncategorias = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+
             this.panelLateral.SuspendLayout();
             this.panelSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelContenido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVecimientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStocBajo)).BeginInit();
+
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
+
+            this.SuspendLayout();
+            // 
+            // btnregistro
+            // 
+            this.btnregistro.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnregistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnregistro.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnregistro.ForeColor = System.Drawing.Color.White;
+            this.btnregistro.Location = new System.Drawing.Point(2, 18);
+            this.btnregistro.Name = "btnregistro";
+            this.btnregistro.Size = new System.Drawing.Size(155, 52);
+            this.btnregistro.TabIndex = 0;
+            this.btnregistro.Text = "Registrar productos";
+            this.btnregistro.UseVisualStyleBackColor = false;
+            this.btnregistro.Click += new System.EventHandler(this.btnregistro_Click);
+            // 
+            // btnactualizarinv
+            // 
+            this.btnactualizarinv.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnactualizarinv.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnactualizarinv.ForeColor = System.Drawing.Color.White;
+            this.btnactualizarinv.Location = new System.Drawing.Point(0, 76);
+            this.btnactualizarinv.Name = "btnactualizarinv";
+            this.btnactualizarinv.Size = new System.Drawing.Size(160, 52);
+            this.btnactualizarinv.TabIndex = 1;
+            this.btnactualizarinv.Text = "Actualizar inventario";
+            this.btnactualizarinv.UseVisualStyleBackColor = false;
+            this.btnactualizarinv.Click += new System.EventHandler(this.btnactualizarinv_Click);
+            // 
+            // btncategorias
+            // 
+            this.btncategorias.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btncategorias.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btncategorias.ForeColor = System.Drawing.Color.White;
+            this.btncategorias.Location = new System.Drawing.Point(0, 143);
+            this.btncategorias.Name = "btncategorias";
+            this.btncategorias.Size = new System.Drawing.Size(160, 52);
+            this.btncategorias.TabIndex = 2;
+            this.btncategorias.Text = "Gestionar categorias";
+            this.btncategorias.UseVisualStyleBackColor = false;
+            this.btncategorias.Click += new System.EventHandler(this.btncategorias_Click);
+            // 
+
             // btnsalir
             // 
             this.btnsalir.BackColor = System.Drawing.Color.Firebrick;
             this.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsalir.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnsalir.ForeColor = System.Drawing.Color.White;
+
             this.btnsalir.Location = new System.Drawing.Point(4, 306);
             this.btnsalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnsalir.Name = "btnsalir";
             this.btnsalir.Padding = new System.Windows.Forms.Padding(5, 5, 10, 5);
             this.btnsalir.Size = new System.Drawing.Size(279, 68);
+
             this.btnsalir.TabIndex = 8;
             this.btnsalir.Text = "Salir";
             this.btnsalir.UseVisualStyleBackColor = false;
@@ -88,12 +140,37 @@
             // panelLateral
             // 
             this.panelLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(227)))), ((int)(((byte)(196)))));
+
             this.panelLateral.Controls.Add(this.flowLayoutPanel1);
+
+            this.panelLateral.Controls.Add(this.btnRegresar);
+            this.panelLateral.Controls.Add(this.btnregistro);
+            this.panelLateral.Controls.Add(this.btnactualizarinv);
+            this.panelLateral.Controls.Add(this.btnsalir);
+            this.panelLateral.Controls.Add(this.btncategorias);
+
             this.panelLateral.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLateral.Location = new System.Drawing.Point(0, 94);
+            this.panelLateral.Location = new System.Drawing.Point(0, 76);
+            this.panelLateral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelLateral.Name = "panelLateral";
+
             this.panelLateral.Size = new System.Drawing.Size(286, 690);
+
             this.panelLateral.TabIndex = 9;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnRegresar.ForeColor = System.Drawing.Color.White;
+            this.btnRegresar.Location = new System.Drawing.Point(0, 223);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(158, 50);
+            this.btnRegresar.TabIndex = 9;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // panelSuperior
             // 
@@ -104,7 +181,9 @@
             this.panelSuperior.Controls.Add(this.lblUsuario);
             this.panelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSuperior.Location = new System.Drawing.Point(0, 0);
+            this.panelSuperior.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelSuperior.Name = "panelSuperior";
+
             this.panelSuperior.Size = new System.Drawing.Size(1254, 94);
             this.panelSuperior.TabIndex = 10;
             // 
@@ -116,6 +195,32 @@
             this.lblHora.Location = new System.Drawing.Point(825, 45);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(26, 25);
+
+            this.panelSuperior.Size = new System.Drawing.Size(785, 76);
+            this.panelSuperior.TabIndex = 10;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
+            this.pictureBox2.Image = global::Agro_UES.Properties.Resources.logo2;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(70, 76);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblHora.Location = new System.Drawing.Point(619, 37);
+            this.lblHora.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(21, 20);
+
             this.lblHora.TabIndex = 0;
             this.lblHora.Text = "--";
             // 
@@ -124,9 +229,11 @@
             this.lblRol.AutoSize = true;
             this.lblRol.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRol.ForeColor = System.Drawing.Color.DarkOliveGreen;
+
             this.lblRol.Location = new System.Drawing.Point(343, 45);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(26, 25);
+
             this.lblRol.TabIndex = 0;
             this.lblRol.Text = "--";
             // 
@@ -135,9 +242,11 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.DarkOliveGreen;
+
             this.lblUsuario.Location = new System.Drawing.Point(200, 45);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(26, 25);
+
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "--";
             // 
@@ -151,9 +260,11 @@
             this.panelContenido.Controls.Add(this.dgvVecimientos);
             this.panelContenido.Controls.Add(this.dgvStocBajo);
             this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.panelContenido.Location = new System.Drawing.Point(286, 94);
             this.panelContenido.Name = "panelContenido";
             this.panelContenido.Size = new System.Drawing.Size(968, 690);
+
             this.panelContenido.TabIndex = 11;
             // 
             // dgvSolicitudes
@@ -168,11 +279,14 @@
             this.Descripcion,
             this.Estado,
             this.FechaHora});
+
             this.dgvSolicitudes.Location = new System.Drawing.Point(89, 502);
+
             this.dgvSolicitudes.Name = "dgvSolicitudes";
             this.dgvSolicitudes.ReadOnly = true;
             this.dgvSolicitudes.RowHeadersWidth = 51;
             this.dgvSolicitudes.RowTemplate.Height = 24;
+
             this.dgvSolicitudes.Size = new System.Drawing.Size(794, 176);
             this.dgvSolicitudes.TabIndex = 2;
             // 
@@ -286,6 +400,11 @@
             this.relojHora.Enabled = true;
             this.relojHora.Interval = 1000;
             this.relojHora.Tick += new System.EventHandler(this.relojHora_Tick_1);
+
+            
+            // 
+            // ID
+
             // 
             // flowLayoutPanel1
             // 
@@ -407,40 +526,112 @@
             this.btnRegresar.UseVisualStyleBackColor = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
-            // pictureBox2
+            // dgvVecimientos
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
-            this.pictureBox2.Image = global::Agro_UES.Properties.Resources.logo2;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(93, 94);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            this.dgvVecimientos.AllowUserToAddRows = false;
+            this.dgvVecimientos.AllowUserToDeleteRows = false;
+            this.dgvVecimientos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVecimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVecimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NombreProductoV,
+            this.FechaVencimiento});
+            this.dgvVecimientos.Location = new System.Drawing.Point(96, 223);
+            this.dgvVecimientos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvVecimientos.Name = "dgvVecimientos";
+            this.dgvVecimientos.ReadOnly = true;
+            this.dgvVecimientos.RowHeadersWidth = 51;
+            this.dgvVecimientos.RowTemplate.Height = 24;
+            this.dgvVecimientos.Size = new System.Drawing.Size(381, 122);
+            this.dgvVecimientos.TabIndex = 1;
+            // 
+            // NombreProductoV
+            // 
+            this.NombreProductoV.HeaderText = "Producto";
+            this.NombreProductoV.MinimumWidth = 6;
+            this.NombreProductoV.Name = "NombreProductoV";
+            this.NombreProductoV.ReadOnly = true;
+            // 
+            // FechaVencimiento
+            // 
+            this.FechaVencimiento.HeaderText = "Fecha de Vencimiento";
+            this.FechaVencimiento.MinimumWidth = 6;
+            this.FechaVencimiento.Name = "FechaVencimiento";
+            this.FechaVencimiento.ReadOnly = true;
+            // 
+            // dgvStocBajo
+            // 
+            this.dgvStocBajo.AllowUserToAddRows = false;
+            this.dgvStocBajo.AllowUserToDeleteRows = false;
+            this.dgvStocBajo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvStocBajo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStocBajo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NombreProducto,
+            this.Stock,
+            this.Categoria});
+            this.dgvStocBajo.Location = new System.Drawing.Point(96, 20);
+            this.dgvStocBajo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvStocBajo.Name = "dgvStocBajo";
+            this.dgvStocBajo.ReadOnly = true;
+            this.dgvStocBajo.RowHeadersWidth = 51;
+            this.dgvStocBajo.RowTemplate.Height = 24;
+            this.dgvStocBajo.Size = new System.Drawing.Size(381, 122);
+            this.dgvStocBajo.TabIndex = 0;
+            // 
+            // NombreProducto
+            // 
+            this.NombreProducto.HeaderText = "Producto";
+            this.NombreProducto.MinimumWidth = 6;
+            this.NombreProducto.Name = "NombreProducto";
+            this.NombreProducto.ReadOnly = true;
+            // 
+            // Stock
+            // 
+            this.Stock.HeaderText = "Stock";
+            this.Stock.MinimumWidth = 6;
+            this.Stock.Name = "Stock";
+            this.Stock.ReadOnly = true;
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.MinimumWidth = 6;
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            // 
+            // relojHora
+            // 
+            this.relojHora.Enabled = true;
+            this.relojHora.Interval = 1000;
+            this.relojHora.Tick += new System.EventHandler(this.relojHora_Tick_1);
             // 
             // FormAlmacen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(1254, 784);
             this.Controls.Add(this.panelContenido);
             this.Controls.Add(this.panelLateral);
             this.Controls.Add(this.panelSuperior);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(800, 600);
+
             this.Name = "FormAlmacen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAlmacen";
             this.panelLateral.ResumeLayout(false);
             this.panelSuperior.ResumeLayout(false);
             this.panelSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelContenido.ResumeLayout(false);
+
             this.panelContenido.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVecimientos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStocBajo)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+
             this.ResumeLayout(false);
 
         }
