@@ -117,12 +117,6 @@
     <Compile Include="Formularios\FormAlmacen\FormAlmacen.Designer.cs">
       <DependentUpon>FormAlmacen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FormAlmacen\GenerarAlertas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FormAlmacen\GenerarAlertas.Designer.cs">
-      <DependentUpon>GenerarAlertas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\FormAlmacen\GestionCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,22 +159,22 @@
     <Compile Include="Formularios\FormEditarUsuario\FormEditarUsuario.Designer.cs">
       <DependentUpon>FormEditarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Formgerente\EstadísticasUsuarios.cs">
+    <Compile Include="Formularios\FormGerente\EstadísticasUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Formgerente\EstadísticasUsuarios.Designer.cs">
+    <Compile Include="Formularios\FormGerente\EstadísticasUsuarios.Designer.cs">
       <DependentUpon>EstadísticasUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Formgerente\FormGerente.cs">
+    <Compile Include="Formularios\FormGerente\FormGerente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Formgerente\FormGerente.Designer.cs">
+    <Compile Include="Formularios\FormGerente\FormGerente.Designer.cs">
       <DependentUpon>FormGerente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Formgerente\FormSolicitudes.cs">
+    <Compile Include="Formularios\FormGerente\FormSolicitudes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Formgerente\FormSolicitudes.Designer.cs">
+    <Compile Include="Formularios\FormGerente\FormSolicitudes.Designer.cs">
       <DependentUpon>FormSolicitudes.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FormRecuperar\FormRecuperar.cs">
@@ -215,9 +209,6 @@
     <EmbeddedResource Include="Formularios\FormAlmacen\FormAlmacen.resx">
       <DependentUpon>FormAlmacen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FormAlmacen\GenerarAlertas.resx">
-      <DependentUpon>GenerarAlertas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormAlmacen\GestionCategorias.resx">
       <DependentUpon>GestionCategorias.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,13 +227,13 @@
     <EmbeddedResource Include="Formularios\FormEditarUsuario\FormEditarUsuario.resx">
       <DependentUpon>FormEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Formgerente\EstadísticasUsuarios.resx">
+    <EmbeddedResource Include="Formularios\FormGerente\EstadísticasUsuarios.resx">
       <DependentUpon>EstadísticasUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Formgerente\FormGerente.resx">
+    <EmbeddedResource Include="Formularios\FormGerente\FormGerente.resx">
       <DependentUpon>FormGerente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Formgerente\FormSolicitudes.resx">
+    <EmbeddedResource Include="Formularios\FormGerente\FormSolicitudes.resx">
       <DependentUpon>FormSolicitudes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormLogin\FormLogin.resx">

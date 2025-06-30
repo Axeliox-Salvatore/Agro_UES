@@ -120,61 +120,62 @@ namespace Agro_UES.Formularios.FormAlmacen
 
                 int idProducto = item.Id;
                 string nuevaDescripcion = txtdescripcion.Text.Trim();
-                decimal nuevoPrecio = decimal.Parse(txtprecio.Text);
-                int nuevoStock = int.Parse(txtstock.Text);
-                string nuevaFechaVenc = mtxtvencimiento.Text.Trim();
 
-                string descripcionAprob = $"Actualización de producto ID {idProducto}: " +
-                    $"Descripción: {nuevaDescripcion}, Precio: {nuevoPrecio}, Stock: {nuevoStock}, Fecha de vencimiento: {nuevaFechaVenc}";
+                if (!decimal.TryParse(txtprecio.Text, out decimal nuevoPrecio) ||
+                    !int.TryParse(txtstock.Text, out int nuevoStock))
+                {
+                    MessageBox.Show("Verifique que precio y stock tengan valores numéricos.");
+                    return;
+                }
+
+                if (!DateTime.TryParse(mtxtvencimiento.Text.Trim(), out DateTime nuevaFechaVenc))
+                {
+                    MessageBox.Show("La fecha de vencimiento no tiene un formato válido.");
+                    return;
+                }
 
                 try
                 {
                     using (var conn = ConexionDB.Conexion())
                     {
                         conn.Open();
-                        using (var trans = conn.BeginTransaction())
+
+                        string sql = @"
+                    INSERT INTO aprobaciones_almacen (
+                        id_producto,
+                        descripcion,
+                        precio,
+                        stock,
+                        fecha_vencimiento,
+                        estado,
+                        usuario_solicita,
+                        nombre_solicita,
+                        fecha_solicita
+                    )
+                    VALUES (
+                        @id, @desc, @precio, @stock, @venc, 'Pendiente',
+                        @uid, @nombre, NOW()
+                    );";
+
+                        using (var cmd = new MySqlCommand(sql, conn))
                         {
-                            // 1. Insertar solicitud en aprobaciones
-                            string sqlAprob = @"INSERT INTO aprobaciones 
-                        (tipo_proceso, descripcion, estado, usuario_id, nombre_usuario_aprueba, fecha_hora)
-                        VALUES (@tipo, @desc, 'Pendiente', @uid, @nombre, NOW())";
-                            using (var cmdAprob = new MySqlCommand(sqlAprob, conn, trans))
-                            {
-                                cmdAprob.Parameters.AddWithValue("@tipo", "Actualizar producto");
-                                cmdAprob.Parameters.AddWithValue("@desc", descripcionAprob);
-                                cmdAprob.Parameters.AddWithValue("@uid", idUsuarioActual);
-                                cmdAprob.Parameters.AddWithValue("@nombre", nombreUsuarioActual);
-                                cmdAprob.ExecuteNonQuery();
-                            }
-
-                            // 2. Actualizar producto y ponerlo en estado 'Pendiente'
-                            string sqlUpdate = @"UPDATE productos SET 
-                        descripcion = @descripcion,
-                        precio = @precio,
-                        stock = @stock,
-                        fecha_vencimiento = @fecha_venc,
-                        estado = 'Pendiente'
-                        WHERE id_producto = @id";
-                            using (var cmdUpdate = new MySqlCommand(sqlUpdate, conn, trans))
-                            {
-                                cmdUpdate.Parameters.AddWithValue("@descripcion", nuevaDescripcion);
-                                cmdUpdate.Parameters.AddWithValue("@precio", nuevoPrecio);
-                                cmdUpdate.Parameters.AddWithValue("@stock", nuevoStock);
-                                cmdUpdate.Parameters.AddWithValue("@fecha_venc", nuevaFechaVenc);
-                                cmdUpdate.Parameters.AddWithValue("@id", idProducto);
-                                cmdUpdate.ExecuteNonQuery();
-                            }
-
-                            trans.Commit();
+                            cmd.Parameters.AddWithValue("@id", idProducto);
+                            cmd.Parameters.AddWithValue("@desc", nuevaDescripcion);
+                            cmd.Parameters.AddWithValue("@precio", nuevoPrecio);
+                            cmd.Parameters.AddWithValue("@stock", nuevoStock);
+                            cmd.Parameters.AddWithValue("@venc", nuevaFechaVenc);
+                            cmd.Parameters.AddWithValue("@uid", idUsuarioActual);
+                            cmd.Parameters.AddWithValue("@nombre", nombreUsuarioActual);
+                            cmd.ExecuteNonQuery();
                         }
                     }
 
-                    MessageBox.Show("Solicitud de actualización enviada. El producto quedará pendiente hasta aprobación del gerente.");
+                    MessageBox.Show("La solicitud fue registrada y está pendiente de aprobación.");
                     this.Close();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al actualizar el producto: " + ex.Message);
+                    MessageBox.Show("Error al registrar la solicitud: " + ex.Message);
                 }
             }
             else

@@ -3,84 +3,72 @@
   "WorkspaceRootPath": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|c:\\users\\verde\\agro_ues\\agro_ues\\formularios\\formalmacen\\formalmacen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formalmacen\\formalmacen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|c:\\users\\verde\\agro_ues\\agro_ues\\formularios\\formalmacen\\actualizarproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formalmacen\\actualizarproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|c:\\users\\verde\\agro_ues\\agro_ues\\formularios\\formalmacen\\registrarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formalmacen\\registrarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|c:\\users\\verde\\agro_ues\\agro_ues\\formularios\\formalmacen\\gestioncategorias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formalmacen\\gestioncategorias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|c:\\users\\verde\\agro_ues\\agro_ues\\formularios\\formalmacen\\generaralertas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formalmacen\\generaralertas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formgerente\\estad\u00EDsticasusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formgerente\\estad\u00EDsticasusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formgerente\\estad\u00EDsticasusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formgerente\\estad\u00EDsticasusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formgerente\\formgerente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formgerente\\formgerente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formgerente\\formgerente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formgerente\\formgerente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formgerente\\formsolicitudes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|c:\\users\\verde\\agro_ues\\agro_ues\\formularios\\formgerente\\formsolicitudes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formgerente\\formsolicitudes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formcajero\\formcajero0.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formcajero\\formcajero0.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|c:\\users\\verde\\agro_ues\\agro_ues\\formularios\\formgerente\\formgerente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formgerente\\formgerente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|c:\\users\\verde\\agro_ues\\agro_ues\\formularios\\formgerente\\estad\u00EDsticasusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formgerente\\estad\u00EDsticasusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|c:\\users\\verde\\agro_ues\\agro_ues\\formularios\\formlogin\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formlogin\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formalmacen\\formalmacen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formalmacen\\formalmacen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formcajero\\formcajero0.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formcajero\\formcajero0.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formdevolucion\\formdevoluciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formdevolucion\\formdevoluciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formgerente\\formsolicitudes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formgerente\\formsolicitudes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formalmacen\\actualizarproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formalmacen\\actualizarproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formreportes\\formreportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formreportes\\formreportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formdevolucion\\formdevoluciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formdevolucion\\formdevoluciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formlogin\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formlogin\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formlogin\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formlogin\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formalmacen\\registrarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formalmacen\\registrarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formalmacen\\actualizarproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formalmacen\\actualizarproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formdevolucion\\formdevoluciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formdevolucion\\formdevoluciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formsuperadmin\\formsuperadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formsuperadmin\\formsuperadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formreportes\\formreportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formreportes\\formreportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formdevolucion\\formdevoluciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formdevolucion\\formdevoluciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formlogin\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formlogin\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formalmacen\\gestioncategorias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formalmacen\\gestioncategorias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formcajero\\formcajero0.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formcajero\\formcajero0.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\formularios\\formreportes\\formreportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|solutionrelative:formularios\\formreportes\\formreportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A9EEB332-636C-4A04-AE71-EC660F66A339}|Agro_UES.csproj|C:\\Users\\verde\\Agro_UES\\Agro_UES\\conexiondb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -98,119 +86,103 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormSolicitudes.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormGerente\\FormSolicitudes.cs",
+              "RelativeDocumentMoniker": "Formularios\\FormGerente\\FormSolicitudes.cs",
+              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormGerente\\FormSolicitudes.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Formularios\\FormGerente\\FormSolicitudes.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T03:02:19.719Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "FormGerente.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormGerente\\FormGerente.cs",
+              "RelativeDocumentMoniker": "Formularios\\FormGerente\\FormGerente.cs",
+              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormGerente\\FormGerente.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Formularios\\FormGerente\\FormGerente.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T03:02:18.046Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Estad\u00EDsticasUsuarios.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormGerente\\Estad\u00EDsticasUsuarios.cs",
+              "RelativeDocumentMoniker": "Formularios\\FormGerente\\Estad\u00EDsticasUsuarios.cs",
+              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormGerente\\Estad\u00EDsticasUsuarios.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Formularios\\FormGerente\\Estad\u00EDsticasUsuarios.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T03:02:16.199Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ActualizarProductos.cs",
+              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormAlmacen\\ActualizarProductos.cs",
+              "RelativeDocumentMoniker": "Formularios\\FormAlmacen\\ActualizarProductos.cs",
+              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormAlmacen\\ActualizarProductos.cs",
+              "RelativeToolTip": "Formularios\\FormAlmacen\\ActualizarProductos.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T23:23:12.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "ActualizarProductos.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormAlmacen\\ActualizarProductos.cs",
               "RelativeDocumentMoniker": "Formularios\\FormAlmacen\\ActualizarProductos.cs",
               "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormAlmacen\\ActualizarProductos.cs [Dise\u00F1o]",
               "RelativeToolTip": "Formularios\\FormAlmacen\\ActualizarProductos.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-29T06:54:59.886Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-06-29T06:54:59.886Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "Registrarproducto.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormAlmacen\\Registrarproducto.cs",
               "RelativeDocumentMoniker": "Formularios\\FormAlmacen\\Registrarproducto.cs",
               "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormAlmacen\\Registrarproducto.cs [Dise\u00F1o]",
               "RelativeToolTip": "Formularios\\FormAlmacen\\Registrarproducto.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-29T06:54:57.493Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-06-29T06:54:57.493Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 14,
               "Title": "GestionCategorias.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormAlmacen\\GestionCategorias.cs",
               "RelativeDocumentMoniker": "Formularios\\FormAlmacen\\GestionCategorias.cs",
               "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormAlmacen\\GestionCategorias.cs [Dise\u00F1o]",
               "RelativeToolTip": "Formularios\\FormAlmacen\\GestionCategorias.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-29T06:54:55.415Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-06-29T06:54:55.415Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "GenerarAlertas.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormAlmacen\\GenerarAlertas.cs",
-              "RelativeDocumentMoniker": "Formularios\\FormAlmacen\\GenerarAlertas.cs",
-              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormAlmacen\\GenerarAlertas.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Formularios\\FormAlmacen\\GenerarAlertas.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-29T06:54:53.731Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "FormAlmacen.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormAlmacen\\FormAlmacen.cs",
               "RelativeDocumentMoniker": "Formularios\\FormAlmacen\\FormAlmacen.cs",
               "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormAlmacen\\FormAlmacen.cs [Dise\u00F1o]",
               "RelativeToolTip": "Formularios\\FormAlmacen\\FormAlmacen.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-29T06:54:51.705Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-06-29T06:54:51.705Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Estad\u00EDsticasUsuarios.cs",
-              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\Formgerente\\Estad\u00EDsticasUsuarios.cs",
-              "RelativeDocumentMoniker": "Formularios\\Formgerente\\Estad\u00EDsticasUsuarios.cs",
-              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\Formgerente\\Estad\u00EDsticasUsuarios.cs",
-              "RelativeToolTip": "Formularios\\Formgerente\\Estad\u00EDsticasUsuarios.cs",
-              "ViewState": "AgIAAHoAAAAAAAAAAAAhwIoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-29T06:13:12.71Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Estad\u00EDsticasUsuarios.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\Formgerente\\Estad\u00EDsticasUsuarios.cs",
-              "RelativeDocumentMoniker": "Formularios\\Formgerente\\Estad\u00EDsticasUsuarios.cs",
-              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\Formgerente\\Estad\u00EDsticasUsuarios.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Formularios\\Formgerente\\Estad\u00EDsticasUsuarios.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-29T05:21:24.814Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FormSolicitudes.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\Formgerente\\FormSolicitudes.cs",
-              "RelativeDocumentMoniker": "Formularios\\Formgerente\\FormSolicitudes.cs",
-              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\Formgerente\\FormSolicitudes.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Formularios\\Formgerente\\FormSolicitudes.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T21:50:16.47Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "FormSolicitudes.cs",
-              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\Formgerente\\FormSolicitudes.cs",
-              "RelativeDocumentMoniker": "Formularios\\Formgerente\\FormSolicitudes.cs",
-              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\Formgerente\\FormSolicitudes.cs",
-              "RelativeToolTip": "Formularios\\Formgerente\\FormSolicitudes.cs",
-              "ViewState": "AgIAAJIAAAAAAAAAAAAEwKAAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T22:12:46.302Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 7,
               "Title": "FormReportes.cs",
               "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormReportes\\FormReportes.cs",
               "RelativeDocumentMoniker": "Formularios\\FormReportes\\FormReportes.cs",
@@ -222,7 +194,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 18,
               "Title": "FormSuperAdmin.cs",
               "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormSuperadmin\\FormSuperAdmin.cs",
               "RelativeDocumentMoniker": "Formularios\\FormSuperadmin\\FormSuperAdmin.cs",
@@ -234,30 +206,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FormGerente.cs",
-              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\Formgerente\\FormGerente.cs",
-              "RelativeDocumentMoniker": "Formularios\\Formgerente\\FormGerente.cs",
-              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\Formgerente\\FormGerente.cs",
-              "RelativeToolTip": "Formularios\\Formgerente\\FormGerente.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAawGAAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T04:50:59.107Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FormGerente.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\Formgerente\\FormGerente.cs",
-              "RelativeDocumentMoniker": "Formularios\\Formgerente\\FormGerente.cs",
-              "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\Formgerente\\FormGerente.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Formularios\\Formgerente\\FormGerente.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T21:28:00.127Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 11,
               "Title": "FormDevoluciones.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormDevolucion\\FormDevoluciones.cs",
               "RelativeDocumentMoniker": "Formularios\\FormDevolucion\\FormDevoluciones.cs",
@@ -268,19 +217,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 5,
               "Title": "FormCajero0.cs",
               "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormCajero\\FormCajero0.cs",
               "RelativeDocumentMoniker": "Formularios\\FormCajero\\FormCajero0.cs",
               "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormCajero\\FormCajero0.cs",
               "RelativeToolTip": "Formularios\\FormCajero\\FormCajero0.cs",
-              "ViewState": "AgIAAEsBAAAAAAAAAADwv1cBAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-26T19:25:54.616Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "FormDevoluciones.cs",
               "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormDevolucion\\FormDevoluciones.cs",
               "RelativeDocumentMoniker": "Formularios\\FormDevolucion\\FormDevoluciones.cs",
@@ -292,7 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "FormCajero0.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormCajero\\FormCajero0.cs",
               "RelativeDocumentMoniker": "Formularios\\FormCajero\\FormCajero0.cs",
@@ -303,19 +252,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 3,
               "Title": "FormLogin.cs",
               "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormLogin\\FormLogin.cs",
               "RelativeDocumentMoniker": "Formularios\\FormLogin\\FormLogin.cs",
               "ToolTip": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormLogin\\FormLogin.cs",
               "RelativeToolTip": "Formularios\\FormLogin\\FormLogin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAtwG4AAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T00:06:24.773Z"
+              "WhenOpened": "2025-06-26T00:06:24.773Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 8,
               "Title": "FormLogin.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormLogin\\FormLogin.cs",
               "RelativeDocumentMoniker": "Formularios\\FormLogin\\FormLogin.cs",
@@ -326,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 16,
               "Title": "FormReportes.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormReportes\\FormReportes.cs",
               "RelativeDocumentMoniker": "Formularios\\FormReportes\\FormReportes.cs",
@@ -337,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 12,
               "Title": "FormSuperAdmin.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\Formularios\\FormSuperadmin\\FormSuperAdmin.cs",
               "RelativeDocumentMoniker": "Formularios\\FormSuperadmin\\FormSuperAdmin.cs",
@@ -348,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 17,
               "Title": "ConexionDB.cs",
               "DocumentMoniker": "C:\\Users\\verde\\Agro_UES\\Agro_UES\\ConexionDB.cs",
               "RelativeDocumentMoniker": "ConexionDB.cs",

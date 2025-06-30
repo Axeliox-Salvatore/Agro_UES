@@ -45,9 +45,10 @@
             // cmbproductos
             // 
             this.cmbproductos.FormattingEnabled = true;
-            this.cmbproductos.Location = new System.Drawing.Point(134, 52);
+            this.cmbproductos.Location = new System.Drawing.Point(179, 64);
+            this.cmbproductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbproductos.Name = "cmbproductos";
-            this.cmbproductos.Size = new System.Drawing.Size(117, 21);
+            this.cmbproductos.Size = new System.Drawing.Size(155, 24);
             this.cmbproductos.TabIndex = 0;
             this.cmbproductos.SelectedIndexChanged += new System.EventHandler(this.cmbproductos_SelectedIndexChanged);
             // 
@@ -55,9 +56,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 52);
+            this.label1.Location = new System.Drawing.Point(28, 64);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 26);
+            this.label1.Size = new System.Drawing.Size(131, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "Producto";
             // 
@@ -65,9 +67,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 242);
+            this.label3.Location = new System.Drawing.Point(28, 298);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(245, 26);
+            this.label3.Size = new System.Drawing.Size(299, 31);
             this.label3.TabIndex = 3;
             this.label3.Text = "Fecha de vencimiento";
             // 
@@ -75,9 +78,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 197);
+            this.label4.Location = new System.Drawing.Point(28, 242);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 26);
+            this.label4.Size = new System.Drawing.Size(88, 31);
             this.label4.TabIndex = 4;
             this.label4.Text = "Stock";
             // 
@@ -85,9 +89,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 150);
+            this.label5.Location = new System.Drawing.Point(28, 185);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 26);
+            this.label5.Size = new System.Drawing.Size(97, 31);
             this.label5.TabIndex = 5;
             this.label5.Text = "Precio";
             // 
@@ -95,39 +100,44 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 103);
+            this.label6.Location = new System.Drawing.Point(28, 127);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(137, 26);
+            this.label6.Size = new System.Drawing.Size(168, 31);
             this.label6.TabIndex = 6;
             this.label6.Text = "Descripcion";
             // 
             // txtdescripcion
             // 
-            this.txtdescripcion.Location = new System.Drawing.Point(176, 105);
+            this.txtdescripcion.Location = new System.Drawing.Point(235, 129);
+            this.txtdescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtdescripcion.Name = "txtdescripcion";
-            this.txtdescripcion.Size = new System.Drawing.Size(146, 20);
+            this.txtdescripcion.Size = new System.Drawing.Size(193, 22);
             this.txtdescripcion.TabIndex = 7;
             // 
             // txtstock
             // 
-            this.txtstock.Location = new System.Drawing.Point(176, 197);
+            this.txtstock.Location = new System.Drawing.Point(235, 242);
+            this.txtstock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtstock.Name = "txtstock";
-            this.txtstock.Size = new System.Drawing.Size(146, 20);
+            this.txtstock.Size = new System.Drawing.Size(193, 22);
             this.txtstock.TabIndex = 9;
             // 
             // txtprecio
             // 
-            this.txtprecio.Location = new System.Drawing.Point(176, 156);
+            this.txtprecio.Location = new System.Drawing.Point(235, 192);
+            this.txtprecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtprecio.Name = "txtprecio";
-            this.txtprecio.Size = new System.Drawing.Size(146, 20);
+            this.txtprecio.Size = new System.Drawing.Size(193, 22);
             this.txtprecio.TabIndex = 10;
             // 
             // btnactualizar
             // 
             this.btnactualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnactualizar.Location = new System.Drawing.Point(59, 340);
+            this.btnactualizar.Location = new System.Drawing.Point(79, 418);
+            this.btnactualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnactualizar.Name = "btnactualizar";
-            this.btnactualizar.Size = new System.Drawing.Size(136, 67);
+            this.btnactualizar.Size = new System.Drawing.Size(181, 82);
             this.btnactualizar.TabIndex = 11;
             this.btnactualizar.Text = "Actualizar producto";
             this.btnactualizar.UseVisualStyleBackColor = true;
@@ -135,18 +145,20 @@
             // 
             // mtxtvencimiento
             // 
-            this.mtxtvencimiento.Location = new System.Drawing.Point(274, 247);
+            this.mtxtvencimiento.Location = new System.Drawing.Point(365, 304);
+            this.mtxtvencimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mtxtvencimiento.Mask = "00/00/0000";
             this.mtxtvencimiento.Name = "mtxtvencimiento";
-            this.mtxtvencimiento.Size = new System.Drawing.Size(73, 20);
+            this.mtxtvencimiento.Size = new System.Drawing.Size(96, 22);
             this.mtxtvencimiento.TabIndex = 12;
             this.mtxtvencimiento.ValidatingType = typeof(System.DateTime);
             // 
             // btnvolver
             // 
-            this.btnvolver.Location = new System.Drawing.Point(218, 404);
+            this.btnvolver.Location = new System.Drawing.Point(291, 497);
+            this.btnvolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnvolver.Name = "btnvolver";
-            this.btnvolver.Size = new System.Drawing.Size(139, 34);
+            this.btnvolver.Size = new System.Drawing.Size(185, 42);
             this.btnvolver.TabIndex = 13;
             this.btnvolver.Text = "Regresar al menu";
             this.btnvolver.UseVisualStyleBackColor = true;
@@ -154,9 +166,9 @@
             // 
             // ActualizarProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 450);
+            this.ClientSize = new System.Drawing.Size(536, 554);
             this.Controls.Add(this.btnvolver);
             this.Controls.Add(this.mtxtvencimiento);
             this.Controls.Add(this.btnactualizar);
@@ -169,6 +181,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbproductos);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ActualizarProductos";
             this.Text = "ActualizarProductos";
             this.Load += new System.EventHandler(this.ActualizarProductos_Load);

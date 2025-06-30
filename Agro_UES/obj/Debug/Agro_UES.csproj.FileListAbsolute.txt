@@ -305,4 +305,7 @@ C:\Users\verde\Agro_UES\Agro_UES\obj\Debug\Agro_UES.FormGerente.resources
 C:\Users\verde\Agro_UES\Agro_UES\obj\Debug\Agro_UES.Formularios.Formgerente.FormSolicitudes.resources
 C:\Users\verde\Agro_UES\Agro_UES\obj\Debug\Agro_UES.Formularios.Formgerente.EstadísticasUsuarios.resources
 C:\Users\verde\Agro_UES\Agro_UES\obj\Debug\Agro_UES.Formularios.FormAlmacen.ActualizarProductos.resources
-C:\Users\verde\Agro_UES\Agro_UES\obj\Debug\Agro_UES.Formularios.FormAlmacen.FormAlmacen.resources
+C:\Users\verde\Agro_UES\Agro_UES\obj\Debug\Agro_UES.FormAlmacen.resources
+C:\Users\verde\Agro_UES\Agro_UES\obj\Debug\Agro_UES.Formularios.FormAlmacen.GenerarAlertas.resources
+C:\Users\verde\Agro_UES\Agro_UES\obj\Debug\Agro_UES.Formularios.FormAlmacen.GestionCategorias.resources
+C:\Users\verde\Agro_UES\Agro_UES\obj\Debug\Agro_UES.Formularios.FormAlmacen.Registrarproducto.resources
