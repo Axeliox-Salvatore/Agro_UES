@@ -41,7 +41,7 @@ namespace Agro_UES.Formularios.FormAlmacen
                             if (!reader.IsDBNull(reader.GetOrdinal("fecha_vencimiento")))
                             {
                                 object fechaObj = reader["fecha_vencimiento"];
-                                // Si es DateTime válido
+                                // Si es DateTime valido
                                 if (fechaObj is DateTime dt)
                                 {
                                     fechaVencimientoStr = dt.ToString("yyyy-MM-dd");
@@ -125,7 +125,7 @@ namespace Agro_UES.Formularios.FormAlmacen
                 string nuevaFechaVenc = mtxtvencimiento.Text.Trim();
 
                 string descripcionAprob = $"Actualización de producto ID {idProducto}: " +
-                    $"Descripción: {nuevaDescripcion}, Precio: {nuevoPrecio}, Stock: {nuevoStock}, Fecha de vencimiento: {nuevaFechaVenc}";
+                    $"Descripcion: {nuevaDescripcion}, Precio: {nuevoPrecio}, Stock: {nuevoStock}, Fecha de vencimiento: {nuevaFechaVenc}";
 
                 try
                 {
@@ -169,7 +169,7 @@ namespace Agro_UES.Formularios.FormAlmacen
                         }
                     }
 
-                    MessageBox.Show("Solicitud de actualización enviada. El producto quedará pendiente hasta aprobación del gerente.");
+                    MessageBox.Show("Solicitud de actualizacion enviada. El producto quedara pendiente hasta aprobacion del gerente.");
                     this.Close();
                 }
                 catch (Exception ex)

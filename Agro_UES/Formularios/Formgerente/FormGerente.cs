@@ -33,35 +33,6 @@ namespace Agro_UES
             Application.Exit();
         }
 
-        private void picMinimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-            picExpandir.Visible = true;
-            picMinimizar.Visible = false;
-        }
-
-        private void picExpandir_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            picExpandir.Visible = false;
-            picRestaurar.Visible = true;
-            picRestaurar.BringToFront();
-        }
-
-        private void picRestaurar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            picExpandir.Visible = true;
-            picRestaurar.Visible = false;
-            picExpandir.BringToFront();
-        }
-
-
-
-
-
-
-
 
 
         private void abrirFormularios(Object formHija)
@@ -93,6 +64,11 @@ namespace Agro_UES
         private void btnEstadísticasDesempeño_Click(object sender, EventArgs e)
         {
             abrirFormularios(new EstadísticasUsuarios());
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

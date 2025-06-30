@@ -40,7 +40,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelSuperior = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.lblRol = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.panelSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -56,7 +63,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(152, 41);
+            this.groupBox1.Location = new System.Drawing.Point(149, 104);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(538, 473);
             this.groupBox1.TabIndex = 0;
@@ -157,16 +164,77 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
+            // panelSuperior
+            // 
+            this.panelSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(242)))), ((int)(((byte)(234)))));
+            this.panelSuperior.Controls.Add(this.pictureBox2);
+            this.panelSuperior.Controls.Add(this.lblHora);
+            this.panelSuperior.Controls.Add(this.lblRol);
+            this.panelSuperior.Controls.Add(this.lblUsuario);
+            this.panelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSuperior.Location = new System.Drawing.Point(0, 0);
+            this.panelSuperior.Name = "panelSuperior";
+            this.panelSuperior.Size = new System.Drawing.Size(973, 94);
+            this.panelSuperior.TabIndex = 11;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
+            this.pictureBox2.Image = global::Agro_UES.Properties.Resources.logo2;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(93, 94);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblHora.Location = new System.Drawing.Point(825, 45);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(26, 25);
+            this.lblHora.TabIndex = 0;
+            this.lblHora.Text = "--";
+            // 
+            // lblRol
+            // 
+            this.lblRol.AutoSize = true;
+            this.lblRol.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblRol.Location = new System.Drawing.Point(343, 45);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(26, 25);
+            this.lblRol.TabIndex = 0;
+            this.lblRol.Text = "--";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblUsuario.Location = new System.Drawing.Point(200, 45);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(26, 25);
+            this.lblUsuario.TabIndex = 0;
+            this.lblUsuario.Text = "--";
+            // 
             // FormNuevoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 526);
+            this.ClientSize = new System.Drawing.Size(973, 655);
+            this.Controls.Add(this.panelSuperior);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormNuevoUsuario";
             this.Text = "FormNuevoUsuario";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panelSuperior.ResumeLayout(false);
+            this.panelSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -185,5 +253,10 @@
         private System.Windows.Forms.ComboBox cmbRol;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panelSuperior;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Label lblRol;
+        private System.Windows.Forms.Label lblUsuario;
     }
 }

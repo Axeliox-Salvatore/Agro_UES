@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.btnRechazarSolicitud = new System.Windows.Forms.Button();
             this.btnAprobarProceso = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.dgvTipoProceso2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDescripcion2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvFechaSolicitud2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudesPendientes)).BeginInit();
@@ -84,9 +84,17 @@
             this.panel1.Size = new System.Drawing.Size(325, 602);
             this.panel1.TabIndex = 3;
             // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 406);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(325, 196);
+            this.panel4.TabIndex = 15;
+            // 
             // btnRechazarSolicitud
             // 
-            this.btnRechazarSolicitud.Location = new System.Drawing.Point(157, 314);
+            this.btnRechazarSolicitud.Location = new System.Drawing.Point(25, 332);
             this.btnRechazarSolicitud.Name = "btnRechazarSolicitud";
             this.btnRechazarSolicitud.Size = new System.Drawing.Size(75, 38);
             this.btnRechazarSolicitud.TabIndex = 14;
@@ -95,7 +103,7 @@
             // 
             // btnAprobarProceso
             // 
-            this.btnAprobarProceso.Location = new System.Drawing.Point(238, 314);
+            this.btnAprobarProceso.Location = new System.Drawing.Point(214, 332);
             this.btnAprobarProceso.Name = "btnAprobarProceso";
             this.btnAprobarProceso.Size = new System.Drawing.Size(75, 38);
             this.btnAprobarProceso.TabIndex = 14;
@@ -105,18 +113,20 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 45);
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label12.Location = new System.Drawing.Point(89, 60);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(134, 20);
+            this.label12.Size = new System.Drawing.Size(122, 20);
             this.label12.TabIndex = 6;
             this.label12.Text = "Tipo de proceso:";
             // 
             // lblTipoProceso
             // 
             this.lblTipoProceso.AutoSize = true;
-            this.lblTipoProceso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoProceso.Location = new System.Drawing.Point(153, 45);
+            this.lblTipoProceso.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblTipoProceso.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblTipoProceso.Location = new System.Drawing.Point(123, 80);
             this.lblTipoProceso.Name = "lblTipoProceso";
             this.lblTipoProceso.Size = new System.Drawing.Size(37, 20);
             this.lblTipoProceso.TabIndex = 6;
@@ -126,18 +136,20 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(6, 260);
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label11.Location = new System.Drawing.Point(100, 221);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(111, 40);
+            this.label11.Size = new System.Drawing.Size(101, 40);
             this.label11.TabIndex = 8;
             this.label11.Text = "Fecha y hora \r\nde solicitud:";
             // 
             // lblFechaSolicitud
             // 
             this.lblFechaSolicitud.AutoSize = true;
-            this.lblFechaSolicitud.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaSolicitud.Location = new System.Drawing.Point(153, 260);
+            this.lblFechaSolicitud.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblFechaSolicitud.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblFechaSolicitud.Location = new System.Drawing.Point(134, 277);
             this.lblFechaSolicitud.Name = "lblFechaSolicitud";
             this.lblFechaSolicitud.Size = new System.Drawing.Size(37, 20);
             this.lblFechaSolicitud.TabIndex = 8;
@@ -147,18 +159,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 209);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label2.Location = new System.Drawing.Point(123, 162);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 20);
+            this.label2.Size = new System.Drawing.Size(58, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Estado:";
             // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.Location = new System.Drawing.Point(153, 209);
+            this.lblEstado.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblEstado.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblEstado.Location = new System.Drawing.Point(130, 192);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(37, 20);
             this.lblEstado.TabIndex = 9;
@@ -168,18 +182,20 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 76);
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label10.Location = new System.Drawing.Point(100, 112);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 20);
+            this.label10.Size = new System.Drawing.Size(93, 20);
             this.label10.TabIndex = 10;
             this.label10.Text = "Descripción:";
             // 
             // lblDescripción
             // 
             this.lblDescripción.AutoSize = true;
-            this.lblDescripción.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripción.Location = new System.Drawing.Point(153, 76);
+            this.lblDescripción.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblDescripción.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblDescripción.Location = new System.Drawing.Point(126, 132);
             this.lblDescripción.Name = "lblDescripción";
             this.lblDescripción.Size = new System.Drawing.Size(37, 20);
             this.lblDescripción.TabIndex = 10;
@@ -189,18 +205,21 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 9);
+            this.label9.BackColor = System.Drawing.SystemColors.Control;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label9.Location = new System.Drawing.Point(100, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(101, 20);
+            this.label9.Size = new System.Drawing.Size(93, 20);
             this.label9.TabIndex = 13;
             this.label9.Text = "Solicitud de:";
             // 
             // lblSolicitudUsuario
             // 
             this.lblSolicitudUsuario.AutoSize = true;
-            this.lblSolicitudUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSolicitudUsuario.Location = new System.Drawing.Point(153, 9);
+            this.lblSolicitudUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblSolicitudUsuario.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblSolicitudUsuario.Location = new System.Drawing.Point(123, 29);
             this.lblSolicitudUsuario.Name = "lblSolicitudUsuario";
             this.lblSolicitudUsuario.Size = new System.Drawing.Size(37, 20);
             this.lblSolicitudUsuario.TabIndex = 13;
@@ -221,6 +240,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.label1.Location = new System.Drawing.Point(20, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(239, 20);
@@ -291,6 +311,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.label8.Location = new System.Drawing.Point(20, 32);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(355, 20);
@@ -346,14 +367,6 @@
             this.dgvFechaSolicitud2.MinimumWidth = 6;
             this.dgvFechaSolicitud2.Name = "dgvFechaSolicitud2";
             this.dgvFechaSolicitud2.ReadOnly = true;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 369);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(325, 233);
-            this.panel4.TabIndex = 15;
             // 
             // FormSolicitudes
             // 

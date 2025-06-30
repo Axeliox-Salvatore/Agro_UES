@@ -24,7 +24,7 @@ namespace Agro_UES.FormContraseñaConfirmar
         {
             if (string.IsNullOrEmpty(txtContraseña.Text))
             {
-                MessageBox.Show("Por favor escribí tu contraseña");
+                MessageBox.Show("Por favor escribi tu contraseña");
                 return;
             }
 
