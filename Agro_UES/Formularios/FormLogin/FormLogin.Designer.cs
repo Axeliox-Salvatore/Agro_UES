@@ -56,9 +56,9 @@
             this.txtUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.txtUsuario.Location = new System.Drawing.Point(39, 3);
+            this.txtUsuario.Location = new System.Drawing.Point(37, 3);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(267, 27);
+            this.txtUsuario.Size = new System.Drawing.Size(269, 27);
             this.txtUsuario.TabIndex = 1;
             // 
             // txtContraseña
@@ -66,10 +66,10 @@
             this.txtContraseña.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtContraseña.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.txtContraseña.Location = new System.Drawing.Point(43, 3);
+            this.txtContraseña.Location = new System.Drawing.Point(34, 3);
             this.txtContraseña.MaxLength = 4;
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(263, 34);
+            this.txtContraseña.Size = new System.Drawing.Size(272, 34);
             this.txtContraseña.TabIndex = 2;
             this.txtContraseña.UseSystemPasswordChar = true;
             // 
@@ -135,20 +135,20 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(234)))), ((int)(((byte)(98)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::Agro_UES.Properties.Resources.cuenta;
+            this.pictureBox1.Image = global::Agro_UES.Properties.Resources.UsuarioBlanco2;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 31);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.Size = new System.Drawing.Size(34, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // panelLogin
             // 
-            this.panelLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(230)))));
+            this.panelLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(242)))), ((int)(((byte)(234)))));
             this.panelLogin.Controls.Add(this.pictureBox2);
             this.panelLogin.Controls.Add(this.panel1);
             this.panelLogin.Controls.Add(this.panelUsuIn);
@@ -186,13 +186,13 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(234)))), ((int)(((byte)(98)))));
+            this.pictureBox3.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox3.Image = global::Agro_UES.Properties.Resources.candado;
+            this.pictureBox3.Image = global::Agro_UES.Properties.Resources.candadoc;
             this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
             this.pictureBox3.Location = new System.Drawing.Point(3, 3);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 31);
+            this.pictureBox3.Size = new System.Drawing.Size(31, 31);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;

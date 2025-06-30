@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.panelEncabezadoGerente = new System.Windows.Forms.Panel();
-            this.picExpandir = new System.Windows.Forms.PictureBox();
-            this.picMinimizar = new System.Windows.Forms.PictureBox();
-            this.picRestaurar = new System.Windows.Forms.PictureBox();
-            this.picSalir = new System.Windows.Forms.PictureBox();
+            this.btnNotificaciones = new System.Windows.Forms.Button();
+            this.btnCambiarPIN = new System.Windows.Forms.Button();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.lblBienvenida = new System.Windows.Forms.Label();
             this.lblNombreSistema = new System.Windows.Forms.Label();
             this.panelOpcionesGerente = new System.Windows.Forms.Panel();
+            this.panelPrincipalGerente = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnReportes = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -42,17 +43,20 @@
             this.btnProcesos = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.btnEstadísticasDesempeño = new System.Windows.Forms.Button();
-            this.panelPrincipalGerente = new System.Windows.Forms.Panel();
+            this.picExpandir = new System.Windows.Forms.PictureBox();
+            this.picMinimizar = new System.Windows.Forms.PictureBox();
+            this.picRestaurar = new System.Windows.Forms.PictureBox();
+            this.picSalir = new System.Windows.Forms.PictureBox();
             this.panelEncabezadoGerente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picExpandir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRestaurar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSalir)).BeginInit();
             this.panelOpcionesGerente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExpandir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRestaurar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // panelEncabezadoGerente
@@ -62,6 +66,10 @@
             this.panelEncabezadoGerente.Controls.Add(this.picMinimizar);
             this.panelEncabezadoGerente.Controls.Add(this.picRestaurar);
             this.panelEncabezadoGerente.Controls.Add(this.picSalir);
+            this.panelEncabezadoGerente.Controls.Add(this.btnNotificaciones);
+            this.panelEncabezadoGerente.Controls.Add(this.btnCambiarPIN);
+            this.panelEncabezadoGerente.Controls.Add(this.lblHora);
+            this.panelEncabezadoGerente.Controls.Add(this.lblBienvenida);
             this.panelEncabezadoGerente.Controls.Add(this.lblNombreSistema);
             this.panelEncabezadoGerente.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelEncabezadoGerente.Location = new System.Drawing.Point(0, 0);
@@ -69,52 +77,42 @@
             this.panelEncabezadoGerente.Size = new System.Drawing.Size(1128, 80);
             this.panelEncabezadoGerente.TabIndex = 1;
             // 
-            // picExpandir
+            // btnNotificaciones
             // 
-            this.picExpandir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picExpandir.Image = global::Agro_UES.Properties.Resources.expandir;
-            this.picExpandir.Location = new System.Drawing.Point(1016, 12);
-            this.picExpandir.Name = "picExpandir";
-            this.picExpandir.Size = new System.Drawing.Size(35, 35);
-            this.picExpandir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picExpandir.TabIndex = 6;
-            this.picExpandir.TabStop = false;
-            this.picExpandir.Click += new System.EventHandler(this.picExpandir_Click);
+            this.btnNotificaciones.BackColor = System.Drawing.Color.Ivory;
+            this.btnNotificaciones.Location = new System.Drawing.Point(760, 44);
+            this.btnNotificaciones.Name = "btnNotificaciones";
+            this.btnNotificaciones.Size = new System.Drawing.Size(75, 23);
+            this.btnNotificaciones.TabIndex = 3;
+            this.btnNotificaciones.Text = "button1";
+            this.btnNotificaciones.UseVisualStyleBackColor = false;
             // 
-            // picMinimizar
+            // btnCambiarPIN
             // 
-            this.picMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picMinimizar.Image = global::Agro_UES.Properties.Resources.comprimir_alt__1_;
-            this.picMinimizar.Location = new System.Drawing.Point(964, 12);
-            this.picMinimizar.Name = "picMinimizar";
-            this.picMinimizar.Size = new System.Drawing.Size(35, 35);
-            this.picMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMinimizar.TabIndex = 5;
-            this.picMinimizar.TabStop = false;
-            this.picMinimizar.Click += new System.EventHandler(this.picMinimizar_Click);
+            this.btnCambiarPIN.Location = new System.Drawing.Point(384, 52);
+            this.btnCambiarPIN.Name = "btnCambiarPIN";
+            this.btnCambiarPIN.Size = new System.Drawing.Size(75, 23);
+            this.btnCambiarPIN.TabIndex = 3;
+            this.btnCambiarPIN.Text = "Cambiar";
+            this.btnCambiarPIN.UseVisualStyleBackColor = true;
             // 
-            // picRestaurar
+            // lblHora
             // 
-            this.picRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picRestaurar.Image = global::Agro_UES.Properties.Resources.restaurar_ventana;
-            this.picRestaurar.Location = new System.Drawing.Point(1016, 12);
-            this.picRestaurar.Name = "picRestaurar";
-            this.picRestaurar.Size = new System.Drawing.Size(35, 35);
-            this.picRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picRestaurar.TabIndex = 7;
-            this.picRestaurar.TabStop = false;
-            this.picRestaurar.Click += new System.EventHandler(this.picRestaurar_Click);
+            this.lblHora.AutoSize = true;
+            this.lblHora.Location = new System.Drawing.Point(652, 44);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(44, 16);
+            this.lblHora.TabIndex = 2;
+            this.lblHora.Text = "label1";
             // 
-            // picSalir
+            // lblBienvenida
             // 
-            this.picSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picSalir.Image = global::Agro_UES.Properties.Resources.cerrar_sesion_alt__1_;
-            this.picSalir.Location = new System.Drawing.Point(1068, 12);
-            this.picSalir.Name = "picSalir";
-            this.picSalir.Size = new System.Drawing.Size(48, 35);
-            this.picSalir.TabIndex = 4;
-            this.picSalir.TabStop = false;
-            this.picSalir.Click += new System.EventHandler(this.picSalir_Click);
+            this.lblBienvenida.AutoSize = true;
+            this.lblBienvenida.Location = new System.Drawing.Point(274, 51);
+            this.lblBienvenida.Name = "lblBienvenida";
+            this.lblBienvenida.Size = new System.Drawing.Size(44, 16);
+            this.lblBienvenida.TabIndex = 2;
+            this.lblBienvenida.Text = "label1";
             // 
             // lblNombreSistema
             // 
@@ -140,6 +138,14 @@
             this.panelOpcionesGerente.Name = "panelOpcionesGerente";
             this.panelOpcionesGerente.Size = new System.Drawing.Size(200, 649);
             this.panelOpcionesGerente.TabIndex = 2;
+            // 
+            // panelPrincipalGerente
+            // 
+            this.panelPrincipalGerente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPrincipalGerente.Location = new System.Drawing.Point(200, 80);
+            this.panelPrincipalGerente.Name = "panelPrincipalGerente";
+            this.panelPrincipalGerente.Size = new System.Drawing.Size(928, 649);
+            this.panelPrincipalGerente.TabIndex = 3;
             // 
             // pictureBox3
             // 
@@ -229,13 +235,52 @@
             this.btnEstadísticasDesempeño.UseVisualStyleBackColor = true;
             this.btnEstadísticasDesempeño.Click += new System.EventHandler(this.btnEstadísticasDesempeño_Click);
             // 
-            // panelPrincipalGerente
+            // picExpandir
             // 
-            this.panelPrincipalGerente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPrincipalGerente.Location = new System.Drawing.Point(200, 80);
-            this.panelPrincipalGerente.Name = "panelPrincipalGerente";
-            this.panelPrincipalGerente.Size = new System.Drawing.Size(928, 649);
-            this.panelPrincipalGerente.TabIndex = 3;
+            this.picExpandir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picExpandir.Image = global::Agro_UES.Properties.Resources.expandir;
+            this.picExpandir.Location = new System.Drawing.Point(1016, 12);
+            this.picExpandir.Name = "picExpandir";
+            this.picExpandir.Size = new System.Drawing.Size(35, 35);
+            this.picExpandir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picExpandir.TabIndex = 6;
+            this.picExpandir.TabStop = false;
+            this.picExpandir.Click += new System.EventHandler(this.picExpandir_Click);
+            // 
+            // picMinimizar
+            // 
+            this.picMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMinimizar.Image = global::Agro_UES.Properties.Resources.comprimir_alt__1_;
+            this.picMinimizar.Location = new System.Drawing.Point(964, 12);
+            this.picMinimizar.Name = "picMinimizar";
+            this.picMinimizar.Size = new System.Drawing.Size(35, 35);
+            this.picMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMinimizar.TabIndex = 5;
+            this.picMinimizar.TabStop = false;
+            this.picMinimizar.Click += new System.EventHandler(this.picMinimizar_Click);
+            // 
+            // picRestaurar
+            // 
+            this.picRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picRestaurar.Image = global::Agro_UES.Properties.Resources.restaurar_ventana;
+            this.picRestaurar.Location = new System.Drawing.Point(1016, 12);
+            this.picRestaurar.Name = "picRestaurar";
+            this.picRestaurar.Size = new System.Drawing.Size(35, 35);
+            this.picRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRestaurar.TabIndex = 7;
+            this.picRestaurar.TabStop = false;
+            this.picRestaurar.Click += new System.EventHandler(this.picRestaurar_Click);
+            // 
+            // picSalir
+            // 
+            this.picSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picSalir.Image = global::Agro_UES.Properties.Resources.cerrar_sesion_alt__1_;
+            this.picSalir.Location = new System.Drawing.Point(1068, 12);
+            this.picSalir.Name = "picSalir";
+            this.picSalir.Size = new System.Drawing.Size(48, 35);
+            this.picSalir.TabIndex = 4;
+            this.picSalir.TabStop = false;
+            this.picSalir.Click += new System.EventHandler(this.picSalir_Click);
             // 
             // FormGerente
             // 
@@ -249,15 +294,15 @@
             this.Text = "FormGerente";
             this.panelEncabezadoGerente.ResumeLayout(false);
             this.panelEncabezadoGerente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picExpandir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRestaurar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSalir)).EndInit();
             this.panelOpcionesGerente.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExpandir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRestaurar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSalir)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -265,6 +310,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panelEncabezadoGerente;
+        private System.Windows.Forms.Button btnNotificaciones;
+        private System.Windows.Forms.Button btnCambiarPIN;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Label lblBienvenida;
         private System.Windows.Forms.Label lblNombreSistema;
         private System.Windows.Forms.Panel panelOpcionesGerente;
         private System.Windows.Forms.Button btnEstadísticasDesempeño;

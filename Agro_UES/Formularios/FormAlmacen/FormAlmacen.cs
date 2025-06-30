@@ -213,7 +213,10 @@ namespace Agro_UES
         }
 
         private void btnalertas_Click(object sender, EventArgs e)
-        {                    
+        {
+            var frm = new GenerarAlertas();
+            frm.ShowDialog();
+           
         }
 
         private void btnsalir_Click(object sender, EventArgs e)
