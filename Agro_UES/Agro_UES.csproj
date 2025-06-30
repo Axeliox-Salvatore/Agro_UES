@@ -446,5 +446,44 @@
   <ItemGroup>
     <None Include="Resources\report.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exportar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candadoc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsuarioBlanco2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actualizar producto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevoprod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categoria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volve42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categoria40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categoria1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registrarprod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actualizar prod.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

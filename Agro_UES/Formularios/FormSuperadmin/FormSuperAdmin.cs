@@ -333,7 +333,7 @@ namespace Agro_UES
             }
             catch (Exception error)
             {
-                MessageBox.Show("No se pudo registrar la acción: " + error.Message);
+                MessageBox.Show("No se pudo registrar la accion: " + error.Message);
             }
         }
 
@@ -389,7 +389,7 @@ namespace Agro_UES
 
                 if (rol == "Cajero")
                     lblCajeros.Text = cantidad;
-                else if (rol == "Encargado de Almacén")
+                else if (rol == "Encargado de Almacen")
                     lblAlmacen.Text = cantidad;
                 else if (rol == "Gerente")
                     lblGerentes.Text = cantidad;
@@ -446,12 +446,12 @@ namespace Agro_UES
 
         /********************* PANEL HISTORIAL ********************/
 
-        // Mostrar panelHistorial desde el menú lateral
+        // Mostrar panelHistorial desde el menu lateral
         private void btnHistorial_Click_1(object sender, EventArgs e)
         {
             OcultarTodosLosPaneles();
             panelHistorial.Visible = true;
-            dtpDesde.Value = DateTime.Today.AddDays(-7);  // Por defecto, últimos 7 días
+            dtpDesde.Value = DateTime.Today.AddDays(-7);  // Por defecto, ultimos 7 dias
             dtpHasta.Value = DateTime.Today;
             CargarHistorial(); // Carga inicial
 
@@ -631,7 +631,7 @@ namespace Agro_UES
 
                 CargarUsuariosEnTabla();
                 ContarUsuariosPorRol();
-                RegistrarAccion("Desactivó al usuario: " + nombre);
+                RegistrarAccion("Desactivo al usuario: " + nombre);
             }
             
 
@@ -701,7 +701,7 @@ namespace Agro_UES
 
             if (!File.Exists(rutaMysqldump))
             {
-                MessageBox.Show("No se encontró mysqldump en la ruta especificada.");
+                MessageBox.Show("No se encontro mysqldump en la ruta especificada.");
                 return;
             }
 
@@ -720,7 +720,7 @@ namespace Agro_UES
 
                 if (File.Exists(archivoCompleto))
                 {
-                    RegistrarAccion("Generó respaldo de la base de datos");
+                    RegistrarAccion("Genero respaldo de la base de datos");
                     MessageBox.Show("Respaldo generado correctamente:\n" + archivoCompleto);
                 }
                 else
