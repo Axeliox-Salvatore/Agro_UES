@@ -200,7 +200,7 @@ namespace Agro_UES.Formularios.FormReportes
                 doc.Add(tablaPDF);
                 doc.Close();
 
-                RegistrarAccion($"Genero reporte: {tipo} ({dtpDesde.Value:dd/MM/yyyy} - {dtpHasta.Value:dd/MM/yyyy})");
+                RegistrarAccion($"Generó reporte: {tipo} ({dtpDesde.Value:dd/MM/yyyy} - {dtpHasta.Value:dd/MM/yyyy})");
                 MessageBox.Show("PDF generado correctamente:\n" + rutaArchivo);
             }
             catch (Exception ex)
