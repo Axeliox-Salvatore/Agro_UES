@@ -97,27 +97,36 @@ namespace Agro_UES
             using (var conn = ConexionDB.Conexion())
             {
                 conn.Open();
-                string sql = @"SELECT nombre, fecha_vencimiento 
-                               FROM productos 
-                               WHERE fecha_vencimiento IS NOT NULL AND estado = 'Activo'";
+                string sql = @"SELECT nombre, fecha_vencimiento  
+                       FROM productos  
+                       WHERE fecha_vencimiento IS NOT NULL AND estado = 'Activo'";
                 using (var cmd = new MySqlCommand(sql, conn))
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
                         string nombre = reader.GetString("nombre");
-                        DateTime fecha = reader.GetDateTime("fecha_vencimiento");
 
-                        int fila = dgvVecimientos.Rows.Add(nombre, fecha.ToShortDateString());
-                        var row = dgvVecimientos.Rows[fila];
+                        // porfin arregle le error al leer fecha NULL o invalida
+                        DateTime? fechaVencimiento = null;
+                        int ordFecha = reader.GetOrdinal("fecha_vencimiento");
+                        if (!reader.IsDBNull(ordFecha))
+                            fechaVencimiento = reader.GetDateTime(ordFecha);
 
-                        if (fecha < hoy)
-                            row.DefaultCellStyle.BackColor = Color.Tomato;
-                        else if (fecha <= hoy.AddDays(10))
-                            row.DefaultCellStyle.BackColor = Color.Gold;
+                        if (fechaVencimiento.HasValue)
+                        {
+                            int fila = dgvVecimientos.Rows.Add(nombre, fechaVencimiento.Value.ToShortDateString());
+                            var row = dgvVecimientos.Rows[fila];
+
+                            if (fechaVencimiento.Value < hoy)
+                                row.DefaultCellStyle.BackColor = Color.Tomato; // Vencido
+                            else if (fechaVencimiento.Value <= hoy.AddDays(10))
+                                row.DefaultCellStyle.BackColor = Color.Gold;   // Proximo a vencer
+                        }
                     }
                 }
             }
+
         }
 
         //  Solicitudes: amarillo (pendiente), azul (aprobado)
@@ -140,9 +149,21 @@ namespace Agro_UES
                         string tipo = reader.GetString("tipo_proceso");
                         string desc = reader.GetString("descripcion");
                         string estado = reader.GetString("estado");
-                        DateTime fecha = reader.GetDateTime("fecha_hora");
 
-                        int fila = dgvSolicitudes.Rows.Add(id, tipo, desc, estado, fecha.ToString("g"));
+                        // aqui lo mismo que en el otro
+                        DateTime? fecha = null;
+                        int ordFecha = reader.GetOrdinal("fecha_hora");
+                        if (!reader.IsDBNull(ordFecha))
+                            fecha = reader.GetDateTime(ordFecha);
+
+                        int fila = dgvSolicitudes.Rows.Add(
+                            id,
+                            tipo,
+                            desc,
+                            estado,
+                            fecha?.ToString("g") ?? "—"
+                        );
+
                         var row = dgvSolicitudes.Rows[fila];
 
                         switch (estado.ToLower())
@@ -159,6 +180,7 @@ namespace Agro_UES
                                 break;
                         }
                     }
+
                 }
             }
         }
@@ -193,9 +215,11 @@ namespace Agro_UES
 
         private void btnregistro_Click(object sender, EventArgs e)
         {
-            var frm = new Registrarproducto(idUsuarioActual, nombreUsuarioActual);
+            var frm = new Registrarproducto(idUsuarioActual, nombreUsuarioActual, rolUsuarioActual);
             frm.ShowDialog();
-            
+
+
+
         }
 
         private void btnactualizarinv_Click(object sender, EventArgs e)
@@ -214,8 +238,7 @@ namespace Agro_UES
 
         private void btnalertas_Click(object sender, EventArgs e)
         {
-            var frm = new GenerarAlertas();
-            frm.ShowDialog();
+            
            
         }
 

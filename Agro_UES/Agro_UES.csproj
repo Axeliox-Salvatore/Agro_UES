@@ -485,5 +485,38 @@
   <ItemGroup>
     <None Include="Resources\aprobar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cajablanco1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modulo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono con fondo tran1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono de ventas regi1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevoprod1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fechaaaaaa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fecha1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fechaaaaaa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cam.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

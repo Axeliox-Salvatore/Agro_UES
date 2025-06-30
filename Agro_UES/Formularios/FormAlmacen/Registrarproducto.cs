@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32;
 using MySql.Data.MySqlClient;
 
 namespace Agro_UES.Formularios.FormAlmacen
@@ -15,128 +17,243 @@ namespace Agro_UES.Formularios.FormAlmacen
     {
         private int idUsuarioActual;
         private string nombreUsuarioActual;
+        private string rolUsuarioActual;
+        private string rutaImagenSeleccionada = null;
+        private Timer reloj;
 
-        public Registrarproducto(int idUsuario, string nombreUsuario)
+
+
+        public Registrarproducto(int idUsuario, string nombreUsuario, string rolUsuario)
         {
             InitializeComponent();
             idUsuarioActual = idUsuario;
             nombreUsuarioActual = nombreUsuario;
+            rolUsuarioActual = rolUsuario;
 
-            // Poblar el ComboBox de categorías
-            cmbcategorias.Items.Clear();
-            cmbcategorias.Items.Add("Fertilizantes"); // id 1
-            cmbcategorias.Items.Add("Herramientas");  // id 2
-            cmbcategorias.Items.Add("Semillas");      // id 3
-            cmbcategorias.SelectedIndex = 0;
+            CargarCategorias();
+
+            //Panel superior
+            lblNombreUsuario.Text = nombreUsuarioActual;
+            lblRolUsuario.Text = rolUsuarioActual;
+
+            reloj = new Timer();
+            reloj.Interval = 1000;
+            reloj.Tick += (s, e) => { lblHora.Text = DateTime.Now.ToString("hh:mm:ss tt"); };
+            reloj.Start();
+
+            dtpVencimiento.MinDate = DateTime.Today;
+
         }
+
+        // Registra  accion en historial_acciones
+private void RegistrarAccion(string accion, MySqlConnection conn)
+        {
+            string sql = @"INSERT INTO historial_acciones 
+                   (usuario_id, nombre_usuario, accion, fecha_hora)
+                   VALUES (@uid, @nombre, @accion, NOW())";
+
+            using (var cmd = new MySqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@uid", idUsuarioActual);
+                cmd.Parameters.AddWithValue("@nombre", nombreUsuarioActual);
+                cmd.Parameters.AddWithValue("@accion", accion);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        //Representa una categoria como item del ComboBox
+        public class ComboBoxItem
+        {
+            public string Nombre { get; set; }
+            public int ID { get; set; }
+
+            public ComboBoxItem(string nombre, int id)
+            {
+                Nombre = nombre;
+                ID = id;
+            }
+
+            public override string ToString()
+            {
+                return Nombre; // Muestra el nombre en el ComboBox
+            }
+        }
+
+
+
+        // Carga categorias activas desde la base de datos
+        private void CargarCategorias()
+        {
+            cmbcategorias.Items.Clear();
+
+            using (var conn = ConexionDB.Conexion())
+            {
+                conn.Open();
+                string sql = "SELECT id_categoria, nombre_categoria FROM categorias WHERE estado = 'Activa'";
+                using (var cmd = new MySqlCommand(sql, conn))
+                using (var rdr = cmd.ExecuteReader())
+                {
+                    while (rdr.Read())
+                    {
+                        string nombre = rdr.GetString("nombre_categoria");
+                        int id = rdr.GetInt32("id_categoria");
+                        cmbcategorias.Items.Add(new ComboBoxItem(nombre, id));
+                    }
+                }
+            }
+
+            if (cmbcategorias.Items.Count > 0)
+                cmbcategorias.SelectedIndex = 0;
+            else
+                MessageBox.Show("No hay categorias activas. Registre una desde el formulario de categorias.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        // Valida ingreso de precios: numeros y decimales(máx 2)
 
         private void txtprecio_KeyPress(object sender, KeyPressEventArgs e)
         {
             TextBox txt = sender as TextBox;
-            if (char.IsControl(e.KeyChar))
-                return;
-            if (e.KeyChar == '.')
-            {
-                if (txt.Text.Contains('.'))
-                    e.Handled = true;
-                return;
-            }
-            if (!char.IsDigit(e.KeyChar))
-            {
+            if (char.IsControl(e.KeyChar)) return;
+
+            if (e.KeyChar == '.' && !txt.Text.Contains('.')) return;
+
+            if (!char.IsDigit(e.KeyChar)) { e.Handled = true; return; }
+
+            int pos = txt.SelectionStart;
+            string textoFinal = txt.Text.Insert(pos, e.KeyChar.ToString());
+
+            if (textoFinal.Contains('.') && textoFinal.Split('.')[1].Length > 2)
                 e.Handled = true;
-                return;
-            }
-            int index = txt.SelectionStart;
-            string textoFinal = txt.Text.Insert(index, e.KeyChar.ToString());
-            if (textoFinal.Contains('.'))
-            {
-                int decimales = textoFinal.Length - textoFinal.IndexOf('.') - 1;
-                if (decimales > 2)
-                    e.Handled = true;
-            }
+
         }
+
+
+        //Valida ingreso de stock: solo enteros positivos
 
         private void txtstock_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
                 e.Handled = true;
-            }
         }
+
+
+        //registro o solicitud
 
         private void btnregistro_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtproducto.Text) ||
-                string.IsNullOrWhiteSpace(txtdescripcion.Text) ||
-                cmbcategorias.SelectedIndex < 0 ||
-                string.IsNullOrWhiteSpace(txtprecio.Text) ||
-                string.IsNullOrWhiteSpace(txtstock.Text) ||
-                string.IsNullOrWhiteSpace(mtxtvencimiento.Text))
+               string.IsNullOrWhiteSpace(txtdescripcion.Text) ||
+               cmbcategorias.SelectedItem == null ||
+               string.IsNullOrWhiteSpace(txtprecio.Text) ||
+               string.IsNullOrWhiteSpace(txtstock.Text))
             {
-                MessageBox.Show("Complete todos los campos.");
+                MessageBox.Show("Complete todos los campos requeridos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            // Extraer datos
             string nombre = txtproducto.Text.Trim();
-            string descripcionProd = txtdescripcion.Text.Trim();
-            int categoriaId = cmbcategorias .SelectedIndex + 1; // 1: Fertilizantes, 2: Herramientas, 3: Semillas
+            string descripcion = txtdescripcion.Text.Trim();
+            var itemSeleccionado = cmbcategorias.SelectedItem as ComboBoxItem;
+            int categoriaId = itemSeleccionado.ID;
             decimal precio = decimal.Parse(txtprecio.Text);
             int stock = int.Parse(txtstock.Text);
-            string fechaVencimiento = mtxtvencimiento.Text.Trim();
+            DateTime fechaVencimiento = dtpVencimiento.Value;
 
-            string descripcionAprob = $"Registro de producto: {nombre}, Precio: {precio}, Stock: {stock}, Categoría: {categoriaId}";
+            // Procesar imagen
+            string rutaImagenRelativa = null;
+            if (!string.IsNullOrWhiteSpace(rutaImagenSeleccionada))
+            {
+                string nombreArchivo = Path.GetFileName(rutaImagenSeleccionada);
+                string carpetaDestino = Path.Combine(Application.StartupPath, "imagenes");
+                Directory.CreateDirectory(carpetaDestino);
+                string rutaDestino = Path.Combine(carpetaDestino, nombreArchivo);
+                File.Copy(rutaImagenSeleccionada, rutaDestino, true);
+                rutaImagenRelativa = Path.Combine("imagenes", nombreArchivo);
+            }
 
             try
             {
                 using (var conn = ConexionDB.Conexion())
                 {
                     conn.Open();
-                    using (var trans = conn.BeginTransaction())
+
+                    if (rolUsuarioActual == "Super Administrador")
                     {
-                        // 1. Insertar en aprobaciones
-                        string sqlAprob = @"INSERT INTO aprobaciones 
-                            (tipo_proceso, descripcion, estado, usuario_id, nombre_usuario_aprueba, fecha_hora)
-                            VALUES (@tipo, @desc, 'Pendiente', @uid, @nombre, NOW())";
-                        using (var cmdAprob = new MySqlCommand(sqlAprob, conn, trans))
+                        // 🟢 Insercion directa en productos si es el admin quien lo hace
+                        string sql = @"INSERT INTO productos 
+                            (nombre, descripcion, categoria_id, precio, stock, fecha_vencimiento, 
+                             ruta_imagen, estado)
+                            VALUES (@nombre, @desc, @cat, @precio, @stock, @venc, @img, 'Disponible')";
+                        using (var cmd = new MySqlCommand(sql, conn))
                         {
-                            cmdAprob.Parameters.AddWithValue("@tipo", "Ingreso de producto");
-                            cmdAprob.Parameters.AddWithValue("@desc", descripcionAprob);
-                            cmdAprob.Parameters.AddWithValue("@uid", idUsuarioActual);
-                            cmdAprob.Parameters.AddWithValue("@nombre", nombreUsuarioActual);
-                            cmdAprob.ExecuteNonQuery();
+                            cmd.Parameters.AddWithValue("@nombre", nombre);
+                            cmd.Parameters.AddWithValue("@desc", descripcion);
+                            cmd.Parameters.AddWithValue("@cat", categoriaId);
+                            cmd.Parameters.AddWithValue("@precio", precio);
+                            cmd.Parameters.AddWithValue("@stock", stock);
+                            cmd.Parameters.AddWithValue("@venc", fechaVencimiento);
+                            cmd.Parameters.AddWithValue("@img", rutaImagenRelativa ?? (object)DBNull.Value);
+                            cmd.ExecuteNonQuery();
                         }
 
-                        // 2. Insertar en productos con categoria seleccionada y campos requeridos
-                        string sqlProd = @"INSERT INTO solicitudes_productos 
-                            (nombre, descripcion, categoria_id, precio, stock, fecha_vencimiento, alerta_bajo_stock, ruta_imagen, estado)
-                            VALUES (@nombre, @descripcion, @categoria_id, @precio, @stock, @fecha_venc, NULL, NULL, 'Pendiente')";
-                        using (var cmdProd = new MySqlCommand(sqlProd, conn, trans))
+                        RegistrarAccion("Registró producto directamente: " + nombre, conn);
+                        MessageBox.Show("Producto agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        // Envio a aprobaciones_almacen
+                        string sql = @"INSERT INTO aprobaciones_almacen 
+                            (id_producto, descripcion, precio, stock, fecha_vencimiento, 
+                             usuario_solicita, nombre_solicita, ruta_imagen)
+                            VALUES (NULL, @desc, @precio, @stock, @venc, @uid, @uname, @img)";
+                        using (var cmd = new MySqlCommand(sql, conn))
                         {
-                            cmdProd.Parameters.AddWithValue("@nombre", nombre);
-                            cmdProd.Parameters.AddWithValue("@descripcion", descripcionProd);
-                            cmdProd.Parameters.AddWithValue("@categoria_id", categoriaId);
-                            cmdProd.Parameters.AddWithValue("@precio", precio);
-                            cmdProd.Parameters.AddWithValue("@stock", stock);
-                            cmdProd.Parameters.AddWithValue("@fecha_venc", fechaVencimiento);
-                            cmdProd.ExecuteNonQuery();
+                            cmd.Parameters.AddWithValue("@desc", descripcion);
+                            cmd.Parameters.AddWithValue("@precio", precio);
+                            cmd.Parameters.AddWithValue("@stock", stock);
+                            cmd.Parameters.AddWithValue("@venc", fechaVencimiento);
+                            cmd.Parameters.AddWithValue("@uid", idUsuarioActual);
+                            cmd.Parameters.AddWithValue("@uname", nombreUsuarioActual);
+                            cmd.Parameters.AddWithValue("@img", rutaImagenRelativa ?? (object)DBNull.Value);
+                            cmd.ExecuteNonQuery();
                         }
 
-                        trans.Commit();
+                        RegistrarAccion("Solicito registro de producto: " + nombre, conn);
+                        MessageBox.Show("Solicitud enviada al gerente.", "Solicitud registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
 
-                MessageBox.Show("Solicitud registrada correctamente. El producto estará disponible tras la aprobación del gerente.");
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al registrar la solicitud: " + ex.Message);
+                MessageBox.Show("Error al registrar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void btnvolver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        //Boton para seleccionar una imagen del sistema
+
+        private void btnSeleccionarImagen_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dialogo = new OpenFileDialog())
+            {
+                dialogo.Filter = "Imágenes|*.jpg;*.jpeg;*.png;*.bmp";
+                if (dialogo.ShowDialog() == DialogResult.OK)
+                {
+                    rutaImagenSeleccionada = dialogo.FileName;
+                    pictureBoxProducto.Image = Image.FromFile(rutaImagenSeleccionada);
+                }
+            }
+
+
         }
     }
 }

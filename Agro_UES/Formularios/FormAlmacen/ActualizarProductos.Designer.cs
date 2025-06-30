@@ -55,7 +55,7 @@
             // 
             this.cmbproductos.FormattingEnabled = true;
             this.cmbproductos.Location = new System.Drawing.Point(350, 50);
-            this.cmbproductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbproductos.Margin = new System.Windows.Forms.Padding(4);
             this.cmbproductos.Name = "cmbproductos";
             this.cmbproductos.Size = new System.Drawing.Size(155, 24);
             this.cmbproductos.TabIndex = 0;
@@ -64,62 +64,62 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(199, 50);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 31);
+            this.label1.Size = new System.Drawing.Size(80, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "Producto";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(199, 284);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(299, 31);
+            this.label3.Size = new System.Drawing.Size(178, 23);
             this.label3.TabIndex = 3;
             this.label3.Text = "Fecha de vencimiento";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(199, 228);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 31);
+            this.label4.Size = new System.Drawing.Size(52, 23);
             this.label4.TabIndex = 4;
             this.label4.Text = "Stock";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(199, 171);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 31);
+            this.label5.Size = new System.Drawing.Size(57, 23);
             this.label5.TabIndex = 5;
             this.label5.Text = "Precio";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(199, 113);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(168, 31);
+            this.label6.Size = new System.Drawing.Size(98, 23);
             this.label6.TabIndex = 6;
             this.label6.Text = "Descripcion";
             // 
             // txtdescripcion
             // 
             this.txtdescripcion.Location = new System.Drawing.Point(406, 115);
-            this.txtdescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtdescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtdescripcion.Name = "txtdescripcion";
             this.txtdescripcion.Size = new System.Drawing.Size(193, 22);
             this.txtdescripcion.TabIndex = 7;
@@ -127,7 +127,7 @@
             // txtstock
             // 
             this.txtstock.Location = new System.Drawing.Point(406, 228);
-            this.txtstock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtstock.Margin = new System.Windows.Forms.Padding(4);
             this.txtstock.Name = "txtstock";
             this.txtstock.Size = new System.Drawing.Size(193, 22);
             this.txtstock.TabIndex = 9;
@@ -135,7 +135,7 @@
             // txtprecio
             // 
             this.txtprecio.Location = new System.Drawing.Point(406, 178);
-            this.txtprecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtprecio.Margin = new System.Windows.Forms.Padding(4);
             this.txtprecio.Name = "txtprecio";
             this.txtprecio.Size = new System.Drawing.Size(193, 22);
             this.txtprecio.TabIndex = 10;
@@ -144,7 +144,7 @@
             // 
             this.btnactualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnactualizar.Location = new System.Drawing.Point(250, 404);
-            this.btnactualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnactualizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnactualizar.Name = "btnactualizar";
             this.btnactualizar.Size = new System.Drawing.Size(181, 82);
             this.btnactualizar.TabIndex = 11;
@@ -155,7 +155,7 @@
             // mtxtvencimiento
             // 
             this.mtxtvencimiento.Location = new System.Drawing.Point(536, 290);
-            this.mtxtvencimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtxtvencimiento.Margin = new System.Windows.Forms.Padding(4);
             this.mtxtvencimiento.Mask = "00/00/0000";
             this.mtxtvencimiento.Name = "mtxtvencimiento";
             this.mtxtvencimiento.Size = new System.Drawing.Size(96, 22);
@@ -165,7 +165,7 @@
             // btnvolver
             // 
             this.btnvolver.Location = new System.Drawing.Point(462, 483);
-            this.btnvolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnvolver.Margin = new System.Windows.Forms.Padding(4);
             this.btnvolver.Name = "btnvolver";
             this.btnvolver.Size = new System.Drawing.Size(185, 42);
             this.btnvolver.TabIndex = 13;
@@ -257,7 +257,7 @@
             this.ClientSize = new System.Drawing.Size(879, 673);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelSuperior);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ActualizarProductos";
             this.Text = "ActualizarProductos";
             this.Load += new System.EventHandler(this.ActualizarProductos_Load);
