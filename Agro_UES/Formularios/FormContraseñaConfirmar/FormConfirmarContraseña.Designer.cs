@@ -29,67 +29,82 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(242)))), ((int)(((byte)(234)))));
             this.groupBox1.Controls.Add(this.txtContraseña);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnAceptar);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(71, 70);
+            this.groupBox1.Location = new System.Drawing.Point(42, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(277, 219);
+            this.groupBox1.Size = new System.Drawing.Size(347, 285);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            // 
+            // txtContraseña
+            // 
+            this.txtContraseña.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.txtContraseña.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.txtContraseña.Location = new System.Drawing.Point(87, 121);
+            this.txtContraseña.MaxLength = 4;
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(153, 30);
+            this.txtContraseña.TabIndex = 2;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(20, 223);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(130, 40);
+            this.btnCancelar.TabIndex = 1;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.Location = new System.Drawing.Point(189, 223);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(130, 40);
+            this.btnAceptar.TabIndex = 1;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 31);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label1.Location = new System.Drawing.Point(28, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(223, 16);
+            this.label1.Size = new System.Drawing.Size(293, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ingresa tu contraseña para continuar";
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(165, 154);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 1;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(37, 154);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 1;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // txtContraseña
-            // 
-            this.txtContraseña.Location = new System.Drawing.Point(55, 93);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(137, 22);
-            this.txtContraseña.TabIndex = 2;
             // 
             // FormConfirmarContraseña
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 367);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(227)))), ((int)(((byte)(196)))));
+            this.ClientSize = new System.Drawing.Size(430, 367);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormConfirmarContraseña";
             this.Text = "FormConfirmarContraseña";

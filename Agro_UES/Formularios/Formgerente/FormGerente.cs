@@ -36,7 +36,8 @@ namespace Agro_UES
         private void picMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-            
+            picExpandir.Visible = true;
+            picMinimizar.Visible = false;
         }
 
         private void picExpandir_Click(object sender, EventArgs e)
@@ -70,7 +71,7 @@ namespace Agro_UES
 
             Form fh = formHija as Form;
             fh.TopLevel = false;
-            fh.FormBorderStyle = FormBorderStyle.None; // 👈 Esto elimina el marco
+            fh.FormBorderStyle = FormBorderStyle.None; // Esto elimina el marco
             fh.Dock = DockStyle.Fill;
             this.panelPrincipalGerente.Controls.Add(fh);
             this.panelPrincipalGerente.Tag = fh;
@@ -86,7 +87,7 @@ namespace Agro_UES
 
         private void btnProcesos_Click(object sender, EventArgs e)
         {
-            abrirFormularios(new FormSolicitudes(idUsuarioActual, nombreUsuarioActual));
+            abrirFormularios(new FormSolicitudes());
         }
 
         private void btnEstadísticasDesempeño_Click(object sender, EventArgs e)
