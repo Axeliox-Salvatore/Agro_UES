@@ -121,6 +121,9 @@
   <data name="icons8-estadísticas-321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-estadísticas-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Rechazar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rechazar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,14 +133,14 @@
   <data name="comprimir-alt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\comprimir-alt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="registrarprod" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\registrarprod.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="natural" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\natural.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="exportar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exportar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ícono de notifica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ícono de notifica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cerrar-sesion-alt (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cerrar-sesion-alt (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,6 +172,9 @@
   <data name="caja" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\caja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="actualizar prod" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\actualizar prod.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="modulo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\modulo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -180,6 +186,9 @@
   </data>
   <data name="actualizar producto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\actualizar producto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="comprimir-alt (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\comprimir-alt (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="reportes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reportes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,8 +208,8 @@
   <data name="limpiar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\limpiar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ícono de notifica" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ícono de notifica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="producto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\producto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="historial" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\historial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -213,9 +222,6 @@
   </data>
   <data name="expandir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\expandir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cuenta1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cuenta1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="desactivar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\desactivar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,6 +244,9 @@
   <data name="categoria" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\categoria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="rechazo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rechazo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="solicitud-de-extraccion-de-codigo-cerrada" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\solicitud-de-extraccion-de-codigo-cerrada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -250,8 +259,8 @@
   <data name="cerrar-sesion-alt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cerrar-sesion-alt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="comprimir-alt (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\comprimir-alt (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="registrarprod" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\registrarprod.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="salir-alt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\salir-alt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -283,8 +292,8 @@
   <data name="respaldo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\respaldo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="producto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\producto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cuenta1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuenta1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="filtro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\filtro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -316,7 +325,7 @@
   <data name="volver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\volver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="actualizar prod" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\actualizar prod.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="aprobar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\aprobar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

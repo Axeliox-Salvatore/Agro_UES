@@ -79,14 +79,20 @@ namespace Agro_UES.Formularios.Formgerente
 
         }
 
+        private int idAprobador;
+        private string nombreAprobador;
+        private string rolAprobador;
 
 
-
-
-        public FormSolicitudes()
+        public FormSolicitudes(int idUsuario, string nombreUsuario, string rol)
         {
             InitializeComponent();
-            this.Load += new EventHandler(FormSolicitudes_Load);
+            this.idAprobador = idUsuario;
+            this.nombreAprobador = nombreUsuario;
+            this.rolAprobador = rol;
+
+
+            Load += FormSolicitudes_Load;
         }
 
         private void FormSolicitudes_Load(object sender, EventArgs e)
@@ -94,206 +100,153 @@ namespace Agro_UES.Formularios.Formgerente
             CargarPendientes();
             CargarHistorial();
         }
-
-
-        private void MostrarDetalles(int idAprob)
+        private void RegistrarAccion(string descripcion)
         {
-            using (MySqlConnection conn = ConexionDB.Conexion())
+            try
             {
-                // 1) Si el helper devolvió null, salimos
-                if (conn == null)
-                    return;
-
-                // 2) Si no está abierta, la abrimos aquí
-                if (conn.State != ConnectionState.Open)
-                    conn.Open();
-
-                // 3) Tu consulta sigue igual
-                string sql = @"
-            SELECT a.usuario_id,
-                   u.nombre       AS usuario_nombre,
-                   a.tipo_proceso,
-                   a.descripcion,
-                   a.estado,
-                   a.fecha_hora
-              FROM aprobaciones a
-              JOIN usuarios u ON a.usuario_id = u.id_usuario
-             WHERE a.id_aprobacion = @id;";
-
-                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                using (var conn = ConexionDB.Conexion())
                 {
-                    cmd.Parameters.AddWithValue("@id", idAprob);
+                    conn.Open();
+                    string sql = @"INSERT INTO historial_acciones 
+                           (usuario_id, nombre_usuario, accion, fecha_hora)
+                           VALUES (@id, @nombre, @accion, NOW())";
 
-                    using (MySqlDataReader rdr = cmd.ExecuteReader())
+                    using (var cmd = new MySqlCommand(sql, conn))
                     {
-                        if (rdr.Read())
-                        {
-                            lblSolicitudUsuario.Text = rdr.GetString("usuario_nombre");
-                            lblTipoProceso.Text = rdr.GetString("tipo_proceso");
-                            lblDescripción.Text = rdr.IsDBNull(rdr.GetOrdinal("descripcion"))
-                                                        ? ""
-                                                        : rdr.GetString("descripcion");
-                            lblEstado.Text = rdr.GetString("estado");
-                            lblFechaSolicitud.Text = rdr.GetDateTime("fecha_hora")
-                                                           .ToString("g");
-                        }
+                        cmd.Parameters.AddWithValue("@id", idAprobador);
+                        cmd.Parameters.AddWithValue("@nombre", nombreAprobador);
+                        cmd.Parameters.AddWithValue("@accion", descripcion);
+                        cmd.ExecuteNonQuery();
                     }
                 }
             }
+            catch
+            {
+                
+            }
+
         }
+
+
+
+
+        /**************Mostra detalless***********/
+
+       
+
+
 
 
         private void CargarHistorial()
         {
             dgvHistorialSolicitudes.Rows.Clear();
 
-            MySqlConnection conn = null;
-            MySqlCommand cmd = null;
-            MySqlDataReader rdr = null;
-
-            try
+            using (var conn = ConexionDB.Conexion())
             {
-                conn = ConexionDB.Conexion();
-                if (conn == null) return;
-
-                if (conn.State != ConnectionState.Open)
-                    conn.Open();
-
+                conn.Open();
                 string sql = @"
-            SELECT a.id_aprobacion,
-                   u.nombre      AS usuario_nombre,
-                   a.tipo_proceso,
-                   a.descripcion,
-                   a.fecha_hora
-              FROM aprobaciones a
-              JOIN usuarios u ON a.usuario_id = u.id_usuario
-             WHERE a.estado IN ('aprobado', 'rechazado')
-             ORDER BY a.fecha_hora DESC;";
+                    SELECT id_aprobacion, id_producto, descripcion, precio, stock, 
+                           fecha_vencimiento, estado, nombre_solicita, fecha_solicita,
+                           nombre_responde, fecha_respuesta
+                    FROM aprobaciones_almacen
+                    WHERE estado IN ('Aprobada','Rechazada')
+                    ORDER BY fecha_respuesta DESC";
 
-                cmd = new MySqlCommand(sql, conn);
-                rdr = cmd.ExecuteReader();
-
-                while (rdr.Read())
+                using (var cmd = new MySqlCommand(sql, conn))
+                using (var rdr = cmd.ExecuteReader())
                 {
-                    int idAp = rdr.GetInt32("id_aprobacion");
-                    string usuario = rdr.GetString("usuario_nombre");
-                    string tipo = rdr.GetString("tipo_proceso");
-                    string desc = rdr.IsDBNull(rdr.GetOrdinal("descripcion")) ? "" : rdr.GetString("descripcion");
-                    string fecha = rdr.GetDateTime("fecha_hora").ToString("g");
+                    while (rdr.Read())
+                    {
+                        int idProducto = rdr.GetInt32("id_producto");
+                        string descripcion = rdr.GetString("descripcion");
+                        decimal precio = rdr.GetDecimal("precio");
+                        int stock = rdr.GetInt32("stock");
+                        string venc = rdr.IsDBNull(rdr.GetOrdinal("fecha_vencimiento"))
+                                        ? "—"
+                                        : rdr.GetDateTime("fecha_vencimiento").ToShortDateString();
+                        string estado = rdr.GetString("estado");
+                        string solicitadoPor = rdr.GetString("nombre_solicita");
+                        string fechaSolicitud = rdr.GetDateTime("fecha_solicita").ToString("g");
+                        string aprobadoPor = rdr.IsDBNull(rdr.GetOrdinal("nombre_responde"))
+                                                ? "—"
+                                                : rdr.GetString("nombre_responde");
+                        string fechaRespuesta = rdr.IsDBNull(rdr.GetOrdinal("fecha_respuesta"))
+                                                ? "—"
+                                                : rdr.GetDateTime("fecha_respuesta").ToString("g");
 
-                    int idx = dgvHistorialSolicitudes.Rows.Add();
-                    dgvHistorialSolicitudes.Rows[idx].Cells["dgvUsuarioSolicitud2"].Value = usuario;
-                    dgvHistorialSolicitudes.Rows[idx].Cells["dgvTipoProceso2"].Value = tipo;
-                    dgvHistorialSolicitudes.Rows[idx].Cells["dgvDescripcion2"].Value = desc;
-                    dgvHistorialSolicitudes.Rows[idx].Cells["dgvFechaSolicitud2"].Value = fecha;
-                    dgvHistorialSolicitudes.Rows[idx].Tag = idAp;
+                        int idx = dgvHistorialSolicitudes.Rows.Add();
+                        var fila = dgvHistorialSolicitudes.Rows[idx];
+                        fila.Cells["dgvHistIDProd"].Value = idProducto;
+                        fila.Cells["dgvHistDescripcion"].Value = descripcion;
+                        fila.Cells["dgvHistPrecio"].Value = precio;
+                        fila.Cells["dgvHistStock"].Value = stock;
+                        fila.Cells["dgvHistVencimiento"].Value = venc;
+                        fila.Cells["dgvHistEstado"].Value = estado;
+                        fila.Cells["dgvHistSolicita"].Value = solicitadoPor;
+                        fila.Cells["dgvHistFechaSolicita"].Value = fechaSolicitud;
+                        fila.Cells["dgvHistAprobador"].Value = aprobadoPor;
+                        fila.Cells["dgvHistFechaRespuesta"].Value = fechaRespuesta;
+                    }
                 }
             }
-            catch (MySqlException mex)
-            {
-                MessageBox.Show(
-                    $"MySQL Error en CargarHistorial():\nCódigo: {mex.Number}\nMensaje: {mex.Message}",
-                    "Error de Base de Datos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    $"Error general en CargarHistorial():\n{ex.Message}",
-                    "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (rdr != null && !rdr.IsClosed) rdr.Close();
-                if (conn != null && conn.State == ConnectionState.Open) conn.Close();
-            }
+
+
         }
+
+
+
+        //**************Cargar solicitudes pendientes***********/
         private void CargarPendientes()
         {
             dgvSolicitudesPendientes.Rows.Clear();
 
-            MySqlConnection conn = null;
-            MySqlCommand cmd = null;
-            MySqlDataReader rdr = null;
-
-            try
+            using (var conn = ConexionDB.Conexion())
             {
-                // 1) Obtengo la conexión
-                conn = ConexionDB.Conexion();
-                if (conn == null) return;  // si tu helper ya mostró el error, salgo
-
-                // 2) Aseguro que esté abierta
-                if (conn.State != ConnectionState.Open)
-                    conn.Open();
-
-                // 3) Preparo la consulta
+                conn.Open();
                 string sql = @"
-            SELECT a.id_aprobacion,
-                   u.nombre      AS usuario_nombre,
-                   a.tipo_proceso,
-                   a.descripcion,
-                   a.fecha_hora
-              FROM aprobaciones a
-              JOIN usuarios u ON a.usuario_id = u.id_usuario
-             WHERE a.estado = 'pendiente'
-             ORDER BY a.fecha_hora DESC;";
+                    SELECT id_aprobacion, id_producto, descripcion, precio, stock, 
+                           fecha_vencimiento, nombre_solicita, fecha_solicita
+                    FROM aprobaciones_almacen
+                    WHERE estado = 'Pendiente'
+                    ORDER BY fecha_solicita DESC";
 
-                cmd = new MySqlCommand(sql, conn);
-                rdr = cmd.ExecuteReader();
-
-                // 4) Cargo filas
-                while (rdr.Read())
+                using (var cmd = new MySqlCommand(sql, conn))
+                using (var rdr = cmd.ExecuteReader())
                 {
-                    int idAp = rdr.GetInt32("id_aprobacion");
-                    string usuarioNom = rdr.GetString("usuario_nombre");
-                    string tipo = rdr.GetString("tipo_proceso");
-                    string desc = rdr.IsDBNull(rdr.GetOrdinal("descripcion"))
-                                        ? ""
-                                        : rdr.GetString("descripcion");
-                    string fecha = rdr.GetDateTime("fecha_hora").ToString("g");
+                    while (rdr.Read())
+                    {
+                        int idAprobacion = rdr.GetInt32("id_aprobacion");
+                        int idProducto = rdr.GetInt32("id_producto");
+                        string descripcion = rdr.GetString("descripcion");
+                        decimal precio = rdr.GetDecimal("precio");
+                        int stock = rdr.GetInt32("stock");
+                        string fechaVenc = rdr.IsDBNull(rdr.GetOrdinal("fecha_vencimiento"))
+                                            ? "—"
+                                            : rdr.GetDateTime("fecha_vencimiento").ToShortDateString();
+                        string usuario = rdr.GetString("nombre_solicita");
+                        string fechaSolicitud = rdr.GetDateTime("fecha_solicita").ToString("g");
 
-                    int idx = dgvSolicitudesPendientes.Rows.Add();
-                    dgvSolicitudesPendientes.Rows[idx].Cells["dgvUsuarioSolicitud"].Value = usuarioNom;
-                    dgvSolicitudesPendientes.Rows[idx].Cells["dgvTipoProceso"].Value = tipo;
-                    dgvSolicitudesPendientes.Rows[idx].Cells["dgvDescripcion"].Value = desc;
-                    dgvSolicitudesPendientes.Rows[idx].Cells["dgvFechaSolicitud"].Value = fecha;
-                    dgvSolicitudesPendientes.Rows[idx].Tag = idAp;
+                        int idx = dgvSolicitudesPendientes.Rows.Add();
+                        var fila = dgvSolicitudesPendientes.Rows[idx];
+                        fila.Cells["dgvIDProducto"].Value = idProducto;
+                        fila.Cells["dgvDescripcion"].Value = descripcion;
+                        fila.Cells["dgvPrecio"].Value = precio;
+                        fila.Cells["dgvStock"].Value = stock;
+                        fila.Cells["dgvFechaVencimiento"].Value = fechaVenc;
+                        fila.Cells["dgvSolicita"].Value = usuario;
+                        fila.Cells["dgvFechaSolicitud"].Value = fechaSolicitud;
+                        fila.Tag = idAprobacion;
+                    }
                 }
             }
-            catch (MySqlException mex)
-            {
-                // Error específico de MySQL
-                MessageBox.Show(
-                    $"MySQL Error en CargarPendientes():\nCódigo: {mex.Number}\nMensaje: {mex.Message}",
-                    "Error de Base de Datos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                // Cualquier otro
-                MessageBox.Show(
-                    $"Error general en CargarPendientes():\n{ex.Message}",
-                    "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                // Cleanup
-                if (rdr != null && !rdr.IsClosed) rdr.Close();
-                if (conn != null && conn.State == ConnectionState.Open) conn.Close();
-            }
+
+
         }
 
         private void dgvSolicitudesPendientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
+            
 
-            DataGridViewRow fila = dgvSolicitudesPendientes.Rows[e.RowIndex];
-            if (fila.Tag == null) return;
-
-            int id = Convert.ToInt32(fila.Tag);
-            MostrarDetalles(id);
         }
 
         private void dgvHistorialSolicitudes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -303,6 +256,181 @@ namespace Agro_UES.Formularios.Formgerente
 
         private void dgvHistorialSolicitudes_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+        private void AplicarAjusteProductoDesdeDescripcion(string descripcion, MySqlConnection conn)
+        {
+            try
+            {
+                int idProducto = int.Parse(descripcion.Split(new[] { "ID " }, StringSplitOptions.None)[1].Split(':')[0]);
+                int nuevoStock = int.Parse(
+                    descripcion.ToLower().Contains("stock:")
+                        ? descripcion.Split(new[] { "Stock:" }, StringSplitOptions.None)[1].Split(',')[0].Trim()
+                        : "0"
+                );
+
+                string sql = @"UPDATE productos 
+                       SET stock = @stock, estado = 'Aprobado'
+                       WHERE id_producto = @id";
+
+                using (var cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", idProducto);
+                    cmd.Parameters.AddWithValue("@stock", nuevoStock);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al aplicar el ajuste de stock:\n{ex.Message}", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
+        private void btnAprobarProceso_Click(object sender, EventArgs e)
+        {
+            if (dgvSolicitudesPendientes.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecciona una solicitud para aprobar.");
+                return;
+            }
+
+            var fila = dgvSolicitudesPendientes.SelectedRows[0];
+            int idAprobacion = Convert.ToInt32(fila.Tag);
+
+            using (var conn = ConexionDB.Conexion())
+            {
+                conn.Open();
+
+                // 1) Leer datos de la solicitud en aprobaciones_almacen
+                string sql = @"SELECT * FROM aprobaciones_almacen WHERE id_aprobacion = @id";
+                var cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", idAprobacion);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                if (!rdr.Read())
+                {
+                    MessageBox.Show("Solicitud no encontrada.");
+                    return;
+                }
+
+                int idProducto = rdr.GetInt32("id_producto");
+                string descripcion = rdr.GetString("descripcion");
+                decimal precio = rdr.GetDecimal("precio");
+                int stock = rdr.GetInt32("stock");
+
+                // Correccion aqui: extraemos fecha_vencimiento de forma segura y compatible
+                DateTime? vencimiento = null;
+                int ordinalVenc = rdr.GetOrdinal("fecha_vencimiento");
+                if (!rdr.IsDBNull(ordinalVenc))
+                    vencimiento = rdr.GetDateTime(ordinalVenc);
+
+                rdr.Close();
+
+                // 2) Verificar si el producto ya existe
+                sql = "SELECT COUNT(*) FROM productos WHERE id_producto = @id";
+                cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", idProducto);
+                long existe = (long)cmd.ExecuteScalar();
+
+                if (existe == 0)
+                {
+                    // Insertar nuevo producto si no existe
+                    sql = @"INSERT INTO productos 
+                    (id_producto, descripcion, categoria_id, precio, stock, fecha_vencimiento)
+                    VALUES (@id, @desc, 1, @precio, @stock, @fecha)";
+                }
+                else
+                {
+                    // Actualizar producto existente
+                    sql = @"UPDATE productos 
+                    SET descripcion = @desc,
+                        precio = @precio,
+                        stock = @stock,
+                        fecha_vencimiento = @fecha
+                    WHERE id_producto = @id";
+                }
+
+                cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", idProducto);
+                cmd.Parameters.AddWithValue("@desc", descripcion);
+                cmd.Parameters.AddWithValue("@precio", precio);
+                cmd.Parameters.AddWithValue("@stock", stock);
+                cmd.Parameters.AddWithValue("@fecha", vencimiento.HasValue ? (object)vencimiento.Value : DBNull.Value);
+                cmd.ExecuteNonQuery();
+
+                // 3) Marcar la solicitud como Aprobada
+                sql = @"UPDATE aprobaciones_almacen 
+                SET estado = 'Aprobada', 
+                    usuario_responde = @uId, 
+                    nombre_responde = @nombre, 
+                    fecha_respuesta = NOW()
+                WHERE id_aprobacion = @idAprob";
+
+                cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@uId", idAprobador);
+                cmd.Parameters.AddWithValue("@nombre", nombreAprobador);
+                cmd.Parameters.AddWithValue("@idAprob", idAprobacion);
+                cmd.ExecuteNonQuery();
+
+                // 4) Historial de acción
+                RegistrarAccion($"Aprob solicitud #{idAprobacion} – Producto ID: {idProducto}");
+            }
+
+            MessageBox.Show("La solicitud fue aprobada y el producto ha sido actualizado correctamente.", "Aprobacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            CargarPendientes();
+            CargarHistorial();
+
+        }
+
+
+
+        private void btnRechazarSolicitud_Click(object sender, EventArgs e)
+        {
+            if (dgvSolicitudesPendientes.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecciona una solicitud para rechazar.");
+                return;
+            }
+
+            var fila = dgvSolicitudesPendientes.SelectedRows[0];
+            int idAprobacion = Convert.ToInt32(fila.Tag);
+
+            string motivo = Microsoft.VisualBasic.Interaction.InputBox("Indica la razon del rechazo:", "Rechazar solicitud", "No especificado");
+            if (string.IsNullOrWhiteSpace(motivo))
+            {
+                MessageBox.Show("Se requiere una observacion para rechazar.");
+                return;
+            }
+
+            using (var conn = ConexionDB.Conexion())
+            {
+                conn.Open();
+
+                string sql = @"UPDATE aprobaciones_almacen 
+                       SET estado = 'Rechazada',
+                           observacion = @obs,
+                           usuario_responde = @id,
+                           nombre_responde = @nombre,
+                           fecha_respuesta = NOW()
+                       WHERE id_aprobacion = @idAprob";
+
+                using (var cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@obs", motivo);
+                    cmd.Parameters.AddWithValue("@id", idAprobador);
+                    cmd.Parameters.AddWithValue("@nombre", nombreAprobador);
+                    cmd.Parameters.AddWithValue("@idAprob", idAprobacion);
+                    cmd.ExecuteNonQuery();
+                }
+
+                RegistrarAccion($"Rechazo solicitud #{idAprobacion}. Motivo: {motivo}");
+            }
+
+            MessageBox.Show("La solicitud fue rechazada.", "Solicitud rechazada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            CargarPendientes();
+            CargarHistorial();
+
 
         }
     }

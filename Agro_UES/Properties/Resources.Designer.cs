@@ -93,6 +93,16 @@ namespace Agro_UES.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap aprobar {
+            get {
+                object obj = ResourceManager.GetObject("aprobar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap buscar {
             get {
                 object obj = ResourceManager.GetObject("buscar", resourceCulture);
@@ -566,6 +576,26 @@ namespace Agro_UES.Properties {
         internal static System.Drawing.Bitmap producto {
             get {
                 object obj = ResourceManager.GetObject("producto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rechazar {
+            get {
+                object obj = ResourceManager.GetObject("Rechazar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rechazo {
+            get {
+                object obj = ResourceManager.GetObject("rechazo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

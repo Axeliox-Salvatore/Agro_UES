@@ -58,7 +58,8 @@ namespace Agro_UES
 
         private void btnProcesos_Click(object sender, EventArgs e)
         {
-            abrirFormularios(new FormSolicitudes());
+            abrirFormularios(new FormSolicitudes(idUsuarioActual, nombreUsuarioActual, rolUsuarioActual));
+
         }
 
         private void btnEstadísticasDesempeño_Click(object sender, EventArgs e)
