@@ -117,12 +117,6 @@
     <Compile Include="Formularios\FormAlmacen\FormAlmacen.Designer.cs">
       <DependentUpon>FormAlmacen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FormAlmacen\GenerarAlertas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FormAlmacen\GenerarAlertas.Designer.cs">
-      <DependentUpon>GenerarAlertas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\FormAlmacen\GestionCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,9 +208,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormAlmacen\FormAlmacen.resx">
       <DependentUpon>FormAlmacen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FormAlmacen\GenerarAlertas.resx">
-      <DependentUpon>GenerarAlertas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormAlmacen\GestionCategorias.resx">
       <DependentUpon>GestionCategorias.cs</DependentUpon>
