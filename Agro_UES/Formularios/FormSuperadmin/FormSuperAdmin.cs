@@ -75,7 +75,7 @@ namespace Agro_UES
             while (lectorStock.Read())
             {
                 string nombre = lectorStock["nombre"].ToString();
-                AgregarNotificacion($"{nombre} con stock crítico", Color.Red);
+                AgregarNotificacion($"-{nombre} con stock critico", Color.Red);
             }
             lectorStock.Close();
 
@@ -86,7 +86,7 @@ namespace Agro_UES
             while (lectorVencidos.Read())
             {
                 string nombre = lectorVencidos["nombre"].ToString();
-                AgregarNotificacion($"🟠 {nombre} vencido", Color.Orange);
+                AgregarNotificacion($"- {nombre} vencido", Color.Orange);
             }
             lectorVencidos.Close();
 
@@ -253,7 +253,8 @@ namespace Agro_UES
                        accion AS 'Acción',
                        DATE_FORMAT(fecha_hora, '%d/%m/%Y %H:%i') AS 'Fecha y Hora'
                        FROM historial_acciones
-                       ORDER BY fecha_hora DESC";
+                       ORDER BY fecha_hora DESC
+                       LIMIT 5";
 
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(consultaHistorial, conexion);
                 DataTable tabla = new DataTable();
@@ -332,7 +333,7 @@ namespace Agro_UES
             }
             catch (Exception error)
             {
-                MessageBox.Show("No se pudo registrar la acción: " + error.Message);
+                MessageBox.Show("No se pudo registrar la accion: " + error.Message);
             }
         }
 
@@ -388,7 +389,7 @@ namespace Agro_UES
 
                 if (rol == "Cajero")
                     lblCajeros.Text = cantidad;
-                else if (rol == "Encargado de Almacén")
+                else if (rol == "Encargado de Almacen")
                     lblAlmacen.Text = cantidad;
                 else if (rol == "Gerente")
                     lblGerentes.Text = cantidad;
@@ -445,12 +446,12 @@ namespace Agro_UES
 
         /********************* PANEL HISTORIAL ********************/
 
-        // Mostrar panelHistorial desde el menú lateral
+        // Mostrar panelHistorial desde el menu lateral
         private void btnHistorial_Click_1(object sender, EventArgs e)
         {
             OcultarTodosLosPaneles();
             panelHistorial.Visible = true;
-            dtpDesde.Value = DateTime.Today.AddDays(-7);  // Por defecto, últimos 7 días
+            dtpDesde.Value = DateTime.Today.AddDays(-7);  // Por defecto, ultimos 7 dias
             dtpHasta.Value = DateTime.Today;
             CargarHistorial(); // Carga inicial
 
@@ -535,6 +536,8 @@ namespace Agro_UES
         {
             OcultarTodosLosPaneles();
             panelResumenGeneral.Visible = true;
+   
+
 
         }
 
@@ -603,6 +606,15 @@ namespace Agro_UES
 
             string nombre = dgvUsuarios.SelectedRows[0].Cells["nombre"].Value.ToString();
             int id = Convert.ToInt32(dgvUsuarios.SelectedRows[0].Cells["id_usuario"].Value);
+            string rol = dgvUsuarios.SelectedRows[0].Cells["rol"].Value.ToString();
+
+            // Evitar desactivacion de Super Administrador
+            if (rol == "Super Administrador")
+            {
+                MessageBox.Show("No se puede desactivar a un usuario con rol de Super Administrador.", "Accion no permitida", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+
 
             DialogResult respuesta = MessageBox.Show($"¿Seguro que queres desactivar a {nombre}?",
                 "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -619,7 +631,7 @@ namespace Agro_UES
 
                 CargarUsuariosEnTabla();
                 ContarUsuariosPorRol();
-                RegistrarAccion("Desactivó al usuario: " + nombre);
+                RegistrarAccion("Desactivo al usuario: " + nombre);
             }
             
 
@@ -689,7 +701,7 @@ namespace Agro_UES
 
             if (!File.Exists(rutaMysqldump))
             {
-                MessageBox.Show("No se encontró mysqldump en la ruta especificada.");
+                MessageBox.Show("No se encontro mysqldump en la ruta especificada.");
                 return;
             }
 
@@ -708,7 +720,7 @@ namespace Agro_UES
 
                 if (File.Exists(archivoCompleto))
                 {
-                    RegistrarAccion("Generó respaldo de la base de datos");
+                    RegistrarAccion("Genero respaldo de la base de datos");
                     MessageBox.Show("Respaldo generado correctamente:\n" + archivoCompleto);
                 }
                 else
@@ -742,6 +754,27 @@ namespace Agro_UES
             Application.Exit();
 
         }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCambiarPIN_Click(object sender, EventArgs e)
+        {
+            FormRecuperar frmRecup = new FormRecuperar();
+            frmRecup.Show();
+            // Ocultar este form
+            this.Hide();
+        }
+
+        private void panelHistorial_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        /**********Estilo para que se adapten los paneles***************/
+
     }
 }
 
