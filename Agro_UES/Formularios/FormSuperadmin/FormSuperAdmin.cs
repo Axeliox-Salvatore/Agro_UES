@@ -75,7 +75,7 @@ namespace Agro_UES
             while (lectorStock.Read())
             {
                 string nombre = lectorStock["nombre"].ToString();
-                AgregarNotificacion($"{nombre} con stock crítico", Color.Red);
+                AgregarNotificacion($"-{nombre} con stock critico", Color.Red);
             }
             lectorStock.Close();
 
@@ -86,7 +86,7 @@ namespace Agro_UES
             while (lectorVencidos.Read())
             {
                 string nombre = lectorVencidos["nombre"].ToString();
-                AgregarNotificacion($"🟠 {nombre} vencido", Color.Orange);
+                AgregarNotificacion($"- {nombre} vencido", Color.Orange);
             }
             lectorVencidos.Close();
 
@@ -253,7 +253,8 @@ namespace Agro_UES
                        accion AS 'Acción',
                        DATE_FORMAT(fecha_hora, '%d/%m/%Y %H:%i') AS 'Fecha y Hora'
                        FROM historial_acciones
-                       ORDER BY fecha_hora DESC";
+                       ORDER BY fecha_hora DESC
+                       LIMIT 5";
 
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(consultaHistorial, conexion);
                 DataTable tabla = new DataTable();
@@ -535,6 +536,8 @@ namespace Agro_UES
         {
             OcultarTodosLosPaneles();
             panelResumenGeneral.Visible = true;
+   
+
 
         }
 
@@ -742,6 +745,22 @@ namespace Agro_UES
             Application.Exit();
 
         }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCambiarPIN_Click(object sender, EventArgs e)
+        {
+            FormRecuperar frmRecup = new FormRecuperar();
+            frmRecup.Show();
+            // Ocultar este form
+            this.Hide();
+        }
+
+        /**********Estilo para que se adapten los paneles***************/
+        
     }
 }
 

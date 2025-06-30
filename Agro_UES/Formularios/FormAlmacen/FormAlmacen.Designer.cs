@@ -35,34 +35,34 @@
             this.btnalertas = new System.Windows.Forms.Button();
             this.btnsalir = new System.Windows.Forms.Button();
             this.panelLateral = new System.Windows.Forms.Panel();
-            this.panelSuperior = new System.Windows.Forms.Panel();
             this.btnRegresar = new System.Windows.Forms.Button();
-            this.panelContenido = new System.Windows.Forms.Panel();
-            this.dgvStocBajo = new System.Windows.Forms.DataGridView();
-            this.dgvVecimientos = new System.Windows.Forms.DataGridView();
-            this.dgvSolicitudes = new System.Windows.Forms.DataGridView();
-            this.lblUsuario = new System.Windows.Forms.Label();
+            this.panelSuperior = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
-            this.relojHora = new System.Windows.Forms.Timer(this.components);
-            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreProductoV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.panelContenido = new System.Windows.Forms.Panel();
+            this.dgvSolicitudes = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoProceso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.dgvVecimientos = new System.Windows.Forms.DataGridView();
+            this.NombreProductoV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvStocBajo = new System.Windows.Forms.DataGridView();
+            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.relojHora = new System.Windows.Forms.Timer(this.components);
             this.panelLateral.SuspendLayout();
             this.panelSuperior.SuspendLayout();
-            this.panelContenido.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStocBajo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVecimientos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelContenido.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVecimientos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStocBajo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnregistro
@@ -151,19 +151,6 @@
             this.panelLateral.Size = new System.Drawing.Size(213, 759);
             this.panelLateral.TabIndex = 9;
             // 
-            // panelSuperior
-            // 
-            this.panelSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(230)))));
-            this.panelSuperior.Controls.Add(this.pictureBox2);
-            this.panelSuperior.Controls.Add(this.lblHora);
-            this.panelSuperior.Controls.Add(this.lblRol);
-            this.panelSuperior.Controls.Add(this.lblUsuario);
-            this.panelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSuperior.Location = new System.Drawing.Point(0, 0);
-            this.panelSuperior.Name = "panelSuperior";
-            this.panelSuperior.Size = new System.Drawing.Size(1047, 94);
-            this.panelSuperior.TabIndex = 10;
-            // 
             // btnRegresar
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.DarkOliveGreen;
@@ -177,82 +164,29 @@
             this.btnRegresar.UseVisualStyleBackColor = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
-            // panelContenido
+            // panelSuperior
             // 
-            this.panelContenido.Controls.Add(this.dgvSolicitudes);
-            this.panelContenido.Controls.Add(this.dgvVecimientos);
-            this.panelContenido.Controls.Add(this.dgvStocBajo);
-            this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenido.Location = new System.Drawing.Point(213, 94);
-            this.panelContenido.Name = "panelContenido";
-            this.panelContenido.Size = new System.Drawing.Size(834, 759);
-            this.panelContenido.TabIndex = 11;
+            this.panelSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(230)))));
+            this.panelSuperior.Controls.Add(this.pictureBox2);
+            this.panelSuperior.Controls.Add(this.lblHora);
+            this.panelSuperior.Controls.Add(this.lblRol);
+            this.panelSuperior.Controls.Add(this.lblUsuario);
+            this.panelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSuperior.Location = new System.Drawing.Point(0, 0);
+            this.panelSuperior.Name = "panelSuperior";
+            this.panelSuperior.Size = new System.Drawing.Size(1047, 94);
+            this.panelSuperior.TabIndex = 10;
             // 
-            // dgvStocBajo
+            // pictureBox2
             // 
-            this.dgvStocBajo.AllowUserToAddRows = false;
-            this.dgvStocBajo.AllowUserToDeleteRows = false;
-            this.dgvStocBajo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvStocBajo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStocBajo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NombreProducto,
-            this.Stock,
-            this.Categoria});
-            this.dgvStocBajo.Location = new System.Drawing.Point(128, 25);
-            this.dgvStocBajo.Name = "dgvStocBajo";
-            this.dgvStocBajo.ReadOnly = true;
-            this.dgvStocBajo.RowHeadersWidth = 51;
-            this.dgvStocBajo.RowTemplate.Height = 24;
-            this.dgvStocBajo.Size = new System.Drawing.Size(508, 150);
-            this.dgvStocBajo.TabIndex = 0;
-            // 
-            // dgvVecimientos
-            // 
-            this.dgvVecimientos.AllowUserToAddRows = false;
-            this.dgvVecimientos.AllowUserToDeleteRows = false;
-            this.dgvVecimientos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvVecimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVecimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NombreProductoV,
-            this.FechaVencimiento});
-            this.dgvVecimientos.Location = new System.Drawing.Point(128, 275);
-            this.dgvVecimientos.Name = "dgvVecimientos";
-            this.dgvVecimientos.ReadOnly = true;
-            this.dgvVecimientos.RowHeadersWidth = 51;
-            this.dgvVecimientos.RowTemplate.Height = 24;
-            this.dgvVecimientos.Size = new System.Drawing.Size(508, 150);
-            this.dgvVecimientos.TabIndex = 1;
-            // 
-            // dgvSolicitudes
-            // 
-            this.dgvSolicitudes.AllowUserToAddRows = false;
-            this.dgvSolicitudes.AllowUserToDeleteRows = false;
-            this.dgvSolicitudes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSolicitudes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.TipoProceso,
-            this.Descripcion,
-            this.Estado,
-            this.FechaHora});
-            this.dgvSolicitudes.Location = new System.Drawing.Point(128, 524);
-            this.dgvSolicitudes.Name = "dgvSolicitudes";
-            this.dgvSolicitudes.ReadOnly = true;
-            this.dgvSolicitudes.RowHeadersWidth = 51;
-            this.dgvSolicitudes.RowTemplate.Height = 24;
-            this.dgvSolicitudes.Size = new System.Drawing.Size(508, 150);
-            this.dgvSolicitudes.TabIndex = 2;
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblUsuario.Location = new System.Drawing.Point(200, 45);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(26, 25);
-            this.lblUsuario.TabIndex = 0;
-            this.lblUsuario.Text = "--";
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
+            this.pictureBox2.Image = global::Agro_UES.Properties.Resources.logo2;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(93, 94);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
             // 
             // lblHora
             // 
@@ -276,46 +210,47 @@
             this.lblRol.TabIndex = 0;
             this.lblRol.Text = "--";
             // 
-            // relojHora
+            // lblUsuario
             // 
-            this.relojHora.Enabled = true;
-            this.relojHora.Interval = 1000;
-            this.relojHora.Tick += new System.EventHandler(this.relojHora_Tick_1);
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblUsuario.Location = new System.Drawing.Point(200, 45);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(26, 25);
+            this.lblUsuario.TabIndex = 0;
+            this.lblUsuario.Text = "--";
             // 
-            // NombreProducto
+            // panelContenido
             // 
-            this.NombreProducto.HeaderText = "Producto";
-            this.NombreProducto.MinimumWidth = 6;
-            this.NombreProducto.Name = "NombreProducto";
-            this.NombreProducto.ReadOnly = true;
+            this.panelContenido.Controls.Add(this.dgvSolicitudes);
+            this.panelContenido.Controls.Add(this.dgvVecimientos);
+            this.panelContenido.Controls.Add(this.dgvStocBajo);
+            this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenido.Location = new System.Drawing.Point(213, 94);
+            this.panelContenido.Name = "panelContenido";
+            this.panelContenido.Size = new System.Drawing.Size(834, 759);
+            this.panelContenido.TabIndex = 11;
             // 
-            // Stock
+            // dgvSolicitudes
             // 
-            this.Stock.HeaderText = "Stock";
-            this.Stock.MinimumWidth = 6;
-            this.Stock.Name = "Stock";
-            this.Stock.ReadOnly = true;
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.MinimumWidth = 6;
-            this.Categoria.Name = "Categoria";
-            this.Categoria.ReadOnly = true;
-            // 
-            // NombreProductoV
-            // 
-            this.NombreProductoV.HeaderText = "Producto";
-            this.NombreProductoV.MinimumWidth = 6;
-            this.NombreProductoV.Name = "NombreProductoV";
-            this.NombreProductoV.ReadOnly = true;
-            // 
-            // FechaVencimiento
-            // 
-            this.FechaVencimiento.HeaderText = "Fecha de Vencimiento";
-            this.FechaVencimiento.MinimumWidth = 6;
-            this.FechaVencimiento.Name = "FechaVencimiento";
-            this.FechaVencimiento.ReadOnly = true;
+            this.dgvSolicitudes.AllowUserToAddRows = false;
+            this.dgvSolicitudes.AllowUserToDeleteRows = false;
+            this.dgvSolicitudes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSolicitudes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.TipoProceso,
+            this.Descripcion,
+            this.Estado,
+            this.FechaHora});
+            this.dgvSolicitudes.Location = new System.Drawing.Point(128, 524);
+            this.dgvSolicitudes.Name = "dgvSolicitudes";
+            this.dgvSolicitudes.ReadOnly = true;
+            this.dgvSolicitudes.RowHeadersWidth = 51;
+            this.dgvSolicitudes.RowTemplate.Height = 24;
+            this.dgvSolicitudes.Size = new System.Drawing.Size(508, 150);
+            this.dgvSolicitudes.TabIndex = 2;
             // 
             // ID
             // 
@@ -352,16 +287,81 @@
             this.FechaHora.Name = "FechaHora";
             this.FechaHora.ReadOnly = true;
             // 
-            // pictureBox2
+            // dgvVecimientos
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
-            this.pictureBox2.Image = global::Agro_UES.Properties.Resources.logo2;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(93, 94);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            this.dgvVecimientos.AllowUserToAddRows = false;
+            this.dgvVecimientos.AllowUserToDeleteRows = false;
+            this.dgvVecimientos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVecimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVecimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NombreProductoV,
+            this.FechaVencimiento});
+            this.dgvVecimientos.Location = new System.Drawing.Point(128, 275);
+            this.dgvVecimientos.Name = "dgvVecimientos";
+            this.dgvVecimientos.ReadOnly = true;
+            this.dgvVecimientos.RowHeadersWidth = 51;
+            this.dgvVecimientos.RowTemplate.Height = 24;
+            this.dgvVecimientos.Size = new System.Drawing.Size(508, 150);
+            this.dgvVecimientos.TabIndex = 1;
+            // 
+            // NombreProductoV
+            // 
+            this.NombreProductoV.HeaderText = "Producto";
+            this.NombreProductoV.MinimumWidth = 6;
+            this.NombreProductoV.Name = "NombreProductoV";
+            this.NombreProductoV.ReadOnly = true;
+            // 
+            // FechaVencimiento
+            // 
+            this.FechaVencimiento.HeaderText = "Fecha de Vencimiento";
+            this.FechaVencimiento.MinimumWidth = 6;
+            this.FechaVencimiento.Name = "FechaVencimiento";
+            this.FechaVencimiento.ReadOnly = true;
+            // 
+            // dgvStocBajo
+            // 
+            this.dgvStocBajo.AllowUserToAddRows = false;
+            this.dgvStocBajo.AllowUserToDeleteRows = false;
+            this.dgvStocBajo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvStocBajo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStocBajo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NombreProducto,
+            this.Stock,
+            this.Categoria});
+            this.dgvStocBajo.Location = new System.Drawing.Point(128, 25);
+            this.dgvStocBajo.Name = "dgvStocBajo";
+            this.dgvStocBajo.ReadOnly = true;
+            this.dgvStocBajo.RowHeadersWidth = 51;
+            this.dgvStocBajo.RowTemplate.Height = 24;
+            this.dgvStocBajo.Size = new System.Drawing.Size(508, 150);
+            this.dgvStocBajo.TabIndex = 0;
+            // 
+            // NombreProducto
+            // 
+            this.NombreProducto.HeaderText = "Producto";
+            this.NombreProducto.MinimumWidth = 6;
+            this.NombreProducto.Name = "NombreProducto";
+            this.NombreProducto.ReadOnly = true;
+            // 
+            // Stock
+            // 
+            this.Stock.HeaderText = "Stock";
+            this.Stock.MinimumWidth = 6;
+            this.Stock.Name = "Stock";
+            this.Stock.ReadOnly = true;
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.MinimumWidth = 6;
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            // 
+            // relojHora
+            // 
+            this.relojHora.Enabled = true;
+            this.relojHora.Interval = 1000;
+            this.relojHora.Tick += new System.EventHandler(this.relojHora_Tick_1);
             // 
             // FormAlmacen
             // 
@@ -379,11 +379,11 @@
             this.panelLateral.ResumeLayout(false);
             this.panelSuperior.ResumeLayout(false);
             this.panelSuperior.PerformLayout();
-            this.panelContenido.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStocBajo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVecimientos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelContenido.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVecimientos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStocBajo)).EndInit();
             this.ResumeLayout(false);
 
         }
