@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-07-2025 a las 11:02:22
+-- Tiempo de generación: 01-07-2025 a las 11:40:23
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -89,7 +89,8 @@ INSERT INTO `aprobaciones_almacen` (`id_aprobacion`, `id_producto`, `descripcion
 (16, 3, 'Producto con promoción especial', 1.99, 50, '2025-12-31', 'Pendiente', 3, 'Almacen', '2025-06-29 20:48:05', NULL, NULL, NULL, NULL, NULL),
 (17, 4, 'Revisión de caducidad y stock por rotación', 5.60, 12, '2026-02-14', 'Pendiente', 3, 'Almacen', '2025-06-29 20:48:05', NULL, NULL, NULL, NULL, NULL),
 (18, 1, 'Fertilizante nitrogenado', 25.50, 50, '2025-11-07', 'Aprobada', 13, 'Bodega', '2025-06-30 18:17:23', 12, 'gerente', '2025-06-30 18:18:00', NULL, 'imagenes\\generate an image of.jpg'),
-(19, 0, 'semilla de arbol amarillo', 20.00, 5, '2026-03-20', 'Aprobada', 13, 'Bodega', '2025-06-30 18:42:20', 12, 'gerente', '2025-06-30 19:33:25', NULL, 'imagenes\\generate an image of.png');
+(19, 0, 'semilla de arbol amarillo', 20.00, 5, '2026-03-20', 'Aprobada', 13, 'Bodega', '2025-06-30 18:42:20', 12, 'gerente', '2025-06-30 19:33:25', NULL, 'imagenes\\generate an image of.png'),
+(20, 4, 'asasasas', 12.00, 1222, '2025-07-01', 'Pendiente', 3, 'Almacen', '2025-07-01 03:11:05', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -111,7 +112,8 @@ INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `estado`) VALUES
 (1, 'Fertilizantes', 'Activa'),
 (2, 'Herramientas', 'Activa'),
 (3, 'Semillas', 'Activa'),
-(5, 'Azas', 'Activa');
+(5, 'Azas', 'Activa'),
+(6, 'herbicidas', 'Activa');
 
 -- --------------------------------------------------------
 
@@ -135,7 +137,9 @@ CREATE TABLE `detalle_ventas` (
 
 INSERT INTO `detalle_ventas` (`id_detalle`, `venta_id`, `producto_id`, `nombre_producto`, `cantidad`, `precio_unitario`) VALUES
 (1, 1, 2, 'Azadón', 3, 13.75),
-(2, 2, 5, 'Girasol', 1, 10.00);
+(2, 2, 5, 'Girasol', 1, 10.00),
+(3, 3, 6, 'veneno par sacate', 1, 15.20),
+(4, 4, 5, 'Girasol', 1, 10.00);
 
 -- --------------------------------------------------------
 
@@ -361,7 +365,18 @@ INSERT INTO `historial_acciones` (`id_historial`, `usuario_id`, `nombre_usuario`
 (203, 4, 'Cajero', 'Inicio de sesión en el sistema', '2025-07-01 02:31:29'),
 (204, 4, 'Cajero', 'Inicio de sesión en el sistema', '2025-07-01 02:33:21'),
 (205, 4, 'Cajero', 'Inicio de sesión en el sistema', '2025-07-01 02:45:20'),
-(206, 4, 'Cajero', 'Venta realizada. Total: 11.30', '2025-07-01 02:46:31');
+(206, 4, 'Cajero', 'Venta realizada. Total: 11.30', '2025-07-01 02:46:31'),
+(207, 3, 'Almacen', 'Inicio de sesión en el sistema', '2025-07-01 03:08:47'),
+(208, 3, 'Almacen (Encargado de Almacen)', 'Agrego categoria: herbicidas', '2025-07-01 03:09:30'),
+(209, 3, 'Almacen', 'Registró producto: veneno par sacate', '2025-07-01 03:10:43'),
+(210, 3, 'Almacen', 'Solicitó modificación del producto ID 4', '2025-07-01 03:11:05'),
+(211, 4, 'Cajero', 'Inicio de sesión en el sistema', '2025-07-01 03:11:24'),
+(212, 4, 'Cajero', 'Venta realizada. Total: 17.18', '2025-07-01 03:12:05'),
+(213, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-07-01 03:12:21'),
+(214, 1, 'Admin', 'Genero reporte: Productos (24/06/2025 - 01/07/2025)', '2025-07-01 03:13:22'),
+(215, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-07-01 03:32:07'),
+(216, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-07-01 03:33:06'),
+(217, 1, 'Admin', 'Venta realizada. Total: 11.30', '2025-07-01 03:33:26');
 
 -- --------------------------------------------------------
 
@@ -391,7 +406,8 @@ INSERT INTO `productos` (`id_producto`, `nombre`, `descripcion`, `categoria_id`,
 (2, 'Azadón', 'Herramienta para labranza', 2, 13.75, 17, '2060-04-12', 1, NULL, 'Activo'),
 (3, 'Maíz H-59', 'Semilla híbrida de maíz', 3, 7.90, 100, NULL, 0, NULL, 'Activo'),
 (4, 'asas', 'asasasas', 1, 12.00, 1222, NULL, NULL, NULL, 'Activo'),
-(5, 'Girasol', 'Semillas girasol', 3, 10.00, 7, '2025-10-10', 0, 'imagenes\\generate an image of.png', 'Disponible');
+(5, 'Girasol', 'Semillas girasol', 3, 10.00, 6, '2025-10-10', 0, 'imagenes\\generate an image of.png', 'Disponible'),
+(6, 'veneno par sacate', 'mata el pasto', 6, 15.20, 4, '2029-07-14', 0, 'imagenes\\Paraquat-aleman-20-sl-2-480x480.jpg', 'Disponible');
 
 -- --------------------------------------------------------
 
@@ -526,7 +542,9 @@ CREATE TABLE `ventas` (
 
 INSERT INTO `ventas` (`id_venta`, `usuario_id`, `fecha_venta`, `total`) VALUES
 (1, 10, '2025-06-27 15:24:55', 46.61),
-(2, 4, '2025-07-01 02:46:31', 11.30);
+(2, 4, '2025-07-01 02:46:31', 11.30),
+(3, 4, '2025-07-01 03:12:05', 17.18),
+(4, 1, '2025-07-01 03:33:26', 11.30);
 
 --
 -- Índices para tablas volcadas
@@ -635,31 +653,31 @@ ALTER TABLE `aprobaciones`
 -- AUTO_INCREMENT de la tabla `aprobaciones_almacen`
 --
 ALTER TABLE `aprobaciones_almacen`
-  MODIFY `id_aprobacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_aprobacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_ventas`
 --
 ALTER TABLE `detalle_ventas`
-  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `historial_acciones`
 --
 ALTER TABLE `historial_acciones`
-  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=207;
+  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=218;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `recuperacion_password`
@@ -695,7 +713,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas

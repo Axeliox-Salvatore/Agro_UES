@@ -189,6 +189,7 @@
             this.Controls.Add(this.panelSuperior);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormEditarUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormEditarUsuario";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

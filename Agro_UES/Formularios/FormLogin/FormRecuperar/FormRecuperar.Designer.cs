@@ -47,6 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelRecuperar = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.panelEnvio.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -141,7 +142,7 @@
             this.panelVerificacion.Controls.Add(this.label1);
             this.panelVerificacion.Location = new System.Drawing.Point(21, 364);
             this.panelVerificacion.Name = "panelVerificacion";
-            this.panelVerificacion.Size = new System.Drawing.Size(450, 271);
+            this.panelVerificacion.Size = new System.Drawing.Size(450, 266);
             this.panelVerificacion.TabIndex = 1;
             this.panelVerificacion.TabStop = false;
             // 
@@ -149,6 +150,7 @@
             // 
             this.btnVerificar.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.btnVerificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVerificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerificar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnVerificar.ForeColor = System.Drawing.Color.White;
             this.btnVerificar.Location = new System.Drawing.Point(130, 206);
@@ -253,13 +255,14 @@
             // panelRecuperar
             // 
             this.panelRecuperar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(230)))));
+            this.panelRecuperar.Controls.Add(this.btnCancelar);
             this.panelRecuperar.Controls.Add(this.pictureBox2);
             this.panelRecuperar.Controls.Add(this.panelVerificacion);
             this.panelRecuperar.Controls.Add(this.panelEnvio);
             this.panelRecuperar.Location = new System.Drawing.Point(144, 12);
             this.panelRecuperar.Name = "panelRecuperar";
             this.panelRecuperar.Padding = new System.Windows.Forms.Padding(20);
-            this.panelRecuperar.Size = new System.Drawing.Size(464, 646);
+            this.panelRecuperar.Size = new System.Drawing.Size(464, 686);
             this.panelRecuperar.TabIndex = 7;
             // 
             // pictureBox2
@@ -273,12 +276,25 @@
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(151, 636);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(152, 43);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            // 
             // FormRecuperar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(227)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(782, 703);
+            this.ClientSize = new System.Drawing.Size(782, 711);
             this.Controls.Add(this.panelRecuperar);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "FormRecuperar";
@@ -324,5 +340,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

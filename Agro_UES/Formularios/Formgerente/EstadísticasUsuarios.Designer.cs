@@ -191,6 +191,7 @@
             this.Controls.Add(this.dgvTopCajeros);
             this.Controls.Add(this.dgvCajeros);
             this.Name = "EstadísticasUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EstadísticasUsuarios";
             this.Load += new System.EventHandler(this.EstadísticasUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCajeros)).EndInit();

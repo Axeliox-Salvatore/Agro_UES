@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.lblRol = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.lblFechaYHora = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -53,15 +54,16 @@
             this.txtIVA = new System.Windows.Forms.TextBox();
             this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.dgvCarrito = new System.Windows.Forms.DataGridView();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.timerCajero = new System.Windows.Forms.Timer(this.components);
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblRol = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.flpCategorias = new System.Windows.Forms.FlowLayoutPanel();
+            this.timerCajero = new System.Windows.Forms.Timer(this.components);
+            this.btnCambiarPIN = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
@@ -74,6 +76,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(242)))), ((int)(((byte)(234)))));
+            this.panel1.Controls.Add(this.btnCambiarPIN);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.lblRol);
             this.panel1.Controls.Add(this.lblNombreUsuario);
@@ -94,6 +97,17 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 9;
             this.pictureBox4.TabStop = false;
+            // 
+            // lblRol
+            // 
+            this.lblRol.AutoSize = true;
+            this.lblRol.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.lblRol.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblRol.Location = new System.Drawing.Point(330, 43);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(53, 23);
+            this.lblRol.TabIndex = 0;
+            this.lblRol.Text = "label1";
             // 
             // lblNombreUsuario
             // 
@@ -359,35 +373,6 @@
             this.dgvCarrito.Size = new System.Drawing.Size(289, 301);
             this.dgvCarrito.TabIndex = 0;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Honeydew;
-            this.panel5.Controls.Add(this.btnCerrar);
-            this.panel5.Controls.Add(this.flpCategorias);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(0, 94);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(167, 690);
-            this.panel5.TabIndex = 0;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Firebrick;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(-1, 508);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(145, 50);
-            this.btnCerrar.TabIndex = 0;
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = false;
-            // 
-            // timerCajero
-            // 
-            this.timerCajero.Enabled = true;
-            this.timerCajero.Interval = 1000;
-            // 
             // ID
             // 
             this.ID.HeaderText = "ID";
@@ -417,16 +402,44 @@
             this.PrecioUnitario.Name = "PrecioUnitario";
             this.PrecioUnitario.ReadOnly = true;
             // 
-            // lblRol
+            // panel5
             // 
-            this.lblRol.AutoSize = true;
-            this.lblRol.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.lblRol.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblRol.Location = new System.Drawing.Point(330, 43);
-            this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(53, 23);
-            this.lblRol.TabIndex = 0;
-            this.lblRol.Text = "label1";
+            this.panel5.BackColor = System.Drawing.Color.Honeydew;
+            this.panel5.Controls.Add(this.button1);
+            this.panel5.Controls.Add(this.btnCerrar);
+            this.panel5.Controls.Add(this.flpCategorias);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(0, 94);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(167, 690);
+            this.panel5.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.SteelBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(12, 468);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(145, 50);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Regresar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.Location = new System.Drawing.Point(12, 613);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(145, 50);
+            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = false;
             // 
             // flpCategorias
             // 
@@ -434,6 +447,26 @@
             this.flpCategorias.Name = "flpCategorias";
             this.flpCategorias.Size = new System.Drawing.Size(161, 404);
             this.flpCategorias.TabIndex = 0;
+            // 
+            // timerCajero
+            // 
+            this.timerCajero.Enabled = true;
+            this.timerCajero.Interval = 1000;
+            // 
+            // btnCambiarPIN
+            // 
+            this.btnCambiarPIN.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnCambiarPIN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambiarPIN.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnCambiarPIN.ForeColor = System.Drawing.Color.White;
+            this.btnCambiarPIN.Location = new System.Drawing.Point(1152, 43);
+            this.btnCambiarPIN.Name = "btnCambiarPIN";
+            this.btnCambiarPIN.Padding = new System.Windows.Forms.Padding(5, 5, 10, 5);
+            this.btnCambiarPIN.Size = new System.Drawing.Size(99, 48);
+            this.btnCambiarPIN.TabIndex = 4;
+            this.btnCambiarPIN.Text = "PIN";
+            this.btnCambiarPIN.UseVisualStyleBackColor = false;
+            this.btnCambiarPIN.Click += new System.EventHandler(this.btnCambiarPIN_Click);
             // 
             // FormCajero0
             // 
@@ -497,5 +530,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.FlowLayoutPanel flpCategorias;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCambiarPIN;
     }
 }

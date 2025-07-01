@@ -225,6 +225,9 @@
     <EmbeddedResource Include="Formularios\FormCrearUsuario\FormNuevoUsuario.resx">
       <DependentUpon>FormNuevoUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormDevolucion\FormDevoluciones.resx">
+      <DependentUpon>FormDevoluciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormEditarUsuario\FormEditarUsuario.resx">
       <DependentUpon>FormEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>

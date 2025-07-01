@@ -323,6 +323,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Name = "FormSolicitudes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormSolicitudes";
             this.Load += new System.EventHandler(this.FormSolicitudes_Load);
             this.panel2.ResumeLayout(false);

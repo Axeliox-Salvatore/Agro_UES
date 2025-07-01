@@ -28,6 +28,9 @@ namespace Agro_UES.Formularios.FormCajero
             nombreUsuarioActual = nombreUsuario;
             rolUsuarioActual = rolUsuario;
 
+            button1.Visible = rolUsuarioActual == "Super Admin";
+
+
             lblNombreUsuario.Text = nombreUsuarioActual;
             lblRol.Text = rolUsuarioActual;
             timerCajero.Tick += timerCajero_Tick;
@@ -568,8 +571,20 @@ namespace Agro_UES.Formularios.FormCajero
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            
 
+        }
 
+        private void btnCambiarPIN_Click(object sender, EventArgs e)
+        {
+            FormRecuperar frmRecup = new FormRecuperar();
+            frmRecup.Show();
+            // Ocultar este form
+            this.Hide();
+        }
     }
 }
 

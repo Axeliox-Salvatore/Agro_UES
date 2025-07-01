@@ -212,6 +212,7 @@
             this.Controls.Add(this.panelSuperior);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormNuevoUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormNuevoUsuario";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

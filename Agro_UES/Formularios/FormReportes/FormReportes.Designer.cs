@@ -77,7 +77,7 @@
             this.btnGenerarPDF.Location = new System.Drawing.Point(273, 234);
             this.btnGenerarPDF.Name = "btnGenerarPDF";
             this.btnGenerarPDF.Padding = new System.Windows.Forms.Padding(5, 5, 10, 5);
-            this.btnGenerarPDF.Size = new System.Drawing.Size(125, 43);
+            this.btnGenerarPDF.Size = new System.Drawing.Size(145, 43);
             this.btnGenerarPDF.TabIndex = 3;
             this.btnGenerarPDF.Text = "Pdf";
             this.btnGenerarPDF.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
