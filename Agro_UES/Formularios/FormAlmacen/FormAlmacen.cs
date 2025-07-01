@@ -59,13 +59,15 @@ namespace Agro_UES
         private void CargarStockBajo()
         {
             dgvStocBajo.Rows.Clear();
+
             using (var conn = ConexionDB.Conexion())
             {
                 conn.Open();
                 string sql = @"SELECT p.nombre, p.stock, c.nombre_categoria
-                               FROM productos p
-                               JOIN categorias c ON p.categoria_id = c.id_categoria
-                               WHERE p.estado = 'Activo'";
+                       FROM productos p
+                       JOIN categorias c ON p.categoria_id = c.id_categoria
+                       WHERE p.estado IN ('Activo', 'Disponible')";
+
                 using (var cmd = new MySqlCommand(sql, conn))
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -87,6 +89,7 @@ namespace Agro_UES
                     }
                 }
             }
+
         }
 
         // Vencimientos: rojo (vencido), dorado (próximo)
@@ -98,18 +101,19 @@ namespace Agro_UES
             using (var conn = ConexionDB.Conexion())
             {
                 conn.Open();
-                string sql = @"SELECT nombre, fecha_vencimiento  
-                       FROM productos  
-                       WHERE fecha_vencimiento IS NOT NULL AND estado = 'Activo'";
+                string sql = @"SELECT nombre, fecha_vencimiento
+                       FROM productos
+                       WHERE fecha_vencimiento IS NOT NULL 
+                         AND estado IN ('Activo', 'Disponible')";
+
                 using (var cmd = new MySqlCommand(sql, conn))
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
                         string nombre = reader.GetString("nombre");
-
-                        // porfin arregle le error al leer fecha NULL o invalida
                         DateTime? fechaVencimiento = null;
+
                         int ordFecha = reader.GetOrdinal("fecha_vencimiento");
                         if (!reader.IsDBNull(ordFecha))
                             fechaVencimiento = reader.GetDateTime(ordFecha);
@@ -120,15 +124,17 @@ namespace Agro_UES
                             var row = dgvVecimientos.Rows[fila];
 
                             if (fechaVencimiento.Value < hoy)
-                                row.DefaultCellStyle.BackColor = Color.Tomato; // Vencido
+                                row.DefaultCellStyle.BackColor = Color.Tomato;
                             else if (fechaVencimiento.Value <= hoy.AddDays(10))
-                                row.DefaultCellStyle.BackColor = Color.Gold;   // Proximo a vencer
+                                row.DefaultCellStyle.BackColor = Color.Gold;
                         }
                     }
                 }
             }
 
         }
+
+        
 
         //  Solicitudes: amarillo (pendiente), azul (aprobado)
         private void CargarSolicitudes()
