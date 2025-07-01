@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-06-2025 a las 00:48:55
+-- Tiempo de generación: 01-07-2025 a las 04:21:16
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -53,6 +53,47 @@ INSERT INTO `aprobaciones` (`id_aprobacion`, `tipo_proceso`, `descripcion`, `est
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `aprobaciones_almacen`
+--
+
+CREATE TABLE `aprobaciones_almacen` (
+  `id_aprobacion` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `descripcion` text NOT NULL,
+  `precio` decimal(10,2) NOT NULL,
+  `stock` int(11) NOT NULL,
+  `fecha_vencimiento` date DEFAULT NULL,
+  `estado` enum('Pendiente','Aprobada','Rechazada') DEFAULT 'Pendiente',
+  `usuario_solicita` int(11) NOT NULL,
+  `nombre_solicita` varchar(100) DEFAULT NULL,
+  `fecha_solicita` datetime DEFAULT current_timestamp(),
+  `usuario_responde` int(11) DEFAULT NULL,
+  `nombre_responde` varchar(100) DEFAULT NULL,
+  `fecha_respuesta` datetime DEFAULT NULL,
+  `observacion` text DEFAULT NULL,
+  `ruta_imagen` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `aprobaciones_almacen`
+--
+
+INSERT INTO `aprobaciones_almacen` (`id_aprobacion`, `id_producto`, `descripcion`, `precio`, `stock`, `fecha_vencimiento`, `estado`, `usuario_solicita`, `nombre_solicita`, `fecha_solicita`, `usuario_responde`, `nombre_responde`, `fecha_respuesta`, `observacion`, `ruta_imagen`) VALUES
+(1, 2, 'Herramienta para labranza', 13.75, 17, '2060-04-12', 'Aprobada', 3, 'Almacen', '2025-06-29 18:59:32', 2, 'Gerente', '2025-06-29 20:35:59', NULL, NULL),
+(10, 1, 'Cambio de descripción para producto 1', 4.25, 20, '2025-12-01', 'Pendiente', 3, 'Almacen', '2025-06-29 20:48:05', NULL, NULL, NULL, NULL, NULL),
+(11, 2, 'Actualización de precio para producto 2', 9.90, 15, '2025-10-15', 'Pendiente', 3, 'Almacen', '2025-06-29 20:48:05', NULL, NULL, NULL, NULL, NULL),
+(12, 3, 'Corrección de fecha de vencimiento', 6.40, 10, '2026-01-01', 'Pendiente', 3, 'Almacen', '2025-06-29 20:48:05', NULL, NULL, NULL, NULL, NULL),
+(13, 4, 'Stock corregido después de ajuste físico', 2.80, 35, '2025-11-10', 'Pendiente', 3, 'Almacen', '2025-06-29 20:48:05', NULL, NULL, NULL, NULL, NULL),
+(14, 1, 'Reetiquetado y nuevo precio sugerido', 7.50, 5, '2026-03-20', 'Pendiente', 3, 'Almacen', '2025-06-29 20:48:05', NULL, NULL, NULL, NULL, NULL),
+(15, 2, 'Modificación por error de carga original', 3.15, 8, '2025-09-05', 'Pendiente', 3, 'Almacen', '2025-06-29 20:48:05', NULL, NULL, NULL, NULL, NULL),
+(16, 3, 'Producto con promoción especial', 1.99, 50, '2025-12-31', 'Pendiente', 3, 'Almacen', '2025-06-29 20:48:05', NULL, NULL, NULL, NULL, NULL),
+(17, 4, 'Revisión de caducidad y stock por rotación', 5.60, 12, '2026-02-14', 'Pendiente', 3, 'Almacen', '2025-06-29 20:48:05', NULL, NULL, NULL, NULL, NULL),
+(18, 1, 'Fertilizante nitrogenado', 25.50, 50, '2025-11-07', 'Aprobada', 13, 'Bodega', '2025-06-30 18:17:23', 12, 'gerente', '2025-06-30 18:18:00', NULL, 'imagenes\\generate an image of.jpg'),
+(19, 0, 'semilla de arbol amarillo', 20.00, 5, '2026-03-20', 'Aprobada', 13, 'Bodega', '2025-06-30 18:42:20', 12, 'gerente', '2025-06-30 19:33:25', NULL, 'imagenes\\generate an image of.png');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `categorias`
 --
 
@@ -70,7 +111,7 @@ INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `estado`) VALUES
 (1, 'Fertilizantes', 'Activa'),
 (2, 'Herramientas', 'Activa'),
 (3, 'Semillas', 'Activa'),
-(5, 'asas', 'Inactiva');
+(5, 'Azas', 'Activa');
 
 -- --------------------------------------------------------
 
@@ -241,20 +282,70 @@ INSERT INTO `historial_acciones` (`id_historial`, `usuario_id`, `nombre_usuario`
 (95, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 13:52:55'),
 (96, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 13:55:12'),
 (97, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 13:58:25'),
-(98, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:01:41'),
-(99, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-29 16:01:57'),
-(100, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:22:49'),
-(101, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:25:18'),
-(102, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:37:27'),
-(103, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:38:17'),
-(104, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:40:23'),
-(105, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:40:49'),
-(106, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:42:30'),
-(107, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:44:29'),
-(108, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:45:06'),
-(109, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:45:33'),
-(110, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:46:49'),
-(111, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-06-29 16:48:00');
+(98, 3, 'Almacen', 'Inicio de sesión en el sistema', '2025-06-29 18:58:52'),
+(99, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-29 19:07:40'),
+(100, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-29 19:10:39'),
+(101, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-29 19:13:14'),
+(102, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-29 19:15:20'),
+(103, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-29 19:27:48'),
+(104, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-29 19:29:21'),
+(105, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-29 19:32:30'),
+(106, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-29 19:36:30'),
+(107, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-29 19:43:38'),
+(108, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-29 19:46:30'),
+(109, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-29 19:54:03'),
+(110, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-29 20:16:58'),
+(111, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-29 20:20:13'),
+(112, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-29 20:28:59'),
+(113, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-29 20:35:54'),
+(114, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 14:25:49'),
+(115, 1, 'Admin', 'Registro nuevo usuario: gerente', '2025-06-30 14:26:15'),
+(116, 12, 'gerente', 'Inicio de sesión en el sistema', '2025-06-30 14:26:30'),
+(117, 12, 'gerente', 'Inicio de sesión en el sistema', '2025-06-30 14:43:33'),
+(118, 12, 'gerente', 'Inicio de sesión en el sistema', '2025-06-30 14:44:29'),
+(119, 12, 'gerente', 'Inicio de sesión en el sistema', '2025-06-30 14:46:14'),
+(120, 12, 'gerente', 'Inicio de sesión en el sistema', '2025-06-30 14:49:45'),
+(121, 12, 'gerente', 'Inicio de sesión en el sistema', '2025-06-30 14:51:44'),
+(122, 12, 'gerente', 'Inicio de sesión en el sistema', '2025-06-30 14:58:13'),
+(123, 12, 'gerente', 'Inicio de sesión en el sistema', '2025-06-30 16:16:22'),
+(124, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 16:17:30'),
+(125, 1, 'Admin', 'Registro nuevo usuario: Bodega', '2025-06-30 16:18:03'),
+(126, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 16:18:37'),
+(127, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 16:25:38'),
+(128, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 16:31:54'),
+(129, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 16:33:04'),
+(130, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 16:57:45'),
+(131, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 16:59:38'),
+(132, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 17:03:24'),
+(133, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 17:55:10'),
+(134, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 17:57:01'),
+(135, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 18:00:40'),
+(136, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 18:04:05'),
+(137, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 18:11:42'),
+(138, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 18:17:11'),
+(139, 13, 'Bodega', 'Solicito modificacion del producto: Urea 46%', '2025-06-30 18:17:23'),
+(140, 12, 'gerente', 'Inicio de sesión en el sistema', '2025-06-30 18:17:49'),
+(141, 12, 'gerente', 'Aprob solicitud #18 – Producto ID: 1', '2025-06-30 18:18:00'),
+(142, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 18:36:17'),
+(143, 1, 'Admin', 'Registro nuevo usuario: Axel', '2025-06-30 18:37:17'),
+(144, 14, 'Axel', 'Inicio de sesión en el sistema', '2025-06-30 18:37:35'),
+(145, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 18:39:11'),
+(146, 13, 'Bodega', 'Solicito registro de producto: semilla sesamo', '2025-06-30 18:42:20'),
+(147, 12, 'gerente', 'Inicio de sesión en el sistema', '2025-06-30 18:43:43'),
+(148, 12, 'gerente', 'Inicio de sesión en el sistema', '2025-06-30 18:57:51'),
+(149, 12, 'gerente', 'Inicio de sesión en el sistema', '2025-06-30 19:19:53'),
+(150, 12, 'gerente', 'Inicio de sesión en el sistema', '2025-06-30 19:33:15'),
+(151, 12, 'gerente', '✔️ Aprobó modificación del producto ID 0 (solicitud #19)', '2025-06-30 19:33:25'),
+(152, 12, 'gerente', 'Inicio de sesión en el sistema', '2025-06-30 20:00:17'),
+(153, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 20:00:54'),
+(154, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 20:12:19'),
+(155, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 20:14:40'),
+(156, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 20:17:00'),
+(157, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 20:17:38'),
+(158, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 20:18:23'),
+(159, 13, 'Bodega (Encargado de Almacen)', 'Activo categoría ID 5', '2025-06-30 20:18:31'),
+(160, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 20:19:53'),
+(161, 13, 'Bodega (Encargado de Almacen)', 'Modifico categoria ID 5 → Azas', '2025-06-30 20:20:24');
 
 -- --------------------------------------------------------
 
@@ -292,8 +383,8 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id_producto`, `nombre`, `descripcion`, `categoria_id`, `precio`, `stock`, `fecha_vencimiento`, `alerta_bajo_stock`, `ruta_imagen`, `estado`) VALUES
-(1, 'Urea 46%', 'Fertilizante nitrogenado', 1, 25.50, 50, NULL, 0, NULL, 'Activo'),
-(2, 'Azadón', 'Herramienta para labranza', 2, 13.75, 17, NULL, 1, NULL, 'Activo'),
+(1, 'Urea 46%', 'Fertilizante nitrogenado', 1, 25.50, 50, '2025-11-07', 0, NULL, 'Activo'),
+(2, 'Azadón', 'Herramienta para labranza', 2, 13.75, 17, '2060-04-12', 1, NULL, 'Activo'),
 (3, 'Maíz H-59', 'Semilla híbrida de maíz', 3, 7.90, 100, NULL, 0, NULL, 'Activo'),
 (4, 'asas', 'asasasas', 1, 12.00, 1222, NULL, NULL, NULL, 'Activo');
 
@@ -384,6 +475,28 @@ CREATE TABLE `rol_permisos` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `solicitudes_devoluciones`
+--
+
+CREATE TABLE `solicitudes_devoluciones` (
+  `id_solicitud` int(11) NOT NULL,
+  `id_venta` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `cantidad_devuelta` int(11) NOT NULL,
+  `motivo` text NOT NULL,
+  `estado` enum('Pendiente','Aprobada','Rechazada') DEFAULT 'Pendiente',
+  `usuario_solicita` int(11) NOT NULL,
+  `nombre_solicita` varchar(100) DEFAULT NULL,
+  `fecha_solicita` datetime DEFAULT current_timestamp(),
+  `usuario_responde` int(11) DEFAULT NULL,
+  `nombre_responde` varchar(100) DEFAULT NULL,
+  `fecha_respuesta` datetime DEFAULT NULL,
+  `observacion` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuarios`
 --
 
@@ -403,12 +516,15 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `correo`, `contraseña_hash`, `rol_id`, `fecha_registro`, `estado`) VALUES
 (1, 'Admin', 'hm23052@ues.edu.sv', '9af15b336e6a9619928537df30b2e6a2376569fcf9d7e773eccede65606529a0', 1, '2025-06-22 15:39:12', 'activo'),
-(2, 'Gerente', 'gerente@agro.com', '98ec4ee87e461aa980d5ef58d68042c4a5b9b1d957bd04eac40f8b2fc582816a', 2, '2025-06-22 15:39:12', 'activo'),
-(3, 'Almacen', 'almacen@agro.com', 'c21bcb25ea64255e7e09e04b9284805717a116b5cafbf7e3257b47b0cc7607c1', 4, '2025-06-22 15:39:12', 'activo'),
+(2, 'Gerente', 'gerente@agro.com', '41c991eb6a66242c0454191244278183ce58cf4a6bcd372f799e4b9cc01886af', 2, '2025-06-22 15:39:12', 'activo'),
+(3, 'Almacen', 'almacen@agro.com', '41c991eb6a66242c0454191244278183ce58cf4a6bcd372f799e4b9cc01886af', 4, '2025-06-22 15:39:12', 'activo'),
 (4, 'Cajero', 'cajero@agro.com', 'd6a2cfcc09db01a0bc824ead5b03d12b6e8e3478480d34afefcf69a1c756478e', 3, '2025-06-22 15:39:12', 'activo'),
 (9, 'Josue Carlos', 'Carlos@agro.com', '84b2a5d834daee2fff7eb5e31f44ba68eb860d86d2cf8e37606a26fa775cf23b', 3, '2025-06-24 23:15:13', 'activo'),
 (10, 'Juan Carlos', 'dsadas@gmail.com', 'cbfad02f9ed2a8d1e08d8f74f5303e9eb93637d47f82ab6f1c15871cf8dd0481', 3, '2025-06-26 15:39:32', 'activo'),
-(11, 'Juancho', 'aaaaa@gmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 4, '2025-06-27 15:37:42', 'activo');
+(11, 'Juancho', 'aaaaa@gmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 4, '2025-06-27 15:37:42', 'activo'),
+(12, 'gerente', 'das', '888b19a43b151683c87895f6211d9f8640f97bdc8ef32f03dbe057c8f5e56d32', 2, '2025-06-30 14:26:15', 'activo'),
+(13, 'Bodega', 'bodega@dsa', '4fac6dbe26e823ed6edf999c63fab3507119cf3cbfb56036511aa62e258c35b4', 4, '2025-06-30 16:18:03', 'activo'),
+(14, 'Axel', 'alexmorapat4@gmail.com', 'cbfad02f9ed2a8d1e08d8f74f5303e9eb93637d47f82ab6f1c15871cf8dd0481', 3, '2025-06-30 18:37:17', 'activo');
 
 -- --------------------------------------------------------
 
@@ -440,6 +556,15 @@ INSERT INTO `ventas` (`id_venta`, `usuario_id`, `fecha_venta`, `total`) VALUES
 ALTER TABLE `aprobaciones`
   ADD PRIMARY KEY (`id_aprobacion`),
   ADD KEY `usuario_id` (`usuario_id`);
+
+--
+-- Indices de la tabla `aprobaciones_almacen`
+--
+ALTER TABLE `aprobaciones_almacen`
+  ADD PRIMARY KEY (`id_aprobacion`),
+  ADD KEY `id_producto` (`id_producto`),
+  ADD KEY `usuario_solicita` (`usuario_solicita`),
+  ADD KEY `usuario_responde` (`usuario_responde`);
 
 --
 -- Indices de la tabla `categorias`
@@ -526,6 +651,16 @@ ALTER TABLE `rol_permisos`
   ADD KEY `permiso_id` (`permiso_id`);
 
 --
+-- Indices de la tabla `solicitudes_devoluciones`
+--
+ALTER TABLE `solicitudes_devoluciones`
+  ADD PRIMARY KEY (`id_solicitud`),
+  ADD KEY `id_venta` (`id_venta`),
+  ADD KEY `id_producto` (`id_producto`),
+  ADD KEY `usuario_solicita` (`usuario_solicita`),
+  ADD KEY `usuario_responde` (`usuario_responde`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -549,6 +684,12 @@ ALTER TABLE `ventas`
 --
 ALTER TABLE `aprobaciones`
   MODIFY `id_aprobacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `aprobaciones_almacen`
+--
+ALTER TABLE `aprobaciones_almacen`
+  MODIFY `id_aprobacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `categorias`
@@ -578,7 +719,7 @@ ALTER TABLE `detalle_ventas`
 -- AUTO_INCREMENT de la tabla `historial_acciones`
 --
 ALTER TABLE `historial_acciones`
-  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos`
@@ -623,10 +764,16 @@ ALTER TABLE `rol_permisos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `solicitudes_devoluciones`
+--
+ALTER TABLE `solicitudes_devoluciones`
+  MODIFY `id_solicitud` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `ventas`
@@ -643,6 +790,14 @@ ALTER TABLE `ventas`
 --
 ALTER TABLE `aprobaciones`
   ADD CONSTRAINT `aprobaciones_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id_usuario`);
+
+--
+-- Filtros para la tabla `aprobaciones_almacen`
+--
+ALTER TABLE `aprobaciones_almacen`
+  ADD CONSTRAINT `aprobaciones_almacen_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id_producto`),
+  ADD CONSTRAINT `aprobaciones_almacen_ibfk_2` FOREIGN KEY (`usuario_solicita`) REFERENCES `usuarios` (`id_usuario`),
+  ADD CONSTRAINT `aprobaciones_almacen_ibfk_3` FOREIGN KEY (`usuario_responde`) REFERENCES `usuarios` (`id_usuario`);
 
 --
 -- Filtros para la tabla `compras`
@@ -695,6 +850,15 @@ ALTER TABLE `respaldos`
 ALTER TABLE `rol_permisos`
   ADD CONSTRAINT `rol_permisos_ibfk_1` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id_rol`),
   ADD CONSTRAINT `rol_permisos_ibfk_2` FOREIGN KEY (`permiso_id`) REFERENCES `permisos` (`id_permiso`);
+
+--
+-- Filtros para la tabla `solicitudes_devoluciones`
+--
+ALTER TABLE `solicitudes_devoluciones`
+  ADD CONSTRAINT `solicitudes_devoluciones_ibfk_1` FOREIGN KEY (`id_venta`) REFERENCES `ventas` (`id_venta`),
+  ADD CONSTRAINT `solicitudes_devoluciones_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id_producto`),
+  ADD CONSTRAINT `solicitudes_devoluciones_ibfk_3` FOREIGN KEY (`usuario_solicita`) REFERENCES `usuarios` (`id_usuario`),
+  ADD CONSTRAINT `solicitudes_devoluciones_ibfk_4` FOREIGN KEY (`usuario_responde`) REFERENCES `usuarios` (`id_usuario`);
 
 --
 -- Filtros para la tabla `usuarios`

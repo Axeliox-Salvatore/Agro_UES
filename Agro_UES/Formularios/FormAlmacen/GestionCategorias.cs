@@ -16,55 +16,74 @@ namespace Agro_UES.Formularios.FormAlmacen
     {
         private int idUsuarioActual;
         private string nombreUsuarioActual;
-        public GestionCategorias(int idUsuario, string nombreUsuario)
+        private string rolUsuarioActual;
+
+        public GestionCategorias(int idUsuario, string nombreUsuario, string rolUsuario)
         {
             InitializeComponent();
             idUsuarioActual = idUsuario;
             nombreUsuarioActual = nombreUsuario;
-        }
-        private void GestionCategorias_Load(object sender, EventArgs e)
-        {
-            CargarCategorias();
-        }
-        private void CargarCategorias()
-        {
-            cmbcategorias.Items.Clear();
+            rolUsuarioActual = rolUsuario;
 
+        }
+
+
+
+        private void RegistrarAccion(string descripcion)
+        {
             try
             {
                 using (var conn = ConexionDB.Conexion())
                 {
                     conn.Open();
-                    string sql = "SELECT id_categoria, nombre_categoria FROM categorias WHERE estado = 'Activa'";
+                    string sql = @"INSERT INTO historial_acciones  
+                           (usuario_id, nombre_usuario, accion, fecha_hora)
+                           VALUES (@id, @nombre, @accion, NOW())";
                     using (var cmd = new MySqlCommand(sql, conn))
-                    using (var reader = cmd.ExecuteReader())
                     {
-                        while (reader.Read())
-                        {
-                            cmbcategorias.Items.Add(new CategoriaComboItem
-                            {
-                                Id = reader.GetInt32("id_categoria"),
-                                Nombre = reader.GetString("nombre_categoria")
-                            });
-                        }
+                        cmd.Parameters.AddWithValue("@id", idUsuarioActual);
+                        cmd.Parameters.AddWithValue("@nombre", $"{nombreUsuarioActual} ({rolUsuarioActual})");
+                        cmd.Parameters.AddWithValue("@accion", descripcion);
+                        cmd.ExecuteNonQuery();
                     }
                 }
-                if (cmbcategorias.Items.Count > 0)
-                    cmbcategorias.SelectedIndex = 0;
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Error al cargar categorías: " + ex.Message);
+            
             }
         }
 
-        // Clase auxiliar para el ComboBox
-        private class CategoriaComboItem
+        private void CargarCategorias()
         {
-            public int Id { get; set; }
-            public string Nombre { get; set; }
-            public override string ToString() => Nombre;
+            dgvCategorias.Rows.Clear();
+
+            using (var conn = ConexionDB.Conexion())
+            {
+                conn.Open();
+                string sql = @"SELECT id_categoria, nombre_categoria, estado FROM categorias ORDER BY nombre_categoria";
+                using (var cmd = new MySqlCommand(sql, conn))
+                using (var rdr = cmd.ExecuteReader())
+                {
+                    while (rdr.Read())
+                    {
+                        int id = rdr.GetInt32("id_categoria");
+                        string nombre = rdr.GetString("nombre_categoria");
+                        string estado = rdr.GetString("estado");
+
+                        int idx = dgvCategorias.Rows.Add();
+                        var fila = dgvCategorias.Rows[idx];
+                        fila.Cells["colID"].Value = id;
+                        fila.Cells["colNombre"].Value = nombre;
+                        fila.Cells["colEstado"].Value = estado;
+                    }
+                }
+            }
+
+
         }
+
+
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -73,54 +92,38 @@ namespace Agro_UES.Formularios.FormAlmacen
 
         private void btnsolicitar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtcategoria.Text))
+            string nombre = txtNombre.Text.Trim();
+            if (string.IsNullOrWhiteSpace(nombre))
             {
-                MessageBox.Show("Ingrese el nombre de la nueva categoría.");
+                MessageBox.Show("Ingrese un nombre valido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            string nombreCategoria = txtcategoria.Text.Trim();
 
             try
             {
                 using (var conn = ConexionDB.Conexion())
                 {
                     conn.Open();
-                    using (var trans = conn.BeginTransaction())
+                    string sql = @"INSERT INTO categorias (nombre_categoria, estado)
+                                   VALUES (@nombre, 'Activa')";
+                    using (var cmd = new MySqlCommand(sql, conn))
                     {
-                        // 1. Insertar en categorias con estado 'Inactiva'
-                        string sqlCat = @"INSERT INTO categorias (nombre_categoria, estado) VALUES (@nombre, 'Inactiva')";
-                        using (var cmdCat = new MySqlCommand(sqlCat, conn, trans))
-                        {
-                            cmdCat.Parameters.AddWithValue("@nombre", nombreCategoria);
-                            cmdCat.ExecuteNonQuery();
-                        }
-
-                        // 2. Insertar solicitud en aprobaciones
-                        string descripcion = $"Solicitud de nueva categoría: {nombreCategoria}";
-                        string sqlAprob = @"INSERT INTO aprobaciones 
-                    (tipo_proceso, descripcion, estado, usuario_id, nombre_usuario_aprueba, fecha_hora)
-                    VALUES ('Nueva categoría', @desc, 'Pendiente', @uid, @nombre, NOW())";
-                        using (var cmdAprob = new MySqlCommand(sqlAprob, conn, trans))
-                        {
-                            cmdAprob.Parameters.AddWithValue("@desc", descripcion);
-                            cmdAprob.Parameters.AddWithValue("@uid", idUsuarioActual);
-                            cmdAprob.Parameters.AddWithValue("@nombre", nombreUsuarioActual);
-                            cmdAprob.ExecuteNonQuery();
-                        }
-
-                        trans.Commit();
+                        cmd.Parameters.AddWithValue("@nombre", nombre);
+                        cmd.ExecuteNonQuery();
                     }
                 }
 
-                MessageBox.Show("Solicitud enviada. La categoría quedará inactiva hasta aprobación del gerente.");
-                txtcategoria.Clear();
+                RegistrarAccion($"Agrego categoria: {nombre}");
+                MessageBox.Show("Categoría agregada correctamente.", "exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNombre.Clear();
                 CargarCategorias();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al solicitar la nueva categoría: " + ex.Message);
+                MessageBox.Show("Error al agregar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
         }
 
         private void GestionCategorias_Load_1(object sender, EventArgs e)
@@ -131,6 +134,105 @@ namespace Agro_UES.Formularios.FormAlmacen
         private void btnvolver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtcategoria_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dgvCategorias.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecciona una categoria primero.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int id = Convert.ToInt32(dgvCategorias.SelectedRows[0].Cells["colID"].Value);
+            string nuevoNombre = txtNombre.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(nuevoNombre))
+            {
+                MessageBox.Show("El nombre no puede estar vacio.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                using (var conn = ConexionDB.Conexion())
+                {
+                    conn.Open();
+                    string sql = @"UPDATE categorias SET nombre_categoria = @nombre WHERE id_categoria = @id";
+                    using (var cmd = new MySqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@nombre", nuevoNombre);
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                RegistrarAccion($"Modifico categoria ID {id} → {nuevoNombre}");
+                MessageBox.Show("Categoria modificada.", "exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNombre.Clear();
+                CargarCategorias();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al modificar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dgvCategorias.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecciona una categoría.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int id = Convert.ToInt32(dgvCategorias.SelectedRows[0].Cells["colID"].Value);
+            string estado = dgvCategorias.SelectedRows[0].Cells["colEstado"].Value.ToString();
+            string nuevoEstado = estado == "Activa" ? "Inactiva" : "Activa";
+
+            try
+            {
+                using (var conn = ConexionDB.Conexion())
+                {
+                    conn.Open();
+                    string sql = @"UPDATE categorias SET estado = @estado WHERE id_categoria = @id";
+                    using (var cmd = new MySqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@estado", nuevoEstado);
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                RegistrarAccion($"{(nuevoEstado == "Activa" ? "Activo" : "Inactivo")} categoría ID {id}");
+                MessageBox.Show($"Categoria actualizada: {nuevoEstado}.", "exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarCategorias();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cambiar estado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+     
+
+        private void dgvCategorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgvCategorias.Rows[e.RowIndex].Cells["colNombre"].Value != null)
+            {
+                txtNombre.Text = dgvCategorias.Rows[e.RowIndex].Cells["colNombre"].Value.ToString();
+            }
+
+
+
         }
     }
 }

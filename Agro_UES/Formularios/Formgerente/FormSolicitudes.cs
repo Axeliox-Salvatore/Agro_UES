@@ -19,56 +19,7 @@ namespace Agro_UES.Formularios.Formgerente
 {
     public partial class FormSolicitudes : Form
     {
-        private void lblSolicitudUsuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTipoProceso_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblDescripción_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEstado_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblFechaSolicitud_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAprobarProceso_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblStok_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblFechaVencimiento_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblIngresosMensuales_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblVentasMensuales_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void dgvSolicitudesPendientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -144,10 +95,19 @@ namespace Agro_UES.Formularios.Formgerente
             using (var conn = ConexionDB.Conexion())
             {
                 conn.Open();
-                string sql = @"
-                    SELECT id_aprobacion, id_producto, descripcion, precio, stock, 
-                           fecha_vencimiento, estado, nombre_solicita, fecha_solicita,
-                           nombre_responde, fecha_respuesta
+                const string sql = @"
+                    SELECT
+                      id_aprobacion,
+                      id_producto,
+                      descripcion,
+                      precio,
+                      stock,
+                      fecha_vencimiento,
+                      estado,
+                      nombre_solicita,
+                      fecha_solicita,
+                      nombre_responde,
+                      fecha_respuesta
                     FROM aprobaciones_almacen
                     WHERE estado IN ('Aprobada','Rechazada')
                     ORDER BY fecha_respuesta DESC";
@@ -155,24 +115,35 @@ namespace Agro_UES.Formularios.Formgerente
                 using (var cmd = new MySqlCommand(sql, conn))
                 using (var rdr = cmd.ExecuteReader())
                 {
+                    int oProd = rdr.GetOrdinal("id_producto");
+                    int oDesc = rdr.GetOrdinal("descripcion");
+                    int oPrecio = rdr.GetOrdinal("precio");
+                    int oStock = rdr.GetOrdinal("stock");
+                    int oFechaVenc = rdr.GetOrdinal("fecha_vencimiento");
+                    int oEstado = rdr.GetOrdinal("estado");
+                    int oSolicita = rdr.GetOrdinal("nombre_solicita");
+                    int oFechaSol = rdr.GetOrdinal("fecha_solicita");
+                    int oRespNombre = rdr.GetOrdinal("nombre_responde");
+                    int oFechaResp = rdr.GetOrdinal("fecha_respuesta");
+
                     while (rdr.Read())
                     {
-                        int idProducto = rdr.GetInt32("id_producto");
-                        string descripcion = rdr.GetString("descripcion");
-                        decimal precio = rdr.GetDecimal("precio");
-                        int stock = rdr.GetInt32("stock");
-                        string venc = rdr.IsDBNull(rdr.GetOrdinal("fecha_vencimiento"))
-                                        ? "—"
-                                        : rdr.GetDateTime("fecha_vencimiento").ToShortDateString();
-                        string estado = rdr.GetString("estado");
-                        string solicitadoPor = rdr.GetString("nombre_solicita");
-                        string fechaSolicitud = rdr.GetDateTime("fecha_solicita").ToString("g");
-                        string aprobadoPor = rdr.IsDBNull(rdr.GetOrdinal("nombre_responde"))
-                                                ? "—"
-                                                : rdr.GetString("nombre_responde");
-                        string fechaRespuesta = rdr.IsDBNull(rdr.GetOrdinal("fecha_respuesta"))
-                                                ? "—"
-                                                : rdr.GetDateTime("fecha_respuesta").ToString("g");
+                        int idProducto = rdr.GetInt32(oProd);
+                        string descripcion = rdr.GetString(oDesc);
+                        decimal precio = rdr.GetDecimal(oPrecio);
+                        int stock = rdr.GetInt32(oStock);
+                        string vencimiento = rdr.IsDBNull(oFechaVenc)
+                            ? "—"
+                            : rdr.GetDateTime(oFechaVenc).ToShortDateString();
+                        string estado = rdr.GetString(oEstado);
+                        string solicita = rdr.GetString(oSolicita);
+                        string fechaSolicita = rdr.GetDateTime(oFechaSol).ToString("g");
+                        string aprobadoPor = rdr.IsDBNull(oRespNombre)
+                            ? "—"
+                            : rdr.GetString(oRespNombre);
+                        string fechaRespuesta = rdr.IsDBNull(oFechaResp)
+                            ? "—"
+                            : rdr.GetDateTime(oFechaResp).ToString("g");
 
                         int idx = dgvHistorialSolicitudes.Rows.Add();
                         var fila = dgvHistorialSolicitudes.Rows[idx];
@@ -180,18 +151,20 @@ namespace Agro_UES.Formularios.Formgerente
                         fila.Cells["dgvHistDescripcion"].Value = descripcion;
                         fila.Cells["dgvHistPrecio"].Value = precio;
                         fila.Cells["dgvHistStock"].Value = stock;
-                        fila.Cells["dgvHistVencimiento"].Value = venc;
+                        fila.Cells["dgvHistVencimiento"].Value = vencimiento;
                         fila.Cells["dgvHistEstado"].Value = estado;
-                        fila.Cells["dgvHistSolicita"].Value = solicitadoPor;
-                        fila.Cells["dgvHistFechaSolicita"].Value = fechaSolicitud;
+                        fila.Cells["dgvHistSolicita"].Value = solicita;
+                        fila.Cells["dgvHistFechaSolicita"].Value = fechaSolicita;
                         fila.Cells["dgvHistAprobador"].Value = aprobadoPor;
                         fila.Cells["dgvHistFechaRespuesta"].Value = fechaRespuesta;
                     }
                 }
             }
 
-
         }
+
+
+  
 
 
 
@@ -203,9 +176,16 @@ namespace Agro_UES.Formularios.Formgerente
             using (var conn = ConexionDB.Conexion())
             {
                 conn.Open();
-                string sql = @"
-                    SELECT id_aprobacion, id_producto, descripcion, precio, stock, 
-                           fecha_vencimiento, nombre_solicita, fecha_solicita
+                const string sql = @"
+                    SELECT
+                      id_aprobacion,
+                      id_producto,
+                      descripcion,
+                      precio,
+                      stock,
+                      fecha_vencimiento,
+                      nombre_solicita,
+                      fecha_solicita
                     FROM aprobaciones_almacen
                     WHERE estado = 'Pendiente'
                     ORDER BY fecha_solicita DESC";
@@ -213,18 +193,27 @@ namespace Agro_UES.Formularios.Formgerente
                 using (var cmd = new MySqlCommand(sql, conn))
                 using (var rdr = cmd.ExecuteReader())
                 {
+                    int oIdAprob = rdr.GetOrdinal("id_aprobacion");
+                    int oIdProd = rdr.GetOrdinal("id_producto");
+                    int oDesc = rdr.GetOrdinal("descripcion");
+                    int oPrecio = rdr.GetOrdinal("precio");
+                    int oStock = rdr.GetOrdinal("stock");
+                    int oFechaVenc = rdr.GetOrdinal("fecha_vencimiento");
+                    int oSolicita = rdr.GetOrdinal("nombre_solicita");
+                    int oFechaSol = rdr.GetOrdinal("fecha_solicita");
+
                     while (rdr.Read())
                     {
-                        int idAprobacion = rdr.GetInt32("id_aprobacion");
-                        int idProducto = rdr.GetInt32("id_producto");
-                        string descripcion = rdr.GetString("descripcion");
-                        decimal precio = rdr.GetDecimal("precio");
-                        int stock = rdr.GetInt32("stock");
-                        string fechaVenc = rdr.IsDBNull(rdr.GetOrdinal("fecha_vencimiento"))
-                                            ? "—"
-                                            : rdr.GetDateTime("fecha_vencimiento").ToShortDateString();
-                        string usuario = rdr.GetString("nombre_solicita");
-                        string fechaSolicitud = rdr.GetDateTime("fecha_solicita").ToString("g");
+                        int idAprobacion = rdr.GetInt32(oIdAprob);
+                        int idProducto = rdr.GetInt32(oIdProd);
+                        string descripcion = rdr.GetString(oDesc);
+                        decimal precio = rdr.GetDecimal(oPrecio);
+                        int stock = rdr.GetInt32(oStock);
+                        string fechaVencimiento = rdr.IsDBNull(oFechaVenc)
+                            ? "—"
+                            : rdr.GetDateTime(oFechaVenc).ToShortDateString();
+                        string solicita = rdr.GetString(oSolicita);
+                        string fechaSol = rdr.GetDateTime(oFechaSol).ToString("g");
 
                         int idx = dgvSolicitudesPendientes.Rows.Add();
                         var fila = dgvSolicitudesPendientes.Rows[idx];
@@ -232,16 +221,19 @@ namespace Agro_UES.Formularios.Formgerente
                         fila.Cells["dgvDescripcion"].Value = descripcion;
                         fila.Cells["dgvPrecio"].Value = precio;
                         fila.Cells["dgvStock"].Value = stock;
-                        fila.Cells["dgvFechaVencimiento"].Value = fechaVenc;
-                        fila.Cells["dgvSolicita"].Value = usuario;
-                        fila.Cells["dgvFechaSolicitud"].Value = fechaSolicitud;
+                        fila.Cells["dgvFechaVencimiento"].Value = fechaVencimiento;
+                        fila.Cells["dgvSolicita"].Value = solicita;
+                        fila.Cells["dgvFechaSolicitud"].Value = fechaSol;
                         fila.Tag = idAprobacion;
                     }
                 }
             }
 
-
         }
+
+
+
+     
 
         private void dgvSolicitudesPendientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -295,91 +287,114 @@ namespace Agro_UES.Formularios.Formgerente
                 return;
             }
 
-            var fila = dgvSolicitudesPendientes.SelectedRows[0];
-            int idAprobacion = Convert.ToInt32(fila.Tag);
+            int idAprobacion = Convert.ToInt32(dgvSolicitudesPendientes
+                .SelectedRows[0].Tag);
+            int idProducto;
+            string descripcion;
+            decimal precio;
+            int stock;
+            DateTime? vencimiento;
+            string rutaImagen;
 
             using (var conn = ConexionDB.Conexion())
             {
                 conn.Open();
 
-                // 1) Leer datos de la solicitud en aprobaciones_almacen
-                string sql = @"SELECT * FROM aprobaciones_almacen WHERE id_aprobacion = @id";
-                var cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@id", idAprobacion);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-
-                if (!rdr.Read())
+                // 1. Leer solicitud completa
+                const string selectSql = @"
+            SELECT id_producto, descripcion, precio, stock, fecha_vencimiento, ruta_imagen
+              FROM aprobaciones_almacen
+             WHERE id_aprobacion = @id";
+                using (var cmd = new MySqlCommand(selectSql, conn))
                 {
-                    MessageBox.Show("Solicitud no encontrada.");
-                    return;
+                    cmd.Parameters.AddWithValue("@id", idAprobacion);
+                    using (var rdr = cmd.ExecuteReader())
+                    {
+                        if (!rdr.Read())
+                        {
+                            MessageBox.Show("Solicitud no encontrada.");
+                            return;
+                        }
+
+                        int oIdProd = rdr.GetOrdinal("id_producto");
+                        int oDesc = rdr.GetOrdinal("descripcion");
+                        int oPrecio = rdr.GetOrdinal("precio");
+                        int oStock = rdr.GetOrdinal("stock");
+                        int oVenc = rdr.GetOrdinal("fecha_vencimiento");
+                        int oImg = rdr.GetOrdinal("ruta_imagen");
+
+                        idProducto = rdr.GetInt32(oIdProd);
+                        descripcion = rdr.GetString(oDesc);
+                        precio = rdr.GetDecimal(oPrecio);
+                        stock = rdr.GetInt32(oStock);
+
+                        if (rdr.IsDBNull(oVenc))
+                            vencimiento = null;
+                        else
+                            vencimiento = rdr.GetDateTime(oVenc);
+
+                        rutaImagen = rdr.IsDBNull(oImg)
+                            ? null
+                            : rdr.GetString(oImg);
+                    }
                 }
 
-                int idProducto = rdr.GetInt32("id_producto");
-                string descripcion = rdr.GetString("descripcion");
-                decimal precio = rdr.GetDecimal("precio");
-                int stock = rdr.GetInt32("stock");
-
-                // Correccion aqui: extraemos fecha_vencimiento de forma segura y compatible
-                DateTime? vencimiento = null;
-                int ordinalVenc = rdr.GetOrdinal("fecha_vencimiento");
-                if (!rdr.IsDBNull(ordinalVenc))
-                    vencimiento = rdr.GetDateTime(ordinalVenc);
-
-                rdr.Close();
-
-                // 2) Verificar si el producto ya existe
-                sql = "SELECT COUNT(*) FROM productos WHERE id_producto = @id";
-                cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@id", idProducto);
-                long existe = (long)cmd.ExecuteScalar();
-
-                if (existe == 0)
+                // 2. Actualizar tabla productos
+                const string updateProdSql = @"
+            UPDATE productos
+               SET descripcion      = @desc,
+                   precio           = @precio,
+                   stock            = @stock,
+                   fecha_vencimiento= @venc,
+                   ruta_imagen      = @img
+             WHERE id_producto     = @idProd";
+                using (var cmd = new MySqlCommand(updateProdSql, conn))
                 {
-                    // Insertar nuevo producto si no existe
-                    sql = @"INSERT INTO productos 
-                    (id_producto, descripcion, categoria_id, precio, stock, fecha_vencimiento)
-                    VALUES (@id, @desc, 1, @precio, @stock, @fecha)";
-                }
-                else
-                {
-                    // Actualizar producto existente
-                    sql = @"UPDATE productos 
-                    SET descripcion = @desc,
-                        precio = @precio,
-                        stock = @stock,
-                        fecha_vencimiento = @fecha
-                    WHERE id_producto = @id";
+                    cmd.Parameters.AddWithValue("@desc", descripcion);
+                    cmd.Parameters.AddWithValue("@precio", precio);
+                    cmd.Parameters.AddWithValue("@stock", stock);
+                    cmd.Parameters.AddWithValue(
+                        "@venc",
+                        vencimiento.HasValue ? (object)vencimiento.Value : DBNull.Value
+                    );
+                    cmd.Parameters.AddWithValue(
+                        "@img",
+                        rutaImagen ?? (object)DBNull.Value
+                    );
+                    cmd.Parameters.AddWithValue("@idProd", idProducto);
+                    cmd.ExecuteNonQuery();
                 }
 
-                cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@id", idProducto);
-                cmd.Parameters.AddWithValue("@desc", descripcion);
-                cmd.Parameters.AddWithValue("@precio", precio);
-                cmd.Parameters.AddWithValue("@stock", stock);
-                cmd.Parameters.AddWithValue("@fecha", vencimiento.HasValue ? (object)vencimiento.Value : DBNull.Value);
-                cmd.ExecuteNonQuery();
-
-                // 3) Marcar la solicitud como Aprobada
-                sql = @"UPDATE aprobaciones_almacen 
-                SET estado = 'Aprobada', 
-                    usuario_responde = @uId, 
-                    nombre_responde = @nombre, 
-                    fecha_respuesta = NOW()
-                WHERE id_aprobacion = @idAprob";
-
-                cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@uId", idAprobador);
-                cmd.Parameters.AddWithValue("@nombre", nombreAprobador);
-                cmd.Parameters.AddWithValue("@idAprob", idAprobacion);
-                cmd.ExecuteNonQuery();
-
-                // 4) Historial de acción
-                RegistrarAccion($"Aprob solicitud #{idAprobacion} – Producto ID: {idProducto}");
+                // 3. Marcar solicitud como Aprobada
+                const string updateAprSql = @"
+            UPDATE aprobaciones_almacen
+               SET estado          = 'Aprobada',
+                   usuario_responde = @uid,
+                   nombre_responde  = @nombre,
+                   fecha_respuesta  = NOW()
+             WHERE id_aprobacion  = @idAprob";
+                using (var cmd = new MySqlCommand(updateAprSql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@uid", idAprobador);
+                    cmd.Parameters.AddWithValue("@nombre", nombreAprobador);
+                    cmd.Parameters.AddWithValue("@idAprob", idAprobacion);
+                    cmd.ExecuteNonQuery();
+                }
             }
 
-            MessageBox.Show("La solicitud fue aprobada y el producto ha sido actualizado correctamente.", "Aprobacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // 4. Registrar en historial
+            RegistrarAccion(
+                $"✔️ Aprobó modificación del producto ID {idProducto} (solicitud #{idAprobacion})"
+            );
+
+            MessageBox.Show(
+                "✅ Solicitud aprobada correctamente.",
+                "Aprobación", MessageBoxButtons.OK, MessageBoxIcon.Information
+            );
+
             CargarPendientes();
             CargarHistorial();
+
 
         }
 
@@ -393,10 +408,12 @@ namespace Agro_UES.Formularios.Formgerente
                 return;
             }
 
-            var fila = dgvSolicitudesPendientes.SelectedRows[0];
-            int idAprobacion = Convert.ToInt32(fila.Tag);
+            int idAprobacion = Convert.ToInt32(dgvSolicitudesPendientes
+                .SelectedRows[0].Tag);
+            string motivo = Microsoft.VisualBasic.Interaction.InputBox(
+                "Indica la razón del rechazo:", "Rechazar solicitud", "No especificado"
+            );
 
-            string motivo = Microsoft.VisualBasic.Interaction.InputBox("Indica la razon del rechazo:", "Rechazar solicitud", "No especificado");
             if (string.IsNullOrWhiteSpace(motivo))
             {
                 MessageBox.Show("Se requiere una observacion para rechazar.");
@@ -407,29 +424,35 @@ namespace Agro_UES.Formularios.Formgerente
             {
                 conn.Open();
 
-                string sql = @"UPDATE aprobaciones_almacen 
-                       SET estado = 'Rechazada',
-                           observacion = @obs,
-                           usuario_responde = @id,
-                           nombre_responde = @nombre,
-                           fecha_respuesta = NOW()
-                       WHERE id_aprobacion = @idAprob";
-
+                const string sql = @"
+            UPDATE aprobaciones_almacen
+               SET estado          = 'Rechazada',
+                   observacion     = @obs,
+                   usuario_responde= @uid,
+                   nombre_responde = @nombre,
+                   fecha_respuesta = NOW()
+             WHERE id_aprobacion  = @idAprob";
                 using (var cmd = new MySqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@obs", motivo);
-                    cmd.Parameters.AddWithValue("@id", idAprobador);
+                    cmd.Parameters.AddWithValue("@uid", idAprobador);
                     cmd.Parameters.AddWithValue("@nombre", nombreAprobador);
                     cmd.Parameters.AddWithValue("@idAprob", idAprobacion);
                     cmd.ExecuteNonQuery();
                 }
-
-                RegistrarAccion($"Rechazo solicitud #{idAprobacion}. Motivo: {motivo}");
             }
 
-            MessageBox.Show("La solicitud fue rechazada.", "Solicitud rechazada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            RegistrarAccion($"Rechazo solicitud #{idAprobacion} – Motivo: {motivo}");
+
+            MessageBox.Show(
+                "Solicitud rechazada correctamente.",
+                "Rechazo", MessageBoxButtons.OK, MessageBoxIcon.Warning
+            );
+
             CargarPendientes();
             CargarHistorial();
+
+
 
 
         }

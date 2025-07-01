@@ -224,16 +224,18 @@ namespace Agro_UES
 
         private void btnactualizarinv_Click(object sender, EventArgs e)
         {
-            var frm = new ActualizarProductos(idUsuarioActual, nombreUsuarioActual);
+            var frm = new ActualizarProductos(idUsuarioActual, nombreUsuarioActual, rolUsuarioActual);
             frm.ShowDialog();
-            
+
+
         }
 
         private void btncategorias_Click(object sender, EventArgs e)
         {
-            var frm = new GestionCategorias(idUsuarioActual, nombreUsuarioActual);
-            frm.ShowDialog();
-            
+            var ventana = new GestionCategorias(idUsuarioActual, nombreUsuarioActual, rolUsuarioActual);
+            ventana.Show();
+
+
         }
 
         private void btnalertas_Click(object sender, EventArgs e)

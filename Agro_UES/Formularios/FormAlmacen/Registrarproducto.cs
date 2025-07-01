@@ -142,10 +142,10 @@ private void RegistrarAccion(string accion, MySqlConnection conn)
         private void btnregistro_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtproducto.Text) ||
-               string.IsNullOrWhiteSpace(txtdescripcion.Text) ||
-               cmbcategorias.SelectedItem == null ||
-               string.IsNullOrWhiteSpace(txtprecio.Text) ||
-               string.IsNullOrWhiteSpace(txtstock.Text))
+       string.IsNullOrWhiteSpace(txtdescripcion.Text) ||
+       cmbcategorias.SelectedItem == null ||
+       string.IsNullOrWhiteSpace(txtprecio.Text) ||
+       string.IsNullOrWhiteSpace(txtstock.Text))
             {
                 MessageBox.Show("Complete todos los campos requeridos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -178,50 +178,26 @@ private void RegistrarAccion(string accion, MySqlConnection conn)
                 {
                     conn.Open();
 
-                    if (rolUsuarioActual == "Super Administrador")
-                    {
-                        // 🟢 Insercion directa en productos si es el admin quien lo hace
-                        string sql = @"INSERT INTO productos 
+                    string sql = @"INSERT INTO productos 
                             (nombre, descripcion, categoria_id, precio, stock, fecha_vencimiento, 
                              ruta_imagen, estado)
-                            VALUES (@nombre, @desc, @cat, @precio, @stock, @venc, @img, 'Disponible')";
-                        using (var cmd = new MySqlCommand(sql, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@nombre", nombre);
-                            cmd.Parameters.AddWithValue("@desc", descripcion);
-                            cmd.Parameters.AddWithValue("@cat", categoriaId);
-                            cmd.Parameters.AddWithValue("@precio", precio);
-                            cmd.Parameters.AddWithValue("@stock", stock);
-                            cmd.Parameters.AddWithValue("@venc", fechaVencimiento);
-                            cmd.Parameters.AddWithValue("@img", rutaImagenRelativa ?? (object)DBNull.Value);
-                            cmd.ExecuteNonQuery();
-                        }
+                           VALUES 
+                            (@nombre, @desc, @cat, @precio, @stock, @venc, @img, 'Disponible')";
 
-                        RegistrarAccion("Registró producto directamente: " + nombre, conn);
-                        MessageBox.Show("Producto agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
+                    using (var cmd = new MySqlCommand(sql, conn))
                     {
-                        // Envio a aprobaciones_almacen
-                        string sql = @"INSERT INTO aprobaciones_almacen 
-                            (id_producto, descripcion, precio, stock, fecha_vencimiento, 
-                             usuario_solicita, nombre_solicita, ruta_imagen)
-                            VALUES (NULL, @desc, @precio, @stock, @venc, @uid, @uname, @img)";
-                        using (var cmd = new MySqlCommand(sql, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@desc", descripcion);
-                            cmd.Parameters.AddWithValue("@precio", precio);
-                            cmd.Parameters.AddWithValue("@stock", stock);
-                            cmd.Parameters.AddWithValue("@venc", fechaVencimiento);
-                            cmd.Parameters.AddWithValue("@uid", idUsuarioActual);
-                            cmd.Parameters.AddWithValue("@uname", nombreUsuarioActual);
-                            cmd.Parameters.AddWithValue("@img", rutaImagenRelativa ?? (object)DBNull.Value);
-                            cmd.ExecuteNonQuery();
-                        }
-
-                        RegistrarAccion("Solicito registro de producto: " + nombre, conn);
-                        MessageBox.Show("Solicitud enviada al gerente.", "Solicitud registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cmd.Parameters.AddWithValue("@nombre", nombre);
+                        cmd.Parameters.AddWithValue("@desc", descripcion);
+                        cmd.Parameters.AddWithValue("@cat", categoriaId);
+                        cmd.Parameters.AddWithValue("@precio", precio);
+                        cmd.Parameters.AddWithValue("@stock", stock);
+                        cmd.Parameters.AddWithValue("@venc", fechaVencimiento);
+                        cmd.Parameters.AddWithValue("@img", rutaImagenRelativa ?? (object)DBNull.Value);
+                        cmd.ExecuteNonQuery();
                     }
+
+                    RegistrarAccion("Registró producto: " + nombre, conn);
+                    MessageBox.Show("Producto agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 this.Close();
@@ -230,6 +206,7 @@ private void RegistrarAccion(string accion, MySqlConnection conn)
             {
                 MessageBox.Show("Error al registrar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
 
         }
 
