@@ -402,6 +402,7 @@ namespace Agro_UES.Formularios.Formgerente
 
         private void btnRechazarSolicitud_Click(object sender, EventArgs e)
         {
+
             if (dgvSolicitudesPendientes.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Selecciona una solicitud para rechazar.");
@@ -441,7 +442,7 @@ namespace Agro_UES.Formularios.Formgerente
                     cmd.ExecuteNonQuery();
                 }
             }
-
+            MessageBox.Show($"ID a rechazar: {idAprobacion}");
             RegistrarAccion($"Rechazo solicitud #{idAprobacion} – Motivo: {motivo}");
 
             MessageBox.Show(

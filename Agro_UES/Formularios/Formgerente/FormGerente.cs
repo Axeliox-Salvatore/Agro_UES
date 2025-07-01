@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Agro_UES.Formularios.FormReportes;
 using Agro_UES.Formularios.Formgerente;
+using Agro_UES.Formularios.FormLogin;
 
 namespace Agro_UES
 {
@@ -24,6 +25,7 @@ namespace Agro_UES
             idUsuarioActual = id;
             nombreUsuarioActual = nombre;
             rolUsuarioActual = rol;
+            lblBienvenida.Text = $"Bienvenido, {nombreUsuarioActual}";
 
 
         }
@@ -70,6 +72,16 @@ namespace Agro_UES
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy – HH:mm:ss");
+        }
+
+        private void FormGerente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SesionHelper.MarcarSesionInactiva(idUsuarioActual);
         }
     }
 }

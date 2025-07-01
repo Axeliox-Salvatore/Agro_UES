@@ -14,6 +14,8 @@ using Agro_UES.Formularios.FormCrearUsuario;
 using System.Diagnostics;
 using System.IO;
 using Agro_UES.Formularios.FormReportes;
+using Agro_UES.Formularios.FormCajero;
+using Agro_UES.Formularios.FormLogin;
 
 namespace Agro_UES
 {
@@ -536,14 +538,9 @@ namespace Agro_UES
         {
             OcultarTodosLosPaneles();
             panelResumenGeneral.Visible = true;
-   
-
-
         }
 
-        private void panelResumenGeneral_Paint(object sender, PaintEventArgs e)
-        {
-        }
+        
         
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
@@ -771,6 +768,38 @@ namespace Agro_UES
         private void panelHistorial_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        
+
+        
+
+        private void panelResumenGeneral_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnGerencia_Click(object sender, EventArgs e)
+        {
+            FormGerente ventana = new FormGerente(idUsuarioActual, nombreUsuarioActual, rolUsuarioActual);
+            ventana.Show();
+        }
+
+        private void btnCaja_Click(object sender, EventArgs e)
+        {
+            FormCajero0 ventana1 = new FormCajero0(idUsuarioActual, nombreUsuarioActual, rolUsuarioActual);
+            ventana1.Show();
+        }
+
+        private void btnAlmacen_Click(object sender, EventArgs e)
+        {
+            FormAlmacen ventana2 = new FormAlmacen(idUsuarioActual, nombreUsuarioActual, rolUsuarioActual);
+            ventana2.Show();
+        }
+
+        private void FormSuperAdmin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SesionHelper.MarcarSesionInactiva(idUsuarioActual);
         }
 
         /**********Estilo para que se adapten los paneles***************/

@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelEncabezadoGerente = new System.Windows.Forms.Panel();
-            this.btnNotificaciones = new System.Windows.Forms.Button();
-            this.btnCambiarPIN = new System.Windows.Forms.Button();
-            this.lblHora = new System.Windows.Forms.Label();
-            this.lblBienvenida = new System.Windows.Forms.Label();
             this.lblNombreSistema = new System.Windows.Forms.Label();
             this.panelOpcionesGerente = new System.Windows.Forms.Panel();
-            this.btnReportes = new System.Windows.Forms.Button();
-            this.btnProcesos = new System.Windows.Forms.Button();
-            this.btnEstadísticasDesempeño = new System.Windows.Forms.Button();
-            this.panelPrincipalGerente = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnEstadísticasDesempeño = new System.Windows.Forms.Button();
+            this.btnProcesos = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.panelPrincipalGerente = new System.Windows.Forms.Panel();
+            this.lblBienvenida = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelEncabezadoGerente.SuspendLayout();
             this.panelOpcionesGerente.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -49,8 +49,6 @@
             // panelEncabezadoGerente
             // 
             this.panelEncabezadoGerente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(242)))), ((int)(((byte)(234)))));
-            this.panelEncabezadoGerente.Controls.Add(this.btnNotificaciones);
-            this.panelEncabezadoGerente.Controls.Add(this.btnCambiarPIN);
             this.panelEncabezadoGerente.Controls.Add(this.lblHora);
             this.panelEncabezadoGerente.Controls.Add(this.lblBienvenida);
             this.panelEncabezadoGerente.Controls.Add(this.lblNombreSistema);
@@ -59,43 +57,6 @@
             this.panelEncabezadoGerente.Name = "panelEncabezadoGerente";
             this.panelEncabezadoGerente.Size = new System.Drawing.Size(1254, 95);
             this.panelEncabezadoGerente.TabIndex = 1;
-            // 
-            // btnNotificaciones
-            // 
-            this.btnNotificaciones.BackColor = System.Drawing.Color.Ivory;
-            this.btnNotificaciones.Location = new System.Drawing.Point(760, 44);
-            this.btnNotificaciones.Name = "btnNotificaciones";
-            this.btnNotificaciones.Size = new System.Drawing.Size(75, 23);
-            this.btnNotificaciones.TabIndex = 3;
-            this.btnNotificaciones.Text = "button1";
-            this.btnNotificaciones.UseVisualStyleBackColor = false;
-            // 
-            // btnCambiarPIN
-            // 
-            this.btnCambiarPIN.Location = new System.Drawing.Point(384, 52);
-            this.btnCambiarPIN.Name = "btnCambiarPIN";
-            this.btnCambiarPIN.Size = new System.Drawing.Size(75, 23);
-            this.btnCambiarPIN.TabIndex = 3;
-            this.btnCambiarPIN.Text = "Cambiar";
-            this.btnCambiarPIN.UseVisualStyleBackColor = true;
-            // 
-            // lblHora
-            // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.Location = new System.Drawing.Point(652, 44);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(44, 16);
-            this.lblHora.TabIndex = 2;
-            this.lblHora.Text = "label1";
-            // 
-            // lblBienvenida
-            // 
-            this.lblBienvenida.AutoSize = true;
-            this.lblBienvenida.Location = new System.Drawing.Point(274, 51);
-            this.lblBienvenida.Name = "lblBienvenida";
-            this.lblBienvenida.Size = new System.Drawing.Size(44, 16);
-            this.lblBienvenida.TabIndex = 2;
-            this.lblBienvenida.Text = "label1";
             // 
             // lblNombreSistema
             // 
@@ -116,47 +77,17 @@
             this.panelOpcionesGerente.Size = new System.Drawing.Size(227, 689);
             this.panelOpcionesGerente.TabIndex = 2;
             // 
-            // btnReportes
+            // flowLayoutPanel1
             // 
-            this.btnReportes.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnReportes.FlatAppearance.BorderSize = 0;
-            this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.YellowGreen;
-            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnReportes.ForeColor = System.Drawing.Color.White;
-            this.btnReportes.Image = global::Agro_UES.Properties.Resources.icons8_estadísticas_321;
-            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(3, 236);
-            this.btnReportes.Margin = new System.Windows.Forms.Padding(3, 20, 3, 20);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(219, 68);
-            this.btnReportes.TabIndex = 9;
-            this.btnReportes.Text = "Reportes ";
-            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReportes.UseVisualStyleBackColor = false;
-            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
-            // 
-            // btnProcesos
-            // 
-            this.btnProcesos.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnProcesos.FlatAppearance.BorderSize = 0;
-            this.btnProcesos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnProcesos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.YellowGreen;
-            this.btnProcesos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcesos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnProcesos.ForeColor = System.Drawing.Color.White;
-            this.btnProcesos.Image = global::Agro_UES.Properties.Resources.icons8_requisito_50;
-            this.btnProcesos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProcesos.Location = new System.Drawing.Point(3, 128);
-            this.btnProcesos.Margin = new System.Windows.Forms.Padding(3, 20, 3, 20);
-            this.btnProcesos.Name = "btnProcesos";
-            this.btnProcesos.Size = new System.Drawing.Size(219, 68);
-            this.btnProcesos.TabIndex = 7;
-            this.btnProcesos.Text = "Solicitudes de \r\naprobación";
-            this.btnProcesos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnProcesos.UseVisualStyleBackColor = false;
-            this.btnProcesos.Click += new System.EventHandler(this.btnProcesos_Click);
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(227)))), ((int)(((byte)(196)))));
+            this.flowLayoutPanel1.Controls.Add(this.btnEstadísticasDesempeño);
+            this.flowLayoutPanel1.Controls.Add(this.btnProcesos);
+            this.flowLayoutPanel1.Controls.Add(this.btnReportes);
+            this.flowLayoutPanel1.Controls.Add(this.btnSalir);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 6);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(224, 656);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnEstadísticasDesempeño
             // 
@@ -179,26 +110,47 @@
             this.btnEstadísticasDesempeño.UseVisualStyleBackColor = false;
             this.btnEstadísticasDesempeño.Click += new System.EventHandler(this.btnEstadísticasDesempeño_Click);
             // 
-            // panelPrincipalGerente
+            // btnProcesos
             // 
-            this.panelPrincipalGerente.BackColor = System.Drawing.Color.Honeydew;
-            this.panelPrincipalGerente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPrincipalGerente.Location = new System.Drawing.Point(227, 95);
-            this.panelPrincipalGerente.Name = "panelPrincipalGerente";
-            this.panelPrincipalGerente.Size = new System.Drawing.Size(1027, 689);
-            this.panelPrincipalGerente.TabIndex = 3;
+            this.btnProcesos.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnProcesos.FlatAppearance.BorderSize = 0;
+            this.btnProcesos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnProcesos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.YellowGreen;
+            this.btnProcesos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcesos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btnProcesos.ForeColor = System.Drawing.Color.White;
+            this.btnProcesos.Image = global::Agro_UES.Properties.Resources.icons8_requisito_50;
+            this.btnProcesos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProcesos.Location = new System.Drawing.Point(3, 128);
+            this.btnProcesos.Margin = new System.Windows.Forms.Padding(3, 20, 3, 20);
+            this.btnProcesos.Name = "btnProcesos";
+            this.btnProcesos.Size = new System.Drawing.Size(219, 68);
+            this.btnProcesos.TabIndex = 7;
+            this.btnProcesos.Text = "Solicitudes de \r\naprobación";
+            this.btnProcesos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnProcesos.UseVisualStyleBackColor = false;
+            this.btnProcesos.Click += new System.EventHandler(this.btnProcesos_Click);
             // 
-            // flowLayoutPanel1
+            // btnReportes
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(227)))), ((int)(((byte)(196)))));
-            this.flowLayoutPanel1.Controls.Add(this.btnEstadísticasDesempeño);
-            this.flowLayoutPanel1.Controls.Add(this.btnProcesos);
-            this.flowLayoutPanel1.Controls.Add(this.btnReportes);
-            this.flowLayoutPanel1.Controls.Add(this.btnSalir);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 6);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(224, 656);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.btnReportes.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.YellowGreen;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btnReportes.ForeColor = System.Drawing.Color.White;
+            this.btnReportes.Image = global::Agro_UES.Properties.Resources.icons8_estadísticas_321;
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(3, 236);
+            this.btnReportes.Margin = new System.Windows.Forms.Padding(3, 20, 3, 20);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(219, 68);
+            this.btnReportes.TabIndex = 9;
+            this.btnReportes.Text = "Reportes ";
+            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReportes.UseVisualStyleBackColor = false;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // btnSalir
             // 
@@ -216,6 +168,39 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // panelPrincipalGerente
+            // 
+            this.panelPrincipalGerente.BackColor = System.Drawing.Color.Honeydew;
+            this.panelPrincipalGerente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPrincipalGerente.Location = new System.Drawing.Point(227, 95);
+            this.panelPrincipalGerente.Name = "panelPrincipalGerente";
+            this.panelPrincipalGerente.Size = new System.Drawing.Size(1027, 689);
+            this.panelPrincipalGerente.TabIndex = 3;
+            // 
+            // lblBienvenida
+            // 
+            this.lblBienvenida.AutoSize = true;
+            this.lblBienvenida.Location = new System.Drawing.Point(398, 52);
+            this.lblBienvenida.Name = "lblBienvenida";
+            this.lblBienvenida.Size = new System.Drawing.Size(44, 16);
+            this.lblBienvenida.TabIndex = 2;
+            this.lblBienvenida.Text = "label1";
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Location = new System.Drawing.Point(626, 52);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(44, 16);
+            this.lblHora.TabIndex = 2;
+            this.lblHora.Text = "label1";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormGerente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -227,6 +212,7 @@
             this.Name = "FormGerente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormGerente";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormGerente_FormClosing);
             this.panelEncabezadoGerente.ResumeLayout(false);
             this.panelEncabezadoGerente.PerformLayout();
             this.panelOpcionesGerente.ResumeLayout(false);
@@ -238,10 +224,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelEncabezadoGerente;
-        private System.Windows.Forms.Button btnNotificaciones;
-        private System.Windows.Forms.Button btnCambiarPIN;
-        private System.Windows.Forms.Label lblHora;
-        private System.Windows.Forms.Label lblBienvenida;
         private System.Windows.Forms.Label lblNombreSistema;
         private System.Windows.Forms.Panel panelOpcionesGerente;
         private System.Windows.Forms.Button btnEstadísticasDesempeño;
@@ -250,5 +232,8 @@
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Label lblBienvenida;
+        private System.Windows.Forms.Timer timer1;
     }
 }

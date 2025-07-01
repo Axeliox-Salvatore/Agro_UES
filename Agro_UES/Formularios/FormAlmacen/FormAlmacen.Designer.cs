@@ -431,6 +431,7 @@
             this.Name = "FormAlmacen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAlmacen";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormAlmacen_FormClosing);
             this.panelLateral.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panelSuperior.ResumeLayout(false);

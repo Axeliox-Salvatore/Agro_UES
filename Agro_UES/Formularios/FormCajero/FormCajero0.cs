@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Agro_UES.Formularios.FormDevolucion;
+using Agro_UES.Formularios.FormLogin;
 using Microsoft.VisualBasic;
 using MySql.Data.MySqlClient;
 
@@ -372,6 +373,11 @@ namespace Agro_UES.Formularios.FormCajero
         private void timerCajero_Tick(object sender, EventArgs e)
         {
             lblFechaYHora.Text = DateTime.Now.ToString("dddd dd/MM/yyyy - hh:mm:ss tt");
+        }
+
+        private void FormCajero0_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SesionHelper.MarcarSesionInactiva(idUsuarioActual);
         }
     }
 }

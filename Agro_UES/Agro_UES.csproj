@@ -183,6 +183,7 @@
     <Compile Include="Formularios\FormLogin\FormRecuperar\FormRecuperar.Designer.cs">
       <DependentUpon>FormRecuperar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormLogin\SesionHelper.cs" />
     <Compile Include="Formularios\FormReportes\FormReportes.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Agro_UES.Formularios.FormAlmacen;
+using Agro_UES.Formularios.FormLogin;
 using MySql.Data.MySqlClient;
 
 namespace Agro_UES
@@ -255,6 +256,9 @@ namespace Agro_UES
 
         }
 
-        
+        private void FormAlmacen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SesionHelper.MarcarSesionInactiva(idUsuarioActual);
+        }
     }
 }

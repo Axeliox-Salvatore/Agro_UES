@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-07-2025 a las 04:21:16
+-- Tiempo de generación: 01-07-2025 a las 07:53:14
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -80,7 +80,7 @@ CREATE TABLE `aprobaciones_almacen` (
 
 INSERT INTO `aprobaciones_almacen` (`id_aprobacion`, `id_producto`, `descripcion`, `precio`, `stock`, `fecha_vencimiento`, `estado`, `usuario_solicita`, `nombre_solicita`, `fecha_solicita`, `usuario_responde`, `nombre_responde`, `fecha_respuesta`, `observacion`, `ruta_imagen`) VALUES
 (1, 2, 'Herramienta para labranza', 13.75, 17, '2060-04-12', 'Aprobada', 3, 'Almacen', '2025-06-29 18:59:32', 2, 'Gerente', '2025-06-29 20:35:59', NULL, NULL),
-(10, 1, 'Cambio de descripción para producto 1', 4.25, 20, '2025-12-01', 'Pendiente', 3, 'Almacen', '2025-06-29 20:48:05', NULL, NULL, NULL, NULL, NULL),
+(10, 1, 'Cambio de descripción para producto 1', 4.25, 20, '2025-12-01', 'Rechazada', 3, 'Almacen', '2025-06-29 20:48:05', 2, 'Gerente', '2025-06-30 21:11:10', 'No especificado', NULL),
 (11, 2, 'Actualización de precio para producto 2', 9.90, 15, '2025-10-15', 'Pendiente', 3, 'Almacen', '2025-06-29 20:48:05', NULL, NULL, NULL, NULL, NULL),
 (12, 3, 'Corrección de fecha de vencimiento', 6.40, 10, '2026-01-01', 'Pendiente', 3, 'Almacen', '2025-06-29 20:48:05', NULL, NULL, NULL, NULL, NULL),
 (13, 4, 'Stock corregido después de ajuste físico', 2.80, 35, '2025-11-10', 'Pendiente', 3, 'Almacen', '2025-06-29 20:48:05', NULL, NULL, NULL, NULL, NULL),
@@ -345,7 +345,38 @@ INSERT INTO `historial_acciones` (`id_historial`, `usuario_id`, `nombre_usuario`
 (158, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 20:18:23'),
 (159, 13, 'Bodega (Encargado de Almacen)', 'Activo categoría ID 5', '2025-06-30 20:18:31'),
 (160, 13, 'Bodega', 'Inicio de sesión en el sistema', '2025-06-30 20:19:53'),
-(161, 13, 'Bodega (Encargado de Almacen)', 'Modifico categoria ID 5 → Azas', '2025-06-30 20:20:24');
+(161, 13, 'Bodega (Encargado de Almacen)', 'Modifico categoria ID 5 → Azas', '2025-06-30 20:20:24'),
+(162, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-30 20:46:22'),
+(163, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-30 20:59:16'),
+(164, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-30 21:10:57'),
+(165, 2, 'Gerente', 'Rechazo solicitud #10 – Motivo: No especificado', '2025-06-30 21:11:12'),
+(166, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 21:29:27'),
+(167, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 21:40:22'),
+(168, 1, 'Admin', 'Genero respaldo de la base de datos', '2025-06-30 21:41:00'),
+(169, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 21:53:01'),
+(170, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 21:53:33'),
+(171, 1, 'Admin', 'Genero respaldo de la base de datos', '2025-06-30 21:53:49'),
+(172, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-30 21:55:47'),
+(173, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 21:56:08'),
+(174, 1, 'Admin', 'Genero respaldo de la base de datos', '2025-06-30 21:56:22'),
+(175, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 21:57:16'),
+(176, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 22:01:46'),
+(177, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 22:02:24'),
+(178, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 22:16:29'),
+(179, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 22:31:43'),
+(180, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 22:33:50'),
+(181, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 22:41:55'),
+(182, 1, 'Admin', 'Desactivo al usuario: Josue Carlos', '2025-06-30 22:42:09'),
+(183, 1, 'Admin', 'Desactivo al usuario: Cajero', '2025-06-30 22:44:51'),
+(184, 4, 'Cajero', 'Inicio de sesión en el sistema', '2025-06-30 22:46:28'),
+(185, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 22:55:00'),
+(186, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 22:56:39'),
+(187, 1, 'Admin', 'Reactivo al usuario: Cajero', '2025-06-30 22:56:58'),
+(188, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-30 23:04:22'),
+(189, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-30 23:21:17'),
+(190, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 23:26:33'),
+(191, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 23:35:00'),
+(192, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 23:43:17');
 
 -- --------------------------------------------------------
 
@@ -423,7 +454,8 @@ CREATE TABLE `recuperacion_password` (
 
 INSERT INTO `recuperacion_password` (`id`, `usuario_id`, `codigo`, `fecha_solicitud`, `usado`, `usuario_modifico`) VALUES
 (1, 1, '995449', '2025-06-22 18:09:40', 0, NULL),
-(2, 1, '474219', '2025-06-22 18:43:53', 1, NULL);
+(2, 1, '474219', '2025-06-22 18:43:53', 1, NULL),
+(3, 1, '350051', '2025-06-30 21:41:36', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -507,24 +539,25 @@ CREATE TABLE `usuarios` (
   `contraseña_hash` varchar(255) NOT NULL,
   `rol_id` int(11) NOT NULL,
   `fecha_registro` datetime DEFAULT current_timestamp(),
-  `estado` enum('activo','inactivo') DEFAULT 'activo'
+  `estado` enum('activo','inactivo') DEFAULT 'activo',
+  `sesion` enum('activa','inactiva') NOT NULL DEFAULT 'inactiva'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `nombre`, `correo`, `contraseña_hash`, `rol_id`, `fecha_registro`, `estado`) VALUES
-(1, 'Admin', 'hm23052@ues.edu.sv', '9af15b336e6a9619928537df30b2e6a2376569fcf9d7e773eccede65606529a0', 1, '2025-06-22 15:39:12', 'activo'),
-(2, 'Gerente', 'gerente@agro.com', '41c991eb6a66242c0454191244278183ce58cf4a6bcd372f799e4b9cc01886af', 2, '2025-06-22 15:39:12', 'activo'),
-(3, 'Almacen', 'almacen@agro.com', '41c991eb6a66242c0454191244278183ce58cf4a6bcd372f799e4b9cc01886af', 4, '2025-06-22 15:39:12', 'activo'),
-(4, 'Cajero', 'cajero@agro.com', 'd6a2cfcc09db01a0bc824ead5b03d12b6e8e3478480d34afefcf69a1c756478e', 3, '2025-06-22 15:39:12', 'activo'),
-(9, 'Josue Carlos', 'Carlos@agro.com', '84b2a5d834daee2fff7eb5e31f44ba68eb860d86d2cf8e37606a26fa775cf23b', 3, '2025-06-24 23:15:13', 'activo'),
-(10, 'Juan Carlos', 'dsadas@gmail.com', 'cbfad02f9ed2a8d1e08d8f74f5303e9eb93637d47f82ab6f1c15871cf8dd0481', 3, '2025-06-26 15:39:32', 'activo'),
-(11, 'Juancho', 'aaaaa@gmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 4, '2025-06-27 15:37:42', 'activo'),
-(12, 'gerente', 'das', '888b19a43b151683c87895f6211d9f8640f97bdc8ef32f03dbe057c8f5e56d32', 2, '2025-06-30 14:26:15', 'activo'),
-(13, 'Bodega', 'bodega@dsa', '4fac6dbe26e823ed6edf999c63fab3507119cf3cbfb56036511aa62e258c35b4', 4, '2025-06-30 16:18:03', 'activo'),
-(14, 'Axel', 'alexmorapat4@gmail.com', 'cbfad02f9ed2a8d1e08d8f74f5303e9eb93637d47f82ab6f1c15871cf8dd0481', 3, '2025-06-30 18:37:17', 'activo');
+INSERT INTO `usuarios` (`id_usuario`, `nombre`, `correo`, `contraseña_hash`, `rol_id`, `fecha_registro`, `estado`, `sesion`) VALUES
+(1, 'Admin', 'hm23052@ues.edu.sv', '41c991eb6a66242c0454191244278183ce58cf4a6bcd372f799e4b9cc01886af', 1, '2025-06-22 15:39:12', 'activo', 'activa'),
+(2, 'Gerente', 'gerente@agro.com', '41c991eb6a66242c0454191244278183ce58cf4a6bcd372f799e4b9cc01886af', 2, '2025-06-22 15:39:12', 'activo', 'inactiva'),
+(3, 'Almacen', 'almacen@agro.com', '41c991eb6a66242c0454191244278183ce58cf4a6bcd372f799e4b9cc01886af', 4, '2025-06-22 15:39:12', 'activo', 'inactiva'),
+(4, 'Cajero', 'cajero@agro.com', '41c991eb6a66242c0454191244278183ce58cf4a6bcd372f799e4b9cc01886af', 3, '2025-06-22 15:39:12', 'activo', 'inactiva'),
+(9, 'Josue Carlos', 'Carlos@agro.com', '84b2a5d834daee2fff7eb5e31f44ba68eb860d86d2cf8e37606a26fa775cf23b', 3, '2025-06-24 23:15:13', 'inactivo', 'inactiva'),
+(10, 'Juan Carlos', 'dsadas@gmail.com', 'cbfad02f9ed2a8d1e08d8f74f5303e9eb93637d47f82ab6f1c15871cf8dd0481', 3, '2025-06-26 15:39:32', 'activo', 'inactiva'),
+(11, 'Juancho', 'aaaaa@gmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 4, '2025-06-27 15:37:42', 'activo', 'inactiva'),
+(12, 'gerente', 'das', '888b19a43b151683c87895f6211d9f8640f97bdc8ef32f03dbe057c8f5e56d32', 2, '2025-06-30 14:26:15', 'activo', 'inactiva'),
+(13, 'Bodega', 'bodega@dsa', '4fac6dbe26e823ed6edf999c63fab3507119cf3cbfb56036511aa62e258c35b4', 4, '2025-06-30 16:18:03', 'activo', 'inactiva'),
+(14, 'Axel', 'alexmorapat4@gmail.com', 'cbfad02f9ed2a8d1e08d8f74f5303e9eb93637d47f82ab6f1c15871cf8dd0481', 3, '2025-06-30 18:37:17', 'activo', 'inactiva');
 
 -- --------------------------------------------------------
 
@@ -719,7 +752,7 @@ ALTER TABLE `detalle_ventas`
 -- AUTO_INCREMENT de la tabla `historial_acciones`
 --
 ALTER TABLE `historial_acciones`
-  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
+  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=193;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos`
@@ -743,7 +776,7 @@ ALTER TABLE `proveedores`
 -- AUTO_INCREMENT de la tabla `recuperacion_password`
 --
 ALTER TABLE `recuperacion_password`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `respaldos`
@@ -792,85 +825,11 @@ ALTER TABLE `aprobaciones`
   ADD CONSTRAINT `aprobaciones_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id_usuario`);
 
 --
--- Filtros para la tabla `aprobaciones_almacen`
---
-ALTER TABLE `aprobaciones_almacen`
-  ADD CONSTRAINT `aprobaciones_almacen_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id_producto`),
-  ADD CONSTRAINT `aprobaciones_almacen_ibfk_2` FOREIGN KEY (`usuario_solicita`) REFERENCES `usuarios` (`id_usuario`),
-  ADD CONSTRAINT `aprobaciones_almacen_ibfk_3` FOREIGN KEY (`usuario_responde`) REFERENCES `usuarios` (`id_usuario`);
-
---
 -- Filtros para la tabla `compras`
 --
 ALTER TABLE `compras`
   ADD CONSTRAINT `compras_ibfk_1` FOREIGN KEY (`proveedor_id`) REFERENCES `proveedores` (`id_proveedor`),
   ADD CONSTRAINT `compras_ibfk_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id_usuario`);
-
---
--- Filtros para la tabla `detalle_compras`
---
-ALTER TABLE `detalle_compras`
-  ADD CONSTRAINT `detalle_compras_ibfk_1` FOREIGN KEY (`compra_id`) REFERENCES `compras` (`id_compra`),
-  ADD CONSTRAINT `detalle_compras_ibfk_2` FOREIGN KEY (`producto_id`) REFERENCES `productos` (`id_producto`);
-
---
--- Filtros para la tabla `detalle_ventas`
---
-ALTER TABLE `detalle_ventas`
-  ADD CONSTRAINT `detalle_ventas_ibfk_1` FOREIGN KEY (`venta_id`) REFERENCES `ventas` (`id_venta`),
-  ADD CONSTRAINT `detalle_ventas_ibfk_2` FOREIGN KEY (`producto_id`) REFERENCES `productos` (`id_producto`);
-
---
--- Filtros para la tabla `historial_acciones`
---
-ALTER TABLE `historial_acciones`
-  ADD CONSTRAINT `historial_acciones_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id_usuario`);
-
---
--- Filtros para la tabla `productos`
---
-ALTER TABLE `productos`
-  ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`categoria_id`) REFERENCES `categorias` (`id_categoria`);
-
---
--- Filtros para la tabla `recuperacion_password`
---
-ALTER TABLE `recuperacion_password`
-  ADD CONSTRAINT `recuperacion_password_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id_usuario`);
-
---
--- Filtros para la tabla `respaldos`
---
-ALTER TABLE `respaldos`
-  ADD CONSTRAINT `respaldos_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id_usuario`);
-
---
--- Filtros para la tabla `rol_permisos`
---
-ALTER TABLE `rol_permisos`
-  ADD CONSTRAINT `rol_permisos_ibfk_1` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id_rol`),
-  ADD CONSTRAINT `rol_permisos_ibfk_2` FOREIGN KEY (`permiso_id`) REFERENCES `permisos` (`id_permiso`);
-
---
--- Filtros para la tabla `solicitudes_devoluciones`
---
-ALTER TABLE `solicitudes_devoluciones`
-  ADD CONSTRAINT `solicitudes_devoluciones_ibfk_1` FOREIGN KEY (`id_venta`) REFERENCES `ventas` (`id_venta`),
-  ADD CONSTRAINT `solicitudes_devoluciones_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id_producto`),
-  ADD CONSTRAINT `solicitudes_devoluciones_ibfk_3` FOREIGN KEY (`usuario_solicita`) REFERENCES `usuarios` (`id_usuario`),
-  ADD CONSTRAINT `solicitudes_devoluciones_ibfk_4` FOREIGN KEY (`usuario_responde`) REFERENCES `usuarios` (`id_usuario`);
-
---
--- Filtros para la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id_rol`);
-
---
--- Filtros para la tabla `ventas`
---
-ALTER TABLE `ventas`
-  ADD CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id_usuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

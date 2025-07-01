@@ -437,6 +437,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormCajero0";
             this.Text = "pa";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCajero0_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

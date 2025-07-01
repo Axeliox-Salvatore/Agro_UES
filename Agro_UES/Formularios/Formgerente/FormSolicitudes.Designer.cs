@@ -30,6 +30,7 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnRechazarSolicitud = new System.Windows.Forms.Button();
             this.dgvSolicitudesPendientes = new System.Windows.Forms.DataGridView();
             this.dgvIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,6 +39,7 @@
             this.dgvFechaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSolicita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvFechaSolicitud = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAprobarProceso = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvHistorialSolicitudes = new System.Windows.Forms.DataGridView();
@@ -51,8 +53,6 @@
             this.dgvHistFechaSolicita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvHistAprobador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvHistFechaRespuesta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnRechazarSolicitud = new System.Windows.Forms.Button();
-            this.btnAprobarProceso = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudesPendientes)).BeginInit();
             this.panel3.SuspendLayout();
@@ -82,6 +82,23 @@
             this.label1.Size = new System.Drawing.Size(239, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Pendiente de aprobar/rechazar";
+            // 
+            // btnRechazarSolicitud
+            // 
+            this.btnRechazarSolicitud.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnRechazarSolicitud.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRechazarSolicitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRechazarSolicitud.ForeColor = System.Drawing.Color.White;
+            this.btnRechazarSolicitud.Image = global::Agro_UES.Properties.Resources.rechazo;
+            this.btnRechazarSolicitud.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRechazarSolicitud.Location = new System.Drawing.Point(639, 30);
+            this.btnRechazarSolicitud.Name = "btnRechazarSolicitud";
+            this.btnRechazarSolicitud.Size = new System.Drawing.Size(130, 40);
+            this.btnRechazarSolicitud.TabIndex = 14;
+            this.btnRechazarSolicitud.Text = "Rechazar";
+            this.btnRechazarSolicitud.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRechazarSolicitud.UseVisualStyleBackColor = false;
+            this.btnRechazarSolicitud.Click += new System.EventHandler(this.btnRechazarSolicitud_Click);
             // 
             // dgvSolicitudesPendientes
             // 
@@ -158,6 +175,23 @@
             this.dgvFechaSolicitud.MinimumWidth = 6;
             this.dgvFechaSolicitud.Name = "dgvFechaSolicitud";
             this.dgvFechaSolicitud.ReadOnly = true;
+            // 
+            // btnAprobarProceso
+            // 
+            this.btnAprobarProceso.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnAprobarProceso.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAprobarProceso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAprobarProceso.ForeColor = System.Drawing.Color.White;
+            this.btnAprobarProceso.Image = global::Agro_UES.Properties.Resources.aprobar;
+            this.btnAprobarProceso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAprobarProceso.Location = new System.Drawing.Point(842, 30);
+            this.btnAprobarProceso.Name = "btnAprobarProceso";
+            this.btnAprobarProceso.Size = new System.Drawing.Size(130, 40);
+            this.btnAprobarProceso.TabIndex = 14;
+            this.btnAprobarProceso.Text = "Aprobar";
+            this.btnAprobarProceso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAprobarProceso.UseVisualStyleBackColor = false;
+            this.btnAprobarProceso.Click += new System.EventHandler(this.btnAprobarProceso_Click);
             // 
             // panel3
             // 
@@ -280,40 +314,6 @@
             this.dgvHistFechaRespuesta.MinimumWidth = 6;
             this.dgvHistFechaRespuesta.Name = "dgvHistFechaRespuesta";
             this.dgvHistFechaRespuesta.ReadOnly = true;
-            // 
-            // btnRechazarSolicitud
-            // 
-            this.btnRechazarSolicitud.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnRechazarSolicitud.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRechazarSolicitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRechazarSolicitud.ForeColor = System.Drawing.Color.White;
-            this.btnRechazarSolicitud.Image = global::Agro_UES.Properties.Resources.rechazo;
-            this.btnRechazarSolicitud.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRechazarSolicitud.Location = new System.Drawing.Point(639, 30);
-            this.btnRechazarSolicitud.Name = "btnRechazarSolicitud";
-            this.btnRechazarSolicitud.Size = new System.Drawing.Size(130, 40);
-            this.btnRechazarSolicitud.TabIndex = 14;
-            this.btnRechazarSolicitud.Text = "Rechazar";
-            this.btnRechazarSolicitud.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRechazarSolicitud.UseVisualStyleBackColor = false;
-            this.btnRechazarSolicitud.Click += new System.EventHandler(this.btnRechazarSolicitud_Click);
-            // 
-            // btnAprobarProceso
-            // 
-            this.btnAprobarProceso.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnAprobarProceso.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAprobarProceso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAprobarProceso.ForeColor = System.Drawing.Color.White;
-            this.btnAprobarProceso.Image = global::Agro_UES.Properties.Resources.aprobar;
-            this.btnAprobarProceso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAprobarProceso.Location = new System.Drawing.Point(842, 30);
-            this.btnAprobarProceso.Name = "btnAprobarProceso";
-            this.btnAprobarProceso.Size = new System.Drawing.Size(130, 40);
-            this.btnAprobarProceso.TabIndex = 14;
-            this.btnAprobarProceso.Text = "Aprobar";
-            this.btnAprobarProceso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAprobarProceso.UseVisualStyleBackColor = false;
-            this.btnAprobarProceso.Click += new System.EventHandler(this.btnAprobarProceso_Click);
             // 
             // FormSolicitudes
             // 
