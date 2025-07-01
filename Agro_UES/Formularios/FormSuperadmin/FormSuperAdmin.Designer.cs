@@ -1209,6 +1209,7 @@
             this.panelSuperior.Name = "panelSuperior";
             this.panelSuperior.Size = new System.Drawing.Size(1254, 92);
             this.panelSuperior.TabIndex = 0;
+            this.panelSuperior.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSuperior_Paint);
             // 
             // pictureBox4
             // 

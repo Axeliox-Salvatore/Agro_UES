@@ -802,6 +802,11 @@ namespace Agro_UES
             SesionHelper.MarcarSesionInactiva(idUsuarioActual);
         }
 
+        private void panelSuperior_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         /**********Estilo para que se adapten los paneles***************/
 
     }

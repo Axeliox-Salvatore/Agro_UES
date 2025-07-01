@@ -188,5 +188,14 @@ namespace Agro_UES.Formularios.FormEditarUsuario
             // Se cierra solo este formulario
         }
 
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

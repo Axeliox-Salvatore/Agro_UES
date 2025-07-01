@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-07-2025 a las 07:53:14
+-- Tiempo de generación: 01-07-2025 a las 11:02:22
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -116,36 +116,6 @@ INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `estado`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `compras`
---
-
-CREATE TABLE `compras` (
-  `id_compra` int(11) NOT NULL,
-  `proveedor_id` int(11) NOT NULL,
-  `usuario_id` int(11) NOT NULL,
-  `fecha_compra` datetime DEFAULT current_timestamp(),
-  `total` decimal(10,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `detalle_compras`
---
-
-CREATE TABLE `detalle_compras` (
-  `id_detalle` int(11) NOT NULL,
-  `compra_id` int(11) NOT NULL,
-  `producto_id` int(11) NOT NULL,
-  `nombre_producto` varchar(100) DEFAULT NULL,
-  `cantidad` int(11) NOT NULL,
-  `precio_unitario` decimal(10,2) NOT NULL,
-  `subtotal` decimal(10,2) GENERATED ALWAYS AS (`cantidad` * `precio_unitario`) STORED
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `detalle_ventas`
 --
 
@@ -164,7 +134,8 @@ CREATE TABLE `detalle_ventas` (
 --
 
 INSERT INTO `detalle_ventas` (`id_detalle`, `venta_id`, `producto_id`, `nombre_producto`, `cantidad`, `precio_unitario`) VALUES
-(1, 1, 2, 'Azadón', 3, 13.75);
+(1, 1, 2, 'Azadón', 3, 13.75),
+(2, 2, 5, 'Girasol', 1, 10.00);
 
 -- --------------------------------------------------------
 
@@ -376,19 +347,21 @@ INSERT INTO `historial_acciones` (`id_historial`, `usuario_id`, `nombre_usuario`
 (189, 2, 'Gerente', 'Inicio de sesión en el sistema', '2025-06-30 23:21:17'),
 (190, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 23:26:33'),
 (191, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 23:35:00'),
-(192, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 23:43:17');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `permisos`
---
-
-CREATE TABLE `permisos` (
-  `id_permiso` int(11) NOT NULL,
-  `nombre_permiso` varchar(100) NOT NULL,
-  `descripcion` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+(192, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-06-30 23:43:17'),
+(193, 1, 'Admin', 'Inicio de sesión en el sistema', '2025-07-01 00:33:07'),
+(194, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-07-01 01:23:04'),
+(195, 11, 'Juancho', 'Registró producto: Girasol', '2025-07-01 01:23:59'),
+(196, 11, 'Juancho', 'Inicio de sesión en el sistema', '2025-07-01 01:25:18'),
+(197, 4, 'Cajero', 'Inicio de sesión en el sistema', '2025-07-01 01:26:01'),
+(198, 4, 'Cajero', 'Inicio de sesión en el sistema', '2025-07-01 01:28:29'),
+(199, 4, 'Cajero', 'Inicio de sesión en el sistema', '2025-07-01 01:45:03'),
+(200, 3, 'Almacen', 'Inicio de sesión en el sistema', '2025-07-01 01:46:44'),
+(201, 4, 'Cajero', 'Inicio de sesión en el sistema', '2025-07-01 02:09:28'),
+(202, 4, 'Cajero', 'Inicio de sesión en el sistema', '2025-07-01 02:30:32'),
+(203, 4, 'Cajero', 'Inicio de sesión en el sistema', '2025-07-01 02:31:29'),
+(204, 4, 'Cajero', 'Inicio de sesión en el sistema', '2025-07-01 02:33:21'),
+(205, 4, 'Cajero', 'Inicio de sesión en el sistema', '2025-07-01 02:45:20'),
+(206, 4, 'Cajero', 'Venta realizada. Total: 11.30', '2025-07-01 02:46:31');
 
 -- --------------------------------------------------------
 
@@ -417,21 +390,8 @@ INSERT INTO `productos` (`id_producto`, `nombre`, `descripcion`, `categoria_id`,
 (1, 'Urea 46%', 'Fertilizante nitrogenado', 1, 25.50, 50, '2025-11-07', 0, NULL, 'Activo'),
 (2, 'Azadón', 'Herramienta para labranza', 2, 13.75, 17, '2060-04-12', 1, NULL, 'Activo'),
 (3, 'Maíz H-59', 'Semilla híbrida de maíz', 3, 7.90, 100, NULL, 0, NULL, 'Activo'),
-(4, 'asas', 'asasasas', 1, 12.00, 1222, NULL, NULL, NULL, 'Activo');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `proveedores`
---
-
-CREATE TABLE `proveedores` (
-  `id_proveedor` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `contacto` varchar(100) DEFAULT NULL,
-  `telefono` varchar(20) DEFAULT NULL,
-  `direccion` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+(4, 'asas', 'asasasas', 1, 12.00, 1222, NULL, NULL, NULL, 'Activo'),
+(5, 'Girasol', 'Semillas girasol', 3, 10.00, 7, '2025-10-10', 0, 'imagenes\\generate an image of.png', 'Disponible');
 
 -- --------------------------------------------------------
 
@@ -495,18 +455,6 @@ INSERT INTO `roles` (`id_rol`, `nombre_rol`, `descripcion`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `rol_permisos`
---
-
-CREATE TABLE `rol_permisos` (
-  `id` int(11) NOT NULL,
-  `rol_id` int(11) NOT NULL,
-  `permiso_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `solicitudes_devoluciones`
 --
 
@@ -548,10 +496,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `correo`, `contraseña_hash`, `rol_id`, `fecha_registro`, `estado`, `sesion`) VALUES
-(1, 'Admin', 'hm23052@ues.edu.sv', '41c991eb6a66242c0454191244278183ce58cf4a6bcd372f799e4b9cc01886af', 1, '2025-06-22 15:39:12', 'activo', 'activa'),
+(1, 'Admin', 'hm23052@ues.edu.sv', '41c991eb6a66242c0454191244278183ce58cf4a6bcd372f799e4b9cc01886af', 1, '2025-06-22 15:39:12', 'activo', 'inactiva'),
 (2, 'Gerente', 'gerente@agro.com', '41c991eb6a66242c0454191244278183ce58cf4a6bcd372f799e4b9cc01886af', 2, '2025-06-22 15:39:12', 'activo', 'inactiva'),
 (3, 'Almacen', 'almacen@agro.com', '41c991eb6a66242c0454191244278183ce58cf4a6bcd372f799e4b9cc01886af', 4, '2025-06-22 15:39:12', 'activo', 'inactiva'),
-(4, 'Cajero', 'cajero@agro.com', '41c991eb6a66242c0454191244278183ce58cf4a6bcd372f799e4b9cc01886af', 3, '2025-06-22 15:39:12', 'activo', 'inactiva'),
+(4, 'Cajero', 'cajero@agro.com', '41c991eb6a66242c0454191244278183ce58cf4a6bcd372f799e4b9cc01886af', 3, '2025-06-22 15:39:12', 'activo', 'activa'),
 (9, 'Josue Carlos', 'Carlos@agro.com', '84b2a5d834daee2fff7eb5e31f44ba68eb860d86d2cf8e37606a26fa775cf23b', 3, '2025-06-24 23:15:13', 'inactivo', 'inactiva'),
 (10, 'Juan Carlos', 'dsadas@gmail.com', 'cbfad02f9ed2a8d1e08d8f74f5303e9eb93637d47f82ab6f1c15871cf8dd0481', 3, '2025-06-26 15:39:32', 'activo', 'inactiva'),
 (11, 'Juancho', 'aaaaa@gmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 4, '2025-06-27 15:37:42', 'activo', 'inactiva'),
@@ -577,7 +525,8 @@ CREATE TABLE `ventas` (
 --
 
 INSERT INTO `ventas` (`id_venta`, `usuario_id`, `fecha_venta`, `total`) VALUES
-(1, 10, '2025-06-27 15:24:55', 46.61);
+(1, 10, '2025-06-27 15:24:55', 46.61),
+(2, 4, '2025-07-01 02:46:31', 11.30);
 
 --
 -- Índices para tablas volcadas
@@ -606,22 +555,6 @@ ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id_categoria`);
 
 --
--- Indices de la tabla `compras`
---
-ALTER TABLE `compras`
-  ADD PRIMARY KEY (`id_compra`),
-  ADD KEY `proveedor_id` (`proveedor_id`),
-  ADD KEY `usuario_id` (`usuario_id`);
-
---
--- Indices de la tabla `detalle_compras`
---
-ALTER TABLE `detalle_compras`
-  ADD PRIMARY KEY (`id_detalle`),
-  ADD KEY `compra_id` (`compra_id`),
-  ADD KEY `producto_id` (`producto_id`);
-
---
 -- Indices de la tabla `detalle_ventas`
 --
 ALTER TABLE `detalle_ventas`
@@ -637,23 +570,11 @@ ALTER TABLE `historial_acciones`
   ADD KEY `usuario_id` (`usuario_id`);
 
 --
--- Indices de la tabla `permisos`
---
-ALTER TABLE `permisos`
-  ADD PRIMARY KEY (`id_permiso`);
-
---
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`id_producto`),
   ADD KEY `categoria_id` (`categoria_id`);
-
---
--- Indices de la tabla `proveedores`
---
-ALTER TABLE `proveedores`
-  ADD PRIMARY KEY (`id_proveedor`);
 
 --
 -- Indices de la tabla `recuperacion_password`
@@ -674,14 +595,6 @@ ALTER TABLE `respaldos`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id_rol`);
-
---
--- Indices de la tabla `rol_permisos`
---
-ALTER TABLE `rol_permisos`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `rol_id` (`rol_id`),
-  ADD KEY `permiso_id` (`permiso_id`);
 
 --
 -- Indices de la tabla `solicitudes_devoluciones`
@@ -731,46 +644,22 @@ ALTER TABLE `categorias`
   MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `compras`
---
-ALTER TABLE `compras`
-  MODIFY `id_compra` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `detalle_compras`
---
-ALTER TABLE `detalle_compras`
-  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `detalle_ventas`
 --
 ALTER TABLE `detalle_ventas`
-  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `historial_acciones`
 --
 ALTER TABLE `historial_acciones`
-  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=193;
-
---
--- AUTO_INCREMENT de la tabla `permisos`
---
-ALTER TABLE `permisos`
-  MODIFY `id_permiso` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=207;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT de la tabla `proveedores`
---
-ALTER TABLE `proveedores`
-  MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `recuperacion_password`
@@ -791,12 +680,6 @@ ALTER TABLE `roles`
   MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `rol_permisos`
---
-ALTER TABLE `rol_permisos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `solicitudes_devoluciones`
 --
 ALTER TABLE `solicitudes_devoluciones`
@@ -812,7 +695,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
@@ -823,13 +706,6 @@ ALTER TABLE `ventas`
 --
 ALTER TABLE `aprobaciones`
   ADD CONSTRAINT `aprobaciones_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id_usuario`);
-
---
--- Filtros para la tabla `compras`
---
-ALTER TABLE `compras`
-  ADD CONSTRAINT `compras_ibfk_1` FOREIGN KEY (`proveedor_id`) REFERENCES `proveedores` (`id_proveedor`),
-  ADD CONSTRAINT `compras_ibfk_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id_usuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

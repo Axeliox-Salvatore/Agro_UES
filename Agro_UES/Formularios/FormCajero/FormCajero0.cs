@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Agro_UES.Formularios.FormDevolucion;
-using Agro_UES.Formularios.FormLogin;
 using Microsoft.VisualBasic;
 using MySql.Data.MySqlClient;
 
@@ -30,6 +29,7 @@ namespace Agro_UES.Formularios.FormCajero
             rolUsuarioActual = rolUsuario;
 
             lblNombreUsuario.Text = nombreUsuarioActual;
+            lblRol.Text = rolUsuarioActual;
             timerCajero.Tick += timerCajero_Tick;
             timerCajero.Start();
             //datos del datafrid
@@ -40,6 +40,10 @@ namespace Agro_UES.Formularios.FormCajero
             btnCancelar.Click += btnCancelar_Click;
             btnDevolucion.Click += btnDevolucion_Click_1;
             btnCerrar.Click += btnCerrar_Click;
+
+            CargarCategoriasEnPanel();
+            _ = CargarProductosAsync();
+
 
             _ = CargarProductosAsync();
         }
@@ -375,10 +379,197 @@ namespace Agro_UES.Formularios.FormCajero
             lblFechaYHora.Text = DateTime.Now.ToString("dddd dd/MM/yyyy - hh:mm:ss tt");
         }
 
-        private void FormCajero0_FormClosing(object sender, FormClosingEventArgs e)
+
+        //metodo para filtrar productos por nombre
+        private void button12_Click(object sender, EventArgs e)
         {
-            SesionHelper.MarcarSesionInactiva(idUsuarioActual);
+            string filtro = txtBuscar.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(filtro))
+            {
+                _ = CargarProductosAsync(); // Sin filtro, carga todo
+            }
+            else
+            {
+                _ = CargarProductosPorNombreAsync(filtro);
+            }
+
         }
+
+
+        private async Task CargarProductosPorNombreAsync(string filtro)
+        {
+            flpProductos.Controls.Clear();
+
+            try
+            {
+                using (var conn = ConexionDB.Conexion())
+                {
+                    await conn.OpenAsync();
+                    string sql = @"
+                SELECT id_producto, nombre, precio, stock, IFNULL(ruta_imagen,'') AS ruta_imagen
+                  FROM productos
+                 WHERE stock > 0
+                   AND estado = 'Disponible'
+                   AND nombre LIKE @filtro
+                 ORDER BY nombre";
+
+                    using (var cmd = new MySqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@filtro", $"%{filtro}%");
+                        using (var rdr = await cmd.ExecuteReaderAsync())
+                        {
+                            while (await rdr.ReadAsync())
+                            {
+                                int id = rdr.GetInt32(rdr.GetOrdinal("id_producto"));
+                                string nombre = rdr.GetString(rdr.GetOrdinal("nombre"));
+                                decimal precio = rdr.GetDecimal(rdr.GetOrdinal("precio"));
+                                int stock = rdr.GetInt32(rdr.GetOrdinal("stock"));
+                                string imgPath = rdr.IsDBNull(rdr.GetOrdinal("ruta_imagen"))
+                                    ? null
+                                    : rdr.GetString(rdr.GetOrdinal("ruta_imagen"));
+
+                                var card = CrearCardProducto(id, nombre, precio, stock, imgPath);
+                                flpProductos.Controls.Add(card);
+
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar productos:\n" + ex.Message);
+            }
+        }
+
+
+
+        private void CargarCategoriasEnPanel()
+        {
+            flpCategorias.Controls.Clear();
+
+            // 🔹 Botón "Todos" primero
+            var btnTodos = new Button
+            {
+                Text = "Todos",
+                Tag = null, // Tag nulo indica que no hay filtro
+                Width = flpCategorias.Width - 20,
+                Height = 36,
+                FlatStyle = FlatStyle.Flat,
+                BackColor = Color.DarkOliveGreen,
+                ForeColor = Color.White,
+                Font = new Font("Segoe UI Semibold", 9),
+                TextAlign = ContentAlignment.MiddleLeft
+            };
+            btnTodos.FlatAppearance.BorderSize = 0;
+            btnTodos.Click += Categoria_Click;
+            flpCategorias.Controls.Add(btnTodos);
+
+            // 🔹 Resto de categorías activas
+            try
+            {
+                using (var conn = ConexionDB.Conexion())
+                {
+                    conn.Open();
+                    string sql = @"SELECT id_categoria, nombre_categoria FROM categorias WHERE estado = 'Activa' ORDER BY nombre_categoria";
+
+                    using (var cmd = new MySqlCommand(sql, conn))
+                    using (var rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            int idCat = rdr.GetInt32("id_categoria");
+                            string nombre = rdr.GetString("nombre_categoria");
+
+                            var btn = new Button
+                            {
+                                Text = nombre,
+                                Tag = idCat, // usaremos esto para filtrar
+                                Width = flpCategorias.Width - 20,
+                                Height = 36,
+                                FlatStyle = FlatStyle.Flat,
+                                BackColor = Color.DarkOliveGreen,
+                                ForeColor = Color.White,
+                                Font = new Font("Segoe UI Semibold", 9),
+                                TextAlign = ContentAlignment.MiddleLeft
+                            };
+                            btn.FlatAppearance.BorderSize = 0;
+                            btn.Click += Categoria_Click;
+                            flpCategorias.Controls.Add(btn);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar categorías: " + ex.Message);
+            }
+
+        }
+        private void Categoria_Click(object sender, EventArgs e)
+        {
+            var btn = sender as Button;
+            if (btn == null) return;
+
+            if (btn.Tag == null)
+            {
+                // Mostrar todos los productos
+                _ = CargarProductosAsync();
+            }
+            else
+            {
+                int idCategoria = (int)btn.Tag;
+                _ = CargarProductosPorCategoriaAsync(idCategoria);
+            }
+
+        }
+
+        private async Task CargarProductosPorCategoriaAsync(int idCategoria)
+        {
+            flpProductos.Controls.Clear();
+
+            try
+            {
+                using (var conn = ConexionDB.Conexion())
+                {
+                    await conn.OpenAsync();
+                    string sql = @"
+                SELECT id_producto, nombre, precio, stock, IFNULL(ruta_imagen, '') AS ruta_imagen
+                  FROM productos
+                 WHERE stock > 0 AND estado = 'Disponible' AND categoria_id = @cat
+                 ORDER BY nombre";
+
+                    using (var cmd = new MySqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@cat", idCategoria);
+                        using (var reader = await cmd.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                int id = reader.GetInt32(reader.GetOrdinal("id_producto"));
+                                string nombre = reader.GetString(reader.GetOrdinal("nombre"));
+                                decimal precio = reader.GetDecimal(reader.GetOrdinal("precio"));
+                                int stock = reader.GetInt32(reader.GetOrdinal("stock"));
+                                string imgPath = reader.IsDBNull(reader.GetOrdinal("ruta_imagen"))
+                                                 ? null
+                                                 : reader.GetString(reader.GetOrdinal("ruta_imagen"));
+
+                                var card = CrearCardProducto(id, nombre, precio, stock, imgPath);
+                                flpProductos.Controls.Add(card);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar productos por categoría:\n" + ex.Message);
+            }
+        }
+
+
+
     }
 }
 

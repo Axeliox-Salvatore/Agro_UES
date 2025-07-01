@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelEncabezadoGerente = new System.Windows.Forms.Panel();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.lblBienvenida = new System.Windows.Forms.Label();
             this.lblNombreSistema = new System.Windows.Forms.Label();
             this.panelOpcionesGerente = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -38,17 +40,18 @@
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.panelPrincipalGerente = new System.Windows.Forms.Panel();
-            this.lblBienvenida = new System.Windows.Forms.Label();
-            this.lblHora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelEncabezadoGerente.SuspendLayout();
             this.panelOpcionesGerente.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelEncabezadoGerente
             // 
             this.panelEncabezadoGerente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(242)))), ((int)(((byte)(234)))));
+            this.panelEncabezadoGerente.Controls.Add(this.pictureBox2);
             this.panelEncabezadoGerente.Controls.Add(this.lblHora);
             this.panelEncabezadoGerente.Controls.Add(this.lblBienvenida);
             this.panelEncabezadoGerente.Controls.Add(this.lblNombreSistema);
@@ -57,6 +60,24 @@
             this.panelEncabezadoGerente.Name = "panelEncabezadoGerente";
             this.panelEncabezadoGerente.Size = new System.Drawing.Size(1254, 95);
             this.panelEncabezadoGerente.TabIndex = 1;
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Location = new System.Drawing.Point(626, 52);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(44, 16);
+            this.lblHora.TabIndex = 2;
+            this.lblHora.Text = "label1";
+            // 
+            // lblBienvenida
+            // 
+            this.lblBienvenida.AutoSize = true;
+            this.lblBienvenida.Location = new System.Drawing.Point(398, 52);
+            this.lblBienvenida.Name = "lblBienvenida";
+            this.lblBienvenida.Size = new System.Drawing.Size(44, 16);
+            this.lblBienvenida.TabIndex = 2;
+            this.lblBienvenida.Text = "label1";
             // 
             // lblNombreSistema
             // 
@@ -177,29 +198,22 @@
             this.panelPrincipalGerente.Size = new System.Drawing.Size(1027, 689);
             this.panelPrincipalGerente.TabIndex = 3;
             // 
-            // lblBienvenida
-            // 
-            this.lblBienvenida.AutoSize = true;
-            this.lblBienvenida.Location = new System.Drawing.Point(398, 52);
-            this.lblBienvenida.Name = "lblBienvenida";
-            this.lblBienvenida.Size = new System.Drawing.Size(44, 16);
-            this.lblBienvenida.TabIndex = 2;
-            this.lblBienvenida.Text = "label1";
-            // 
-            // lblHora
-            // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.Location = new System.Drawing.Point(626, 52);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(44, 16);
-            this.lblHora.TabIndex = 2;
-            this.lblHora.Text = "label1";
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
+            this.pictureBox2.Image = global::Agro_UES.Properties.Resources.logo2;
+            this.pictureBox2.Location = new System.Drawing.Point(0, -2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(93, 94);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
             // 
             // FormGerente
             // 
@@ -217,6 +231,7 @@
             this.panelEncabezadoGerente.PerformLayout();
             this.panelOpcionesGerente.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -235,5 +250,6 @@
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblBienvenida;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
