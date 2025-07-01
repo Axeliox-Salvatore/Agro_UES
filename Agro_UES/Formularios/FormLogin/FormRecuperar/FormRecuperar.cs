@@ -222,5 +222,12 @@ namespace Agro_UES
             this.Resize += FormRecuperar_Escalar;
             FormRecuperar_Escalar(null, null);
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            FormLogin frmLogin = new FormLogin();
+            frmLogin.Show();
+            this.Close();
+        }
     }
 }

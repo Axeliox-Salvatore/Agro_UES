@@ -72,8 +72,9 @@ namespace Agro_UES.Formularios.FormAlmacen
             {
                 conn.Open();
                 string sql = @"SELECT id_producto, nombre, descripcion, precio, stock, fecha_vencimiento, ruta_imagen 
-                               FROM productos 
-                               WHERE estado = 'Activo'";
+               FROM productos 
+               WHERE estado IN ('Activo', 'Disponible')";
+
                 using (var cmd = new MySqlCommand(sql, conn))
                 using (var reader = cmd.ExecuteReader())
                 {

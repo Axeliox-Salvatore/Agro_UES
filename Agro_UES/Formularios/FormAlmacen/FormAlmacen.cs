@@ -133,9 +133,6 @@ namespace Agro_UES
             }
 
         }
-
-        
-
         //  Solicitudes: amarillo (pendiente), azul (aprobado)
         private void CargarSolicitudes()
         {
@@ -144,54 +141,62 @@ namespace Agro_UES
             using (var conn = ConexionDB.Conexion())
             {
                 conn.Open();
-                string sql = @"SELECT id_aprobacion, tipo_proceso, descripcion, estado, fecha_hora 
-                               FROM aprobaciones 
-                               ORDER BY fecha_hora DESC";
+                // Traigo sólo las columnas que existen en aprobaciones_almacen
+                string sql = @"
+SELECT 
+    id_aprobacion,
+    id_producto,
+    descripcion,
+    estado,
+    fecha_solicita
+FROM aprobaciones_almacen
+ORDER BY fecha_solicita DESC;";
+
                 using (var cmd = new MySqlCommand(sql, conn))
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
+                        // Leer campos
                         int id = reader.GetInt32("id_aprobacion");
-                        string tipo = reader.GetString("tipo_proceso");
+                        int idProducto = reader.GetInt32("id_producto");
                         string desc = reader.GetString("descripcion");
                         string estado = reader.GetString("estado");
 
-                        // aqui lo mismo que en el otro
+                        // Campo datetime que puede venir null
                         DateTime? fecha = null;
-                        int ordFecha = reader.GetOrdinal("fecha_hora");
-                        if (!reader.IsDBNull(ordFecha))
-                            fecha = reader.GetDateTime(ordFecha);
+                        int idxFecha = reader.GetOrdinal("fecha_solicita");
+                        if (!reader.IsDBNull(idxFecha))
+                            fecha = reader.GetDateTime(idxFecha);
 
+                        // Agrego la fila al grid (5 columnas)
                         int fila = dgvSolicitudes.Rows.Add(
                             id,
-                            tipo,
+                            idProducto,
                             desc,
                             estado,
                             fecha?.ToString("g") ?? "—"
                         );
 
+                        // Coloreo según el estado
                         var row = dgvSolicitudes.Rows[fila];
-
                         switch (estado.ToLower())
                         {
                             case "pendiente":
                                 row.DefaultCellStyle.BackColor = Color.Khaki;
                                 break;
-                            case "aprobado":
+                            case "aprobada":
                                 row.DefaultCellStyle.BackColor = Color.LightBlue;
                                 break;
-                            case "rechazado":
+                            case "rechazada":
                                 row.DefaultCellStyle.BackColor = Color.LightGray;
                                 row.DefaultCellStyle.ForeColor = Color.DimGray;
                                 break;
                         }
                     }
-
                 }
             }
         }
-
         private void RegistrarAccion(string descripcion)
         {
             try
@@ -224,9 +229,6 @@ namespace Agro_UES
         {
             var frm = new Registrarproducto(idUsuarioActual, nombreUsuarioActual, rolUsuarioActual);
             frm.ShowDialog();
-
-
-
         }
 
         private void btnactualizarinv_Click(object sender, EventArgs e)

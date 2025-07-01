@@ -44,7 +44,6 @@ namespace Agro_UES.Formularios.FormReportes
                 "Detalle de Ventas",
                 "Usuarios",
                 "Productos",
-                "Solicitudes de Devolucion",
                 "Aprobaciones de Almacen",
                 "Historial de Acciones"
 

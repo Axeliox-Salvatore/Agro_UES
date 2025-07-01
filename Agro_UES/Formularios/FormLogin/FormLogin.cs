@@ -202,9 +202,13 @@ WHERE u.correo = @id
          // Abrir el form pa recuperar la contraseñaa
          FormRecuperar frmRecup = new FormRecuperar();
          frmRecup.Show();
-         // Ocultar este form
             this.Hide();
        
+        }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

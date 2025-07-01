@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCambiarPIN = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblRol = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.flpCategorias = new System.Windows.Forms.FlowLayoutPanel();
             this.timerCajero = new System.Windows.Forms.Timer(this.components);
-            this.btnCambiarPIN = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
@@ -76,7 +76,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(242)))), ((int)(((byte)(234)))));
-            this.panel1.Controls.Add(this.btnCambiarPIN);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.lblRol);
             this.panel1.Controls.Add(this.lblNombreUsuario);
@@ -86,6 +85,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1254, 94);
             this.panel1.TabIndex = 0;
+            // 
+            // btnCambiarPIN
+            // 
+            this.btnCambiarPIN.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnCambiarPIN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambiarPIN.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnCambiarPIN.ForeColor = System.Drawing.Color.White;
+            this.btnCambiarPIN.Location = new System.Drawing.Point(324, 25);
+            this.btnCambiarPIN.Name = "btnCambiarPIN";
+            this.btnCambiarPIN.Padding = new System.Windows.Forms.Padding(5, 5, 10, 5);
+            this.btnCambiarPIN.Size = new System.Drawing.Size(99, 48);
+            this.btnCambiarPIN.TabIndex = 4;
+            this.btnCambiarPIN.Text = "PIN";
+            this.btnCambiarPIN.UseVisualStyleBackColor = false;
+            this.btnCambiarPIN.Click += new System.EventHandler(this.btnCambiarPIN_Click);
             // 
             // pictureBox4
             // 
@@ -134,8 +148,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(242)))), ((int)(((byte)(234)))));
+            this.panel2.Controls.Add(this.btnCambiarPIN);
             this.panel2.Controls.Add(this.btnEfectuarVenta);
-            this.panel2.Controls.Add(this.btnDevolucion);
             this.panel2.Controls.Add(this.btnCancelar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(167, 684);
@@ -163,12 +177,13 @@
             this.btnDevolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDevolucion.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnDevolucion.ForeColor = System.Drawing.Color.White;
-            this.btnDevolucion.Location = new System.Drawing.Point(310, 23);
+            this.btnDevolucion.Location = new System.Drawing.Point(257, 661);
             this.btnDevolucion.Name = "btnDevolucion";
-            this.btnDevolucion.Size = new System.Drawing.Size(155, 50);
+            this.btnDevolucion.Size = new System.Drawing.Size(29, 17);
             this.btnDevolucion.TabIndex = 0;
             this.btnDevolucion.Text = "Devolucion";
             this.btnDevolucion.UseVisualStyleBackColor = false;
+            this.btnDevolucion.Visible = false;
             this.btnDevolucion.Click += new System.EventHandler(this.btnDevolucion_Click_1);
             // 
             // btnCancelar
@@ -234,6 +249,7 @@
             this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel4.BackColor = System.Drawing.Color.Honeydew;
             this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.btnDevolucion);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label2);
@@ -452,21 +468,6 @@
             // 
             this.timerCajero.Enabled = true;
             this.timerCajero.Interval = 1000;
-            // 
-            // btnCambiarPIN
-            // 
-            this.btnCambiarPIN.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnCambiarPIN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCambiarPIN.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnCambiarPIN.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarPIN.Location = new System.Drawing.Point(1152, 43);
-            this.btnCambiarPIN.Name = "btnCambiarPIN";
-            this.btnCambiarPIN.Padding = new System.Windows.Forms.Padding(5, 5, 10, 5);
-            this.btnCambiarPIN.Size = new System.Drawing.Size(99, 48);
-            this.btnCambiarPIN.TabIndex = 4;
-            this.btnCambiarPIN.Text = "PIN";
-            this.btnCambiarPIN.UseVisualStyleBackColor = false;
-            this.btnCambiarPIN.Click += new System.EventHandler(this.btnCambiarPIN_Click);
             // 
             // FormCajero0
             // 
